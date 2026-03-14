@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume &mdash; Humza Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --void:#0d0e14;
+  --surface:#111319;
+  --card:#16171f;
+  --border:rgba(255,255,255,0.08);
+  --border2:rgba(255,255,255,0.14);
+  --primary:#e8e6df;
+  --secondary:#c4c2bb;
+  --muted:#7a7875;
+  --muted2:#9a9894;
+  --amber:#c8a96e;
+  --orbit:#4a7c9e;
+  --green:#5a9e7a;
+  --font-sans:'Geist',system-ui,sans-serif;
+  --font-display:'Urbanist',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --font-serif:'Instrument Serif',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--primary);font-family:var(--font-sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--orbit);text-decoration:none;transition:color .15s}
+a:hover{color:var(--primary)}
+*{cursor:auto !important}
+
+/* ── CURSOR ── */
+#cur{position:fixed;top:0;left:0;width:7px;height:7px;background:var(--primary);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;cursor:none !important}
+#cur-ring{position:fixed;top:0;left:0;width:28px;height:28px;border:1px solid rgba(232,230,223,.2);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s;cursor:none !important}
+body{cursor:none !important}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;background:rgba(13,14,20,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.nav-logo{font-family:var(--font-display);font-size:15px;font-weight:800;letter-spacing:.04em;color:var(--primary)}
+.nav-right{display:flex;align-items:center;gap:1.75rem}
+.nav-link{font-size:12px;color:var(--muted);letter-spacing:.04em;transition:color .2s}
+.nav-link:hover,.nav-link.active{color:var(--primary)}
+.nav-time{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+
+/* ── PAGE SHELL ── */
+.page{max-width:1000px;margin:0 auto;padding:7rem 2rem 5rem}
+
+/* ── PAGE TITLE ── */
+.resume-head{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.resume-role{font-family:var(--font-display);font-size:clamp(22px,3.5vw,36px);font-weight:700;color:var(--primary);letter-spacing:-.5px;margin-bottom:.5rem}
+.resume-actions{display:flex;align-items:center;gap:1.5rem;margin-top:.75rem;flex-wrap:wrap}
+.download-link{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--orbit);display:flex;align-items:center;gap:5px;border-bottom:1px solid rgba(74,124,158,.3);padding-bottom:1px;transition:color .2s,border-color .2s}
+.download-link:hover{color:var(--primary);border-color:var(--muted2)}
+
+/* ── TWO-COLUMN LAYOUT ── */
+.resume-body{display:grid;grid-template-columns:210px 1fr;gap:0 3.5rem;align-items:start}
+
+/* ── SIDEBAR ── */
+.sidebar{}
+.sidebar-section{margin-bottom:2.25rem}
+.sidebar-heading{font-family:var(--font-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--orbit);margin-bottom:.875rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.contact-item{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.6rem;font-size:13px;color:var(--secondary);line-height:1.4}
+.contact-icon{color:var(--muted);font-size:11px;margin-top:2px;flex-shrink:0;width:14px}
+.contact-item a{color:var(--secondary)}
+.contact-item a:hover{color:var(--primary)}
+.lang-item{font-size:13px;color:var(--secondary);margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+.lang-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--border2);flex-shrink:0}
+.highlight-item{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.6rem;font-size:12.5px;line-height:1.45}
+.highlight-item a{color:var(--secondary)}
+.highlight-item a:hover{color:var(--primary)}
+.hl-icon{color:var(--amber);font-size:11px;flex-shrink:0;margin-top:2px}
+
+/* ── MAIN CONTENT ── */
+.main{}
+
+/* Section */
+.rsection{margin-bottom:2.5rem}
+.rsection-heading{font-family:var(--font-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--orbit);margin-bottom:1.1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.rsection-heading::before{content:'';width:16px;height:1px;background:var(--orbit)}
+
+/* Intro */
+.intro-text{font-size:14px;color:var(--secondary);line-height:1.85;margin-bottom:.875rem}
+.intro-text:last-child{margin-bottom:0}
+
+/* Tech stack */
+.stack-group{margin-bottom:1.25rem}
+.stack-group:last-child{margin-bottom:0}
+.stack-type{font-size:11px;font-weight:600;color:var(--primary);margin-bottom:.35rem;letter-spacing:.02em}
+.stack-label{font-size:11px;color:var(--muted);margin-bottom:.25rem}
+.stack-label strong{color:var(--muted2);font-weight:500}
+.stack-list{font-size:13px;color:var(--secondary);line-height:1.65}
+
+/* Work history */
+.job{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.job:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.job-header{margin-bottom:.75rem}
+.job-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--primary);letter-spacing:-.2px;margin-bottom:.2rem}
+.job-meta{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.job-meta-sep{color:var(--border2)}
+.job-duration{color:var(--muted2)}
+.job-bullets{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.job-bullet{font-size:13px;color:var(--secondary);line-height:1.7;padding-left:1.25rem;position:relative}
+.job-bullet::before{content:'\2192';position:absolute;left:0;color:var(--border2);font-size:12px;top:.05em}
+.job-bullet strong{color:var(--primary);font-weight:500}
+
+/* Certifications */
+.cert{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.cert:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cert-title{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--primary);margin-bottom:.2rem;letter-spacing:-.1px}
+.cert-title a{color:var(--primary)}
+.cert-title a:hover{color:var(--orbit)}
+.cert-date{font-family:var(--font-mono);font-size:10px;color:var(--amber);letter-spacing:.06em;margin-bottom:.4rem}
+.cert-desc{font-size:13px;color:var(--secondary);line-height:1.7}
+
+/* References */
+.ref-note{font-size:13px;color:var(--muted);font-style:italic}
+
+/* ── FOOTER ── */
+.footer{max-width:1000px;margin:0 auto;padding:2.5rem 2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-left{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
+.footer-links{display:flex;gap:1.25rem}
+.flnk{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.flnk:hover{color:var(--primary)}
+
+/* ── PRINT ── */
+@media print {
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color-adjust:exact !important; }
+  #cur,#cur-ring,nav,.resume-actions,.footer{ display:none !important; }
+  html,body{ background:var(--void) !important; }
+  .page{ padding:1.25rem 2rem; max-width:100%; }
+  .resume-body{ grid-template-columns:190px 1fr; gap:0 2.5rem; }
+  .job{ page-break-inside:avoid; }
+  .cert{ page-break-inside:avoid; }
+  a{ color:var(--secondary) !important; }
+}
+
+
+/* ── LIGHT MODE ── */
+[data-theme="light"] {
+  --void:    #f2f0eb;
+  --surface: #e9e6e0;
+  --card:    #e2dfd8;
+  --card2:   #d9d5cd;
+  --border:  rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.15);
+  --primary: #18181a;
+  --secondary:#3a3935;
+  --muted:   #888680;
+  --muted2:  #5c5a56;
+  --amber:   #8a6828;
+  --orbit:   #2d6085;
+  --green:   #3a7a5a;
+}
+[data-theme="light"] body { background: var(--void); }
+[data-theme="light"] nav  { background: rgba(242,240,235,.95); }
+
+/* THEME TOGGLE */
+.theme-toggle{width:32px;height:32px;border:1px solid var(--border2);border-radius:50%;background:transparent;color:var(--muted2);display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s,transform .25s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:var(--orbit);color:var(--primary);transform:rotate(20deg)}
+.theme-toggle svg{display:block;transition:transform .3s ease}
+
+@media(max-width:720px){
+  .resume-body{grid-template-columns:1fr}
+  .sidebar{border-bottom:1px solid var(--border);padding-bottom:2rem;margin-bottom:2rem}
+}
+@media(max-width:560px){
+  nav{padding:1rem 1.25rem}
+  .page{padding:6rem 1.25rem 4rem}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<nav>
+  <a href="/" class="nav-logo">H.K</a>
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/works" class="nav-link">Works</a>
+    <a href="/resume" class="nav-link active">R&eacute;sum&eacute;</a>
+    <button class="theme-toggle" id="theme-btn" title="Toggle light / dark" aria-label="Toggle theme"><svg id="theme-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></button>
+    <div class="nav-time" id="nav-time">MTL --:--</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="resume-head">
+    <div class="resume-role">Senior Software Engineer &mdash; Distributed Systems</div>
+    <div class="resume-actions">
+      <a href="#" class="download-link">&#8659; Download one-page PDF</a>
+    </div>
+  </div>
+
+  <div class="resume-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Contact</div>
+        <div class="contact-item"><span class="contact-icon">&#9675;</span>Montreal, QC</div>
+        <div class="contact-item"><span class="contact-icon">&#9675;</span><a href="mailto:hello@humza.io">hello@humza.io</a></div>
+        <div class="contact-item"><span class="contact-icon">&#9675;</span><a href="https://linkedin.com/in/humza" target="_blank">LinkedIn</a></div>
+        <div class="contact-item"><span class="contact-icon">&#9675;</span><a href="https://github.com/humza" target="_blank">GitHub</a></div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Languages</div>
+        <div class="lang-item">English &mdash; Fluent</div>
+        <div class="lang-item">French &mdash; Basic</div>
+        <div class="lang-item">Urdu &mdash; Native</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Highlights</div>
+        <div class="highlight-item">
+          <span class="hl-icon">&#9670;</span>
+          <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank">AWS Certified Solutions Architect &mdash; Associate</a>
+        </div>
+        <div class="highlight-item">
+          <span class="hl-icon">&#9670;</span>
+          <a href="https://www.startupschool.org" target="_blank">Y Combinator Startup School &mdash; Batch of 2018</a>
+        </div>
+        <div class="highlight-item">
+          <span class="hl-icon">&#9670;</span>
+          <a href="https://medium.com/@humza" target="_blank">Occasional writer on Medium</a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- INTRODUCTION -->
+      <div class="rsection">
+        <div class="rsection-heading">Introduction</div>
+        <p class="intro-text">As a Technical Product Engineer &mdash; something that I identify as &mdash; I focus on understanding the &ldquo;why&rdquo; behind technical and business challenges, transforming them into well-architected solutions that are viable both technically and in business terms.</p>
+        <p class="intro-text">I prioritize collaboration, effective communication, and adaptability in my work, valuing partnerships with organizations that embrace coherent design and development for mutual growth.</p>
+      </div>
+
+      <!-- TECH STACK -->
+      <div class="rsection">
+        <div class="rsection-heading">Tech Stack</div>
+
+        <div class="stack-group">
+          <div class="stack-type">Back-end Development</div>
+          <div class="stack-label"><strong>Currently working with:</strong></div>
+          <div class="stack-list">Java, Scala, Kafka, ElasticSearch, GraphQL, Slick, Spring Boot, Python, Terraform, Docker, Redis</div>
+          <div class="stack-label" style="margin-top:.5rem"><strong>Spent significant time with:</strong></div>
+          <div class="stack-list">Express, TypeScript, Cypress, C# .NET Framework &amp; Core, EF Core, Ansible, Apache Airflow, Kudu, Impala</div>
+        </div>
+
+        <div class="stack-group">
+          <div class="stack-type">Front-end Development</div>
+          <div class="stack-list">React, Redux, Mobx, Blueprint, Tailwind, ChakraUI, TypeScript</div>
+        </div>
+
+        <div class="stack-group">
+          <div class="stack-type">Database Systems</div>
+          <div class="stack-list">Postgres, MariaDB, MongoDB, SQL Server (v2012 &amp; 2014 mostly)</div>
+        </div>
+      </div>
+
+      <!-- WORK HISTORY -->
+      <div class="rsection">
+        <div class="rsection-heading">Work History</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Senior Software Engineer &mdash; Lookout Inc</div>
+            <div class="job-meta">
+              <span class="job-duration">Aug 2022 &mdash; Present</span>
+              <span class="job-meta-sep">&middot;</span>
+              <span>1y 6m+</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li class="job-bullet">Core contributor in redesigning major ingestion service, <strong>saving $60,000 USD annually</strong> in operational costs.</li>
+            <li class="job-bullet">Led automation of compliance activities saving <strong>6&ndash;8 development hours</strong> per week per person within the team.</li>
+            <li class="job-bullet">Boosted system observability by <strong>35&ndash;45%</strong> by developing DataDog-based monitoring infrastructure and integrating cross-channel alerts.</li>
+            <li class="job-bullet">Improved client-facing API latency by <strong>&minus;55%</strong> by introducing batched requests, database partitioning and other methodologies.</li>
+            <li class="job-bullet">Helped reduce infrastructure costs by <strong>30%</strong> by optimizing core services to smartly utilize compute resources.</li>
+            <li class="job-bullet">Responsible for maintaining key logical units of certain services that ingested company-wide data from <strong>~12 million mobile devices</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Full Stack Developer &mdash; Revelate</div>
+            <div class="job-meta">
+              <span class="job-duration">Mar 2019 &mdash; July 2022</span>
+              <span class="job-meta-sep">&middot;</span>
+              <span>3y 5m</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li class="job-bullet">Developed and scaled a real-time Transactional Cost Analytics engine for financial markets, processing <strong>200&ndash;400 million trade messages a day</strong> from venues such as NYSE, NASDAQ, TSX.</li>
+            <li class="job-bullet">Reduced metrics delivery timeframe from <strong>30m to 12m</strong> by optimizing data store and underlying orchestration jobs.</li>
+            <li class="job-bullet">Saved significant execution costs by implementing a <strong>circuit-breaker mechanism</strong> for query engine to catch any timed-out analytic queries across clients.</li>
+            <li class="job-bullet">Directly contributed to <strong>ARR $$$</strong> by building a custom DataTable component for CME Group with real-time filtering and infinite scrolling capabilities.</li>
+            <li class="job-bullet">Built and optimized orchestration jobs using Apache Airflow, AWS Athena &amp; Apache Kudu to deliver analytics on a <strong>T-15 mins timeframe</strong>.</li>
+            <li class="job-bullet">Built a React-based dashboard with necessary memory optimisations to render on-demand tens of thousands of analytics rows, previously only available via REST API.</li>
+            <li class="job-bullet">Attending Career Fairs on behalf of the organization to share the knowledge accumulated internally during development.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Software Consultant &mdash; Self Employed</div>
+            <div class="job-meta">
+              <span class="job-duration">Feb 2018 &mdash; Jan 2019</span>
+              <span class="job-meta-sep">&middot;</span>
+              <span>1y</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li class="job-bullet">Helped a startup in Ed-Tech close their seed funding round by delivering technical guidance around their MVP.</li>
+            <li class="job-bullet">Helped build new development teams from scratch with the best practices and tech stacks relevant to the use-case.</li>
+            <li class="job-bullet">Emphasis on brainstorming subtle details and features required to ensure a seamless user experience.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Full Stack Web Developer &mdash; Muballigh Travels</div>
+            <div class="job-meta">
+              <span class="job-duration">Nov 2016 &mdash; Jan 2018</span>
+              <span class="job-meta-sep">&middot;</span>
+              <span>1y 3m</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li class="job-bullet">Worked closely with the core development team to identify areas which can be managed digitally and implemented custom solutions for those specific requirements.</li>
+            <li class="job-bullet">Created RESTful API endpoints using Node.js and ASP.NET Web API using best architectural practices to efficiently access the data store.</li>
+            <li class="job-bullet">Developed a ReactJS web client to consume the API endpoints.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Intern Web Developer &mdash; Geneve Travel &amp; Tours</div>
+            <div class="job-meta">
+              <span class="job-duration">May 2015 &mdash; Aug 2016</span>
+              <span class="job-meta-sep">&middot;</span>
+              <span>1y 4m</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li class="job-bullet">Worked closely with the core development team to assess the requirements of clients and designing their digital implementations.</li>
+            <li class="job-bullet">Designed responsive front-ends and worked on various bits of back-end as per requirements of the core development team.</li>
+            <li class="job-bullet">Refactored the UX of the core content management system to enhance user engagement.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="rsection">
+        <div class="rsection-heading">Certifications</div>
+
+        <div class="cert">
+          <div class="cert-title"><a href="https://aws.amazon.com/certification/" target="_blank">AWS Certified Solutions Architect &mdash; Associate</a></div>
+          <div class="cert-date">March 2020</div>
+          <div class="cert-desc">Certified with hands-on experience designing available, cost-efficient, fault-tolerant, and scalable distributed systems on AWS.</div>
+        </div>
+
+        <div class="cert">
+          <div class="cert-title"><a href="https://www.startupschool.org" target="_blank">Y Combinator Startup School &mdash; Graduate</a></div>
+          <div class="cert-date">November 2018</div>
+          <div class="cert-desc">Successfully graduated from Startup School by the world&rsquo;s largest and most valuable startup incubator Y Combinator with extensive product training.</div>
+        </div>
+
+      </div>
+
+      <!-- REFERENCES -->
+      <div class="rsection">
+        <div class="rsection-heading">References</div>
+        <div class="ref-note">References available on demand.</div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">humza.io &mdash; <span id="footer-year"></span></div>
+  <div class="footer-links">
+    <a href="/" class="flnk">Home</a>
+    <a href="/works" class="flnk">Works</a>
+    <a href="https://github.com" target="_blank" class="flnk">GitHub</a>
+    <a href="https://linkedin.com" target="_blank" class="flnk">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.width='40px';ring.style.height='40px';ring.style.borderColor='var(--orbit)'});
+  el.addEventListener('mouseleave',()=>{ring.style.width='28px';ring.style.height='28px';ring.style.borderColor='rgba(232,230,223,.2)'});
+});
+
+/* CLOCK */
+function updateClock(){
+  const now=new Date(),opt={timeZone:'America/Toronto'};
+  const hm=now.toLocaleTimeString('en-CA',{...opt,hour:'2-digit',minute:'2-digit',hour12:false});
+  document.getElementById('nav-time').textContent='MTL '+hm;
+}
+updateClock();setInterval(updateClock,1000);
+document.getElementById('footer-year').textContent=new Date().getFullYear();
+
+/* THEME TOGGLE */
+(function(){
+  const PULSAR = `<circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+    <line x1="10" y1="6.5" x2="10" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="10" y1="13.5" x2="10" y2="19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="3.5" y1="10" x2="7" y2="10" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" opacity="0.35"/>
+    <line x1="13" y1="10" x2="16.5" y2="10" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" opacity="0.35"/>
+    <line x1="5.5" y1="5.5" x2="7.8" y2="7.8" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>
+    <line x1="12.2" y1="12.2" x2="14.5" y2="14.5" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>`;
+  const BLACKHOLE = `<circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.2"/>
+    <ellipse cx="10" cy="10" rx="8" ry="2.8" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+    <circle cx="10" cy="10" r="3.8" fill="currentColor"/>
+    <path d="M 3.5 8.5 Q 6 9.5 10 10" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 16.5 11.5 Q 14 10.5 10 10" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.35" stroke-linecap="round"/>`;
+  const root = document.documentElement;
+  const saved = localStorage.getItem('hk-theme') || 'dark';
+  root.setAttribute('data-theme', saved);
+  const btn  = document.getElementById('theme-btn');
+  const icon = document.getElementById('theme-icon');
+  function setIcon(t){
+    if(!icon) return;
+    icon.innerHTML = t === 'dark' ? BLACKHOLE : PULSAR;
+  }
+  setIcon(saved);
+  if(btn) btn.addEventListener('click', () => {
+    const cur  = root.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('hk-theme', next);
+    setIcon(next);
+  });
+})();
+
+</script>
+</body>
+</html>
