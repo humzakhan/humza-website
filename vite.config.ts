@@ -35,4 +35,9 @@ function staticHtmlPlugin() {
 
 export default defineConfig({
   plugins: [cloudflareDevProxy(), reactRouter(), staticHtmlPlugin()],
+  resolve: {
+    alias: {
+      "~": resolve(__dirname, "app"),
+    },
+  },
 });

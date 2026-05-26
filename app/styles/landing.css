@@ -1,0 +1,476 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body { position: relative; }
+
+.ascii-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ink);
+  opacity: 0.06;
+  white-space: pre;
+  user-select: none;
+  overflow: hidden;
+  letter-spacing: 0.05em;
+  z-index: 0;
+}
+
+[data-theme="dark"] .ascii-bg {
+  opacity: 1;
+  color: transparent;
+  background: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 8px rgba(138, 170, 208, 0.10),
+    0 0 2px rgba(138, 170, 208, 0.16);
+  -webkit-text-stroke: 0.5px rgba(138, 170, 208, 0.13);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.nav-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--ink-faint);
+  align-items: center;
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+.nav-clock {
+  color: var(--whisper);
+  display: flex;
+  align-items: center;
+}
+
+.dot-blink {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--ink);
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* ── Theme switcher ─────────────────────────────────── */
+.theme-toggle {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover { transform: scale(1.15); }
+.theme-toggle:active { transform: scale(0.92); }
+
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+  overflow: visible;
+}
+
+/* ── Shared transition base ── */
+.tog-star-body,
+.tog-ray,
+.tog-planet,
+.tog-orbit-ring,
+.tog-sun-body,
+.tog-sun-ray {
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── LIGHT MODE: orbiting planet ── */
+/* Central star — small, sharp */
+.tog-star-body {
+  fill: #1a1612;
+  transform-origin: 11px 11px;
+}
+
+/* 4 short rays on the central star */
+.tog-ray {
+  stroke: #1a1612;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+/* Orbit path — faint ellipse */
+.tog-orbit-ring {
+  fill: none;
+  stroke: #1a1612;
+  stroke-width: 0.6;
+  stroke-dasharray: 2 3;
+  opacity: 0.35;
+  transform-origin: 11px 11px;
+}
+
+/* Planet dot — orbits the star */
+.tog-planet {
+  fill: #1a1612;
+  transform-origin: 11px 11px;
+  animation: planet-orbit 3s linear infinite;
+}
+
+@keyframes planet-orbit {
+  0%   { transform: rotate(0deg)   translate(7px, 0) scale(1); }
+  25%  { transform: rotate(90deg)  translate(7px, 0) scale(0.7); }
+  50%  { transform: rotate(180deg) translate(7px, 0) scale(1); }
+  75%  { transform: rotate(270deg) translate(7px, 0) scale(0.7); }
+  100% { transform: rotate(360deg) translate(7px, 0) scale(1); }
+}
+
+/* ── DARK MODE: sun with rays ── */
+.tog-sun-body {
+  fill: #f0f4fc;
+  transform-origin: 11px 11px;
+}
+
+.tog-sun-ray {
+  stroke: #f0f4fc;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transform-origin: 11px 11px;
+}
+
+/* LIGHT: show orbit system, hide sun */
+[data-theme="light"] .tog-star-body { opacity: 1; }
+[data-theme="light"] .tog-ray       { opacity: 1; }
+[data-theme="light"] .tog-orbit-ring{ opacity: 0.35; }
+[data-theme="light"] .tog-planet    { opacity: 1; animation: planet-orbit 3s linear infinite; }
+[data-theme="light"] .tog-sun-body  { opacity: 0; transform: scale(0.3); }
+[data-theme="light"] .tog-sun-ray   { opacity: 0; transform: scale(0.3); }
+
+/* DARK: show sun with rays, hide orbit */
+[data-theme="dark"] .tog-star-body  { opacity: 0; transform: scale(0.3); }
+[data-theme="dark"] .tog-ray        { opacity: 0; }
+[data-theme="dark"] .tog-orbit-ring { opacity: 0; }
+[data-theme="dark"] .tog-planet     { opacity: 0; animation: none; }
+[data-theme="dark"] .tog-sun-body   { opacity: 1; transform: scale(1); }
+[data-theme="dark"] .tog-sun-ray    { opacity: 1; transform: scale(1); animation: sun-breathe 4s ease-in-out infinite; }
+
+@keyframes sun-breathe {
+  0%, 100% { opacity: 1;   stroke-width: 1.5; }
+  50%       { opacity: 0.7; stroke-width: 1.2; }
+}
+
+/* ── Hero ─────────────────────────────────── */
+.hero {
+  padding: 7rem 0 5rem;
+  max-width: 640px;
+}
+
+.eyebrow {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--label);
+  letter-spacing: 0.08em;
+  margin: 0 0 1.75rem;
+  font-weight: 500;
+}
+
+.hero-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(44px, 6.5vw, 60px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin: 0 0 2rem;
+  color: var(--ink);
+}
+
+.hero-heading em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.hero-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 540px;
+  letter-spacing: -0.005em;
+}
+
+.hero-text strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.scroll-cue {
+  padding: 0 0 5rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: var(--whisper);
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-line {
+  width: 32px;
+  height: 0.5px;
+  background: var(--whisper);
+}
+
+.section {
+  padding: 3.5rem 0;
+  border-top: 0.5px solid var(--hairline);
+}
+
+.section-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--label);
+  letter-spacing: 0.08em;
+  margin: 0 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.section-label-right {
+  color: var(--whisper);
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.section-label-right:hover { color: var(--ink); }
+
+.building-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--hairline);
+  border: 0.5px solid var(--hairline);
+}
+
+.building-card {
+  background: var(--bg);
+  padding: 2rem 1.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.building-card:hover { background: var(--bg-hover); }
+
+.building-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+
+.building-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.005em;
+}
+
+.building-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: var(--label);
+  letter-spacing: 0.05em;
+  padding-top: 0.85rem;
+  border-top: 0.5px solid var(--hairline);
+}
+
+.building-arrow {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.works-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 0.5px solid var(--hairline);
+  cursor: pointer;
+  transition: padding 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.works-row:hover { padding-left: 0.5rem; }
+.works-row:last-child { border-bottom: none; }
+
+.works-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+
+.works-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-muted);
+  margin: 0 0 0.55rem;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+}
+
+.works-metric {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: var(--label);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.works-meta {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--label);
+  letter-spacing: 0.02em;
+  text-align: right;
+  align-self: start;
+  padding-top: 0.5rem;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.contact {
+  padding: 5rem 0 3rem;
+  border-top: 0.5px solid var(--hairline);
+}
+
+.contact-email {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 1.5rem;
+  cursor: pointer;
+  line-height: 1.1;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contact-email:hover { color: var(--accent); }
+
+.contact-links {
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  color: var(--label);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.contact-links a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.contact-links a:hover { color: var(--ink); }
+
+.footer {
+  padding: 1.5rem 0;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--whisper);
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.5px solid var(--hairline);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .content { padding: 0 1.25rem; }
+  .nav-links { gap: 1rem; font-size: 11px; }
+  .nav-clock { display: none; }
+  .hero { padding: 4rem 0 3rem; }
+  .building-grid { grid-template-columns: 1fr; }
+  .works-row { grid-template-columns: 1fr; }
+  .works-meta { text-align: left; padding-top: 0.25rem; }
+  .ascii-bg { font-size: 9px; opacity: 0.05; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-blink, [data-theme="dark"] .star { animation: none; opacity: 0.6; }
+  .ascii-bg { display: none; }
+  *, *::before, *::after { transition: none !important; }
+}
