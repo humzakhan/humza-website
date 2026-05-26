@@ -1,6 +1,6 @@
 {
   "name": "humza-website",
-  "compatibility_date": "2025-01-01",
+  "compatibility_date": "2026-01-01",
   "main": "build/server/index.js",
   "assets": {
     "directory": "./public"
