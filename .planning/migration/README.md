@@ -19,7 +19,7 @@ Migrate humza.io from a no-build-step static site (plain HTML + `deploy.sh`) to 
 | CSS theme mechanism | `[data-theme="light"\|"dark"]` on `<html>`, same variable names as source (`--bg`, `--ink`, `--accent`, `--hairline`, …) |
 | Fonts | Google Fonts (Outfit, Inter, Geist Mono) via `<link>` preconnect in `<head>` |
 | Blog format | Plain `.tsx` route modules under `app/routes/blog.*` — no MDX |
-| Package manager | npm |
+| Package manager | pnpm (run scripts via `pnpm run <script>`; `pnpm deploy` is a reserved builtin) |
 | Account | CF account `9f7eb5d8779c6286d8203d49e5c8de44`, existing `CLOUDFLARE_API_TOKEN`, domain humza.io |
 | Design source | `design/source/humza-io-landing.html` (copy of `/Users/humza/downloads/humza-io-landing.html`) |
 

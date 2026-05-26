@@ -10,7 +10,7 @@
 | SSR | `ssr: true` in `react-router.config.ts` | Enables server rendering per route; streaming-ready |
 | Runtime | Cloudflare Workers | Edge-first; matches existing CF Pages account; `@react-router/cloudflare` adapter |
 | Styling | Plain CSS | Pixel-perfect port of source CSS; no framework overhead; `[data-theme]` mechanism is trivially CSS-native |
-| Package manager | npm | Consistent with toolchain defaults |
+| Package manager | pnpm | Adopted post-migration; `pnpm-workspace.yaml` `allowBuilds` enables esbuild/sharp/workerd build scripts. Run scripts via `pnpm run <script>` (`pnpm deploy` is a reserved builtin) |
 
 ---
 

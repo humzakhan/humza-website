@@ -37,8 +37,8 @@ design/source/        → design source files (Figma exports, etc.)
 ## Local Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Starts a local Vite dev server with Cloudflare Workers emulation via Wrangler.
@@ -46,7 +46,7 @@ Starts a local Vite dev server with Cloudflare Workers emulation via Wrangler.
 ## Build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 Outputs to `build/server/index.js` (Worker entry) and `build/client/` (static assets).
@@ -54,7 +54,7 @@ Outputs to `build/server/index.js` (Worker entry) and `build/client/` (static as
 ## Type Check
 
 ```bash
-npm run typecheck
+pnpm typecheck
 ```
 
 Runs `tsc --noEmit` against the full project.
@@ -62,12 +62,15 @@ Runs `tsc --noEmit` against the full project.
 ## Deploy
 
 ```bash
-CLOUDFLARE_API_TOKEN=<token> npm run deploy
+CLOUDFLARE_API_TOKEN=<token> pnpm run deploy
 ```
 
-Equivalent to `npm run build && wrangler deploy`. Requires a `CLOUDFLARE_API_TOKEN` environment variable with Workers deploy permissions. The `wrangler.jsonc` `routes` block binds `humza.io/*` and `www.humza.io/*` to the Worker on deploy.
+> Note: use `pnpm run deploy` (not `pnpm deploy`) — `deploy` is a reserved pnpm built-in command.
+
+Equivalent to `pnpm run build && wrangler deploy`. Requires a `CLOUDFLARE_API_TOKEN` environment variable with Workers deploy permissions. The `wrangler.jsonc` `routes` block binds `humza.io/*` and `www.humza.io/*` to the Worker on deploy.
 
 ## Requirements
 
 - Node >= 20
-- [wrangler](https://developers.cloudflare.com/workers/wrangler/) (installed as a dev dependency via `npm install`)
+- [pnpm](https://pnpm.io) (the package manager — version pinned via `packageManager` in `package.json`)
+- [wrangler](https://developers.cloudflare.com/workers/wrangler/) (installed as a dev dependency via `pnpm install`)
