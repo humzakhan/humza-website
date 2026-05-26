@@ -4,9 +4,10 @@ export function WorksSection() {
   return (
     <section className="section" id="works">
       <div className="section-label">
-        <span>— WORKS</span>
+        <span>— SELECTED WORK</span>
         <Link className="section-label-right" to="/works">browse all →</Link>
       </div>
+      <p className="section-intro">Production systems at enterprise scale — market data, security, and finance.</p>
       <div>
         <a className="works-row" href="#">
           <div>

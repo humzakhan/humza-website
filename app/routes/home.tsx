@@ -9,11 +9,11 @@ import { Contact } from "~/components/Contact";
 import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Product Engineer" },
+  { title: "Humza Khan — Enterprise AI Engineer" },
   {
     name: "description",
     content:
-      "Product Engineer based in Montréal, working at the intersection of AI and finance.",
+      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
   },
 ];
 

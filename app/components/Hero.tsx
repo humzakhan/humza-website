@@ -1,12 +1,12 @@
 export function Hero() {
   return (
     <section className="hero">
-      <p className="eyebrow">— PRODUCT ENGINEER · MONTRÉAL</p>
-      <h1 className="hero-heading">AI &amp; finance, <em>shipped.</em></h1>
+      <p className="eyebrow">— AI ENGINEER · FINANCE &amp; ENTERPRISE · MONTRÉAL</p>
+      <h1 className="hero-heading">Enterprise AI, <em>shipped.</em></h1>
       <p className="hero-text">
-        Working at the intersection of <strong>AI and finance</strong>. Spend most
-        days using AI to ship production systems faster, automate legacy
-        infrastructure, and translate business problems into working software.
+        I build AI at the intersection of <strong>finance, enterprise, and productivity</strong>{" "}
+        — turning legacy infrastructure and messy business problems into production systems that ship.
+        Work spans <strong>CME Group, Revelate, and Lookout.</strong>
       </p>
     </section>
   );

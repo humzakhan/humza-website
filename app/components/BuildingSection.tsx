@@ -3,26 +3,21 @@ export function BuildingSection() {
     <section className="section" id="building">
       <div className="section-label">
         <span>— CURRENTLY BUILDING</span>
-        <span className="section-label-right">02 ACTIVE</span>
+        <span className="section-label-right">01 FLAGSHIP</span>
       </div>
-      <div className="building-grid">
-        <a className="building-card" href="#">
-          <h3 className="building-name">WordStack</h3>
-          <p className="building-desc">[ one-line description of WordStack — what it is and who it's for ]</p>
-          <div className="building-meta">
-            <span>[ stack ]</span>
-            <span className="building-arrow">→</span>
-          </div>
-        </a>
-        <a className="building-card" href="#">
-          <h3 className="building-name">Sendic</h3>
-          <p className="building-desc">[ one-line description of Sendic — what it is and who it's for ]</p>
-          <div className="building-meta">
-            <span>[ stack ]</span>
-            <span className="building-arrow">→</span>
-          </div>
-        </a>
-      </div>
+      <a className="flagship" href="#">
+        <h3 className="flagship-name">[ Your flagship project ]</h3>
+        <p className="flagship-line flagship-line--problem">[ the problem it kills — one line ]</p>
+        <p className="flagship-line flagship-line--what">[ what you built + the AI angle — one line ]</p>
+        <p className="flagship-line flagship-line--outcome">[ outcome / who it's for / a metric ]</p>
+        <div className="building-meta">
+          <span>[ stack ]</span>
+          <span className="building-arrow">→</span>
+        </div>
+      </a>
+      <p className="also-building">
+        also building — <a href="#">WordStack</a> · <a href="#">Sendic</a>
+      </p>
     </section>
   );
 }
