@@ -1,0 +1,36 @@
+{
+  "name": "humza-website",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "deploy": "npm run build && wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "start": "wrangler dev"
+  },
+  "dependencies": {
+    "@react-router/cloudflare": "^7",
+    "isbot": "^4.1.0",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-router": "^7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1",
+    "@cloudflare/workers-types": "^4",
+    "@types/node": "^22",
+    "@react-router/dev": "^7",
+    "@react-router/fs-routes": "^7",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5",
+    "vite": "^6",
+    "wrangler": "^3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
