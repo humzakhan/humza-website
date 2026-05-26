@@ -1,0 +1,6 @@
+# Allow these dependencies to run install/build scripts (pnpm blocks them by default).
+# workerd + esbuild ship native binaries the toolchain needs; sharp is a wrangler subdep.
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
