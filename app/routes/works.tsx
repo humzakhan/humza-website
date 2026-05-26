@@ -69,10 +69,7 @@ export default function Works() {
             <a href="/">home</a>
             <a href="/works" className="active">works</a>
             <a href="/resume">résumé</a>
-            <span className="nav-clock">
-              <span className="dot-blink" />
-              <Clock />
-            </span>
+            <Clock />
             <ThemeToggle />
           </div>
         </nav>
