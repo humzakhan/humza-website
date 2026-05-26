@@ -7,6 +7,7 @@ export function Nav() {
       <span className="nav-name">humza khan</span>
       <div className="nav-links">
         <a href="/works">works</a>
+        <a href="/blog">writing</a>
         <a href="/resume">résumé</a>
         <a href="mailto:hello@humza.io">hello</a>
         <Clock />
