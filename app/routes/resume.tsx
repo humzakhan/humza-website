@@ -1,4 +1,4 @@
-import type { MetaFunction } from "react-router";
+import { type MetaFunction, Link } from "react-router";
 import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
@@ -32,17 +32,17 @@ export default function Resume() {
 
         {/* Nav — ported faithfully from source; active class on résumé */}
         <nav className="nav">
-          <a
+          <Link
             className="nav-name"
-            href="/"
+            to="/"
             style={{ textDecoration: "none", color: "var(--ink)" }}
           >
             humza khan
-          </a>
+          </Link>
           <div className="nav-links">
-            <a href="/">home</a>
-            <a href="/works">works</a>
-            <a href="/resume" className="active">résumé</a>
+            <Link to="/">home</Link>
+            <Link to="/works">works</Link>
+            <Link to="/resume" className="active">résumé</Link>
             {/* Clock already renders its own nav-clock + dot-blink — do NOT wrap */}
             <Clock />
             <ThemeToggle />

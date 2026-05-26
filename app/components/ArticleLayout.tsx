@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { ArticleMeta } from "~/routes/blog/articles";
 
 interface ArticleLayoutProps {
@@ -18,9 +19,9 @@ export function ArticleLayout({ meta, children }: ArticleLayoutProps) {
   return (
     <article className="article">
       <header className="article-header">
-        <a href="/blog" className="article-back">
+        <Link to="/blog" className="article-back">
           ← Writing
-        </a>
+        </Link>
         <h1 className="article-title">{meta.title}</h1>
         <time className="article-date" dateTime={meta.date}>
           {formatDate(meta.date)}

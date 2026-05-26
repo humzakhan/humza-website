@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function Contact() {
   return (
     <section className="contact">
@@ -6,7 +8,7 @@ export function Contact() {
       </div>
       <a className="contact-email" href="mailto:hello@humza.io">hello@humza.io</a>
       <p className="contact-links">
-        <a href="#">github</a> · <a href="#">linkedin</a> · <a href="#">twitter</a> · <a href="/resume">résumé</a>
+        <a href="#">github</a> · <a href="#">linkedin</a> · <a href="#">twitter</a> · <Link to="/resume">résumé</Link>
       </p>
     </section>
   );
