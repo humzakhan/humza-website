@@ -4,9 +4,9 @@ export function AsciiBackground() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const bg = document.getElementById("ascii-bg") as HTMLElement | null;
-    if (!bg) return;
-    const bgEl = bg as HTMLElement;
+    const bgMaybe = document.getElementById("ascii-bg");
+    if (!bgMaybe) return;
+    const bg = bgMaybe as HTMLElement;
 
     const charW = 7.4;
     const charH = 15.4;
@@ -47,6 +47,7 @@ export function AsciiBackground() {
     const GW_INTERVAL = 280; // frames between pulses
     const gwPulses: Array<{ radius: number; born: number }> = [];
 
+    let rafId = 0;
     let mouseX = -999, mouseY = -999;
     let targetX = -999, targetY = -999;
     let cols = 0, rows = 0;
@@ -88,7 +89,7 @@ export function AsciiBackground() {
 
     function onVisibilityChange() {
       running = !document.hidden;
-      if (running) requestAnimationFrame(render);
+      if (running) rafId = requestAnimationFrame(render);
     }
 
     function easeOut(x: number) { return 1 - Math.pow(1 - Math.max(0, x), 2); }
@@ -252,14 +253,15 @@ export function AsciiBackground() {
         out += '\n';
       }
 
-      bgEl.textContent = out;
-      requestAnimationFrame(render);
+      bg.textContent = out;
+      rafId = requestAnimationFrame(render);
     }
 
-    render();
+    rafId = requestAnimationFrame(render);
 
     return () => {
       running = false;
+      cancelAnimationFrame(rafId);
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseleave', onMouseLeave);
