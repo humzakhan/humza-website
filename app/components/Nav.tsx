@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Clock } from "./Clock";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -6,9 +7,9 @@ export function Nav() {
     <nav className="nav">
       <span className="nav-name">humza khan</span>
       <div className="nav-links">
-        <a href="/works">works</a>
-        <a href="/blog">writing</a>
-        <a href="/resume">résumé</a>
+        <Link to="/works">works</Link>
+        <Link to="/blog">writing</Link>
+        <Link to="/resume">résumé</Link>
         <a href="mailto:hello@humza.io">hello</a>
         <Clock />
         <ThemeToggle />

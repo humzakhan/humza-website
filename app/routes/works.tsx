@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { MetaFunction } from "react-router";
+import { type MetaFunction, Link } from "react-router";
 import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
@@ -62,13 +62,13 @@ export default function Works() {
 
         {/* Nav — ported faithfully from source with active class on works */}
         <nav className="nav">
-          <a className="nav-name" href="/" style={{ textDecoration: "none", color: "var(--ink)" }}>
+          <Link className="nav-name" to="/" style={{ textDecoration: "none", color: "var(--ink)" }}>
             humza khan
-          </a>
+          </Link>
           <div className="nav-links">
-            <a href="/">home</a>
-            <a href="/works" className="active">works</a>
-            <a href="/resume">résumé</a>
+            <Link to="/">home</Link>
+            <Link to="/works" className="active">works</Link>
+            <Link to="/resume">résumé</Link>
             <Clock />
             <ThemeToggle />
           </div>

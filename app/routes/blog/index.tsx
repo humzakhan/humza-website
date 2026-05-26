@@ -1,4 +1,4 @@
-import type { MetaFunction } from "react-router";
+import { type MetaFunction, Link } from "react-router";
 import { Nav } from "~/components/Nav";
 import { articles } from "./articles";
 import "~/styles/blog.css";
@@ -36,7 +36,7 @@ export default function BlogIndex() {
         <ul className="article-list">
           {articles.map((article) => (
             <li key={article.slug} className="article-row">
-              <a href={`/blog/${article.slug}`} className="article-row-link">
+              <Link to={`/blog/${article.slug}`} className="article-row-link">
                 <div className="article-row-body">
                   <h2 className="article-row-title">{article.title}</h2>
                   <p className="article-row-desc">{article.description}</p>
@@ -47,7 +47,7 @@ export default function BlogIndex() {
                 >
                   {formatDate(article.date)}
                 </time>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

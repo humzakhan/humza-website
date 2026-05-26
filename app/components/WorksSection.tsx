@@ -1,9 +1,11 @@
+import { Link } from "react-router";
+
 export function WorksSection() {
   return (
     <section className="section" id="works">
       <div className="section-label">
         <span>— WORKS</span>
-        <a className="section-label-right" href="/works">browse all →</a>
+        <Link className="section-label-right" to="/works">browse all →</Link>
       </div>
       <div>
         <a className="works-row" href="#">
