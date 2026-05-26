@@ -4,5 +4,9 @@
   "main": "build/server/index.js",
   "assets": {
     "directory": "./public"
-  }
+  },
+  "routes": [
+    { "pattern": "humza.io/*", "zone_name": "humza.io" },
+    { "pattern": "www.humza.io/*", "zone_name": "humza.io" }
+  ]
 }
