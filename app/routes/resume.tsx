@@ -201,11 +201,11 @@ export default function Resume() {
               <dl className="ai-spec">
                 <div className="ai-row">
                   <dt>Current</dt>
-                  <dd className="stack-line">Go <span className="sep">·</span> TypeScript <span className="sep">·</span> Python <span className="sep">·</span> Postgres <span className="sep">·</span> pgvector <span className="sep">·</span> React <span className="sep">·</span> Next.js <span className="sep">·</span> Tailwind</dd>
+                  <dd className="stack-line">Go&nbsp;<span className="sep">·</span> TypeScript&nbsp;<span className="sep">·</span> Python&nbsp;<span className="sep">·</span> Postgres&nbsp;<span className="sep">·</span> pgvector&nbsp;<span className="sep">·</span> React&nbsp;<span className="sep">·</span> Next.js&nbsp;<span className="sep">·</span> Tailwind</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Experienced</dt>
-                  <dd className="stack-line">Java <span className="sep">·</span> Scala <span className="sep">·</span> Kafka <span className="sep">·</span> Spring&nbsp;Boot <span className="sep">·</span> ElasticSearch <span className="sep">·</span> GraphQL <span className="sep">·</span> AWS <span className="sep">·</span> Terraform <span className="sep">·</span> Docker <span className="sep">·</span> Redis <span className="sep">·</span> Airflow <span className="sep">·</span> Kudu</dd>
+                  <dd className="stack-line">Java&nbsp;<span className="sep">·</span> Scala&nbsp;<span className="sep">·</span> Kafka&nbsp;<span className="sep">·</span> Spring&nbsp;Boot&nbsp;<span className="sep">·</span> ElasticSearch&nbsp;<span className="sep">·</span> GraphQL&nbsp;<span className="sep">·</span> AWS&nbsp;<span className="sep">·</span> Terraform&nbsp;<span className="sep">·</span> Docker&nbsp;<span className="sep">·</span> Redis&nbsp;<span className="sep">·</span> Airflow&nbsp;<span className="sep">·</span> Kudu</dd>
                 </div>
               </dl>
             </section>
