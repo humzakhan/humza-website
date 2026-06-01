@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section className="hero">
       <p className="eyebrow">— AGENTS &amp; ENTERPRISE · MONTRÉAL</p>
-      <h1 className="hero-heading">Senior AI Product Engineer</h1>
+      <h1 className="hero-heading">AI Product Engineer</h1>
       <p className="hero-subtitle">
         Data Infrastructure<span className="hero-subtitle-sep">·</span>Physics Enthusiast
       </p>
