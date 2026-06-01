@@ -5,12 +5,10 @@ import { ThemeToggle } from "./ThemeToggle";
 export function Nav() {
   return (
     <nav className="nav">
-      <span className="nav-name">humza khan</span>
+      <span className="nav-name">humza k<span className="nav-dot">.</span></span>
       <div className="nav-links">
         <Link to="/works">works</Link>
-        <Link to="/blog">writing</Link>
-        <Link to="/resume">résumé</Link>
-        <a href="mailto:hello@humza.io">hello</a>
+        <Link to="/resume">resume</Link>
         <Clock />
         <ThemeToggle />
       </div>

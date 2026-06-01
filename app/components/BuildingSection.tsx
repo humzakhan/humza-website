@@ -5,19 +5,26 @@ export function BuildingSection() {
         <span>— CURRENTLY BUILDING</span>
         <span className="section-label-right">01 FLAGSHIP</span>
       </div>
-      <a className="flagship" href="#">
-        <h3 className="flagship-name">[ Your flagship project ]</h3>
-        <p className="flagship-line flagship-line--problem">[ the problem it kills — one line ]</p>
-        <p className="flagship-line flagship-line--what">[ what you built + the AI angle — one line ]</p>
-        <p className="flagship-line flagship-line--outcome">[ outcome / who it's for / a metric ]</p>
+      <a className="flagship flagship--verstack" href="https://verstack.ai" target="_blank" rel="noreferrer">
+        <h3 className="flagship-name">Verstack</h3>
+        <p className="flagship-line flagship-line--problem">Reverse ETL for the unstructured data your AI agents can&apos;t read yet.</p>
+        <p className="flagship-line flagship-line--what">Technical co-founder, leading the platform&apos;s engineering end to end.</p>
+        <p className="flagship-line flagship-line--outcome">Unstructured in, structured out. Agent-ready data, delivered reliably at scale.</p>
         <div className="building-meta">
           <span>[ stack ]</span>
           <span className="building-arrow">→</span>
         </div>
       </a>
-      <p className="also-building">
-        also building — <a href="#">WordStack</a> · <a href="#">Sendic</a>
-      </p>
+      <a className="flagship flagship--syndic" href="https://syndic.dev" target="_blank" rel="noreferrer">
+        <h3 className="flagship-name">Syndic</h3>
+        <p className="flagship-line flagship-line--problem">Mobile control plane for AI coding agents, running on the subscriptions you already pay for.</p>
+        <p className="flagship-line flagship-line--what">Built the entire platform solo, end to end.</p>
+        <p className="flagship-line flagship-line--outcome">Move your agent workflow off the desktop. Plan, run, and ship from anywhere.</p>
+        <div className="building-meta">
+          <span>[ stack ]</span>
+          <span className="building-arrow">→</span>
+        </div>
+      </a>
     </section>
   );
 }

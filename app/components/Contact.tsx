@@ -8,7 +8,10 @@ export function Contact() {
       </div>
       <a className="contact-email" href="mailto:hello@humza.io">hello@humza.io</a>
       <p className="contact-links">
-        <a href="#">github</a> · <a href="#">linkedin</a> · <a href="#">twitter</a> · <Link to="/resume">résumé</Link>
+        <a href="https://x.com/0xHumza" target="_blank" rel="noreferrer">x</a> ·{" "}
+        <a href="https://github.com/humzakhan" target="_blank" rel="noreferrer">github</a> ·{" "}
+        <a href="https://www.linkedin.com/in/humzakhaan/" target="_blank" rel="noreferrer">linkedin</a> ·{" "}
+        <Link to="/resume">resume</Link>
       </p>
     </section>
   );
