@@ -22,7 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300..700&family=Geist+Mono:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Lora:wght@500;600;700&family=Inter:opsz,wght@14..32,300..700&family=Geist+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         <Meta />
