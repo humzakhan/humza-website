@@ -4,7 +4,7 @@ export function Hero() {
       <p className="eyebrow">— AGENTS &amp; ENTERPRISE · MONTRÉAL</p>
       <h1 className="hero-heading">AI Product Engineer</h1>
       <p className="hero-subtitle">
-        Data Infrastructure<span className="hero-subtitle-sep">·</span>Physics Enthusiast
+0→1 Builder<span className="hero-subtitle-sep">·</span>Physics Enthusiast
       </p>
       <p className="hero-text">
         An AI engineer building <strong>data infrastructure and AI products</strong> across
