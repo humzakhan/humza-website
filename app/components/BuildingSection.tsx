@@ -8,7 +8,7 @@ export function BuildingSection() {
       <a className="flagship flagship--verstack" href="https://verstack.ai" target="_blank" rel="noreferrer">
         <h3 className="flagship-name">Verstack</h3>
         <p className="flagship-line flagship-line--problem">Reverse ETL for the unstructured data your AI agents can&apos;t read yet.</p>
-        <p className="flagship-line flagship-line--what">Co-founded the platform and lead its engineering as technical co-founder.</p>
+        <p className="flagship-line flagship-line--what">Technical co-founder, leading the platform&apos;s engineering end to end.</p>
         <p className="flagship-line flagship-line--outcome">Unstructured in, structured out. Agent-ready data, delivered reliably at scale.</p>
         <div className="building-meta">
           <span>[ stack ]</span>
