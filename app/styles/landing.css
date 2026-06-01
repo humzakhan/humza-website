@@ -226,11 +226,11 @@ body { position: relative; }
 
 .hero-heading {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(44px, 6.5vw, 60px);
-  line-height: 1.05;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.1;
   font-weight: 600;
   letter-spacing: -0.025em;
-  margin: 0 0 2rem;
+  margin: 0 0 0.5rem;
   color: var(--ink);
 }
 
@@ -240,9 +240,24 @@ body { position: relative; }
   font-weight: 500;
 }
 
+.hero-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(15px, 2.4vw, 20px);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.5rem;
+  color: var(--ink-soft);
+}
+
+.hero-subtitle-sep {
+  margin: 0 0.6em;
+  color: var(--label);
+}
+
 .hero-text {
   font-family: 'Inter', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
   margin: 0;

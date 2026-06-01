@@ -1,12 +1,14 @@
 export function Hero() {
   return (
     <section className="hero">
-      <p className="eyebrow">— AI ENGINEER · FINANCE &amp; ENTERPRISE · MONTRÉAL</p>
-      <h1 className="hero-heading">Enterprise AI, <em>shipped.</em></h1>
+      <p className="eyebrow">— AGENTS &amp; ENTERPRISE · MONTRÉAL</p>
+      <h1 className="hero-heading">Senior AI Product Engineer</h1>
+      <p className="hero-subtitle">
+        Data Infrastructure<span className="hero-subtitle-sep">·</span>Physics Enthusiast
+      </p>
       <p className="hero-text">
-        I build AI at the intersection of <strong>finance, enterprise, and productivity</strong>{" "}
-        — turning legacy infrastructure and messy business problems into production systems that ship.
-        Work spans <strong>CME Group, Revelate, and Lookout.</strong>
+        An AI engineer building <strong>data infrastructure and AI products</strong> across
+        enterprise and productivity, with extensive <strong>fintech</strong> experience.
       </p>
     </section>
   );
