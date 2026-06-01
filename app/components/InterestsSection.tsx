@@ -31,7 +31,7 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">03</span>
           <div>
-            <h3 className="interest-title">The context layer for AI agents</h3>
+            <h3 className="interest-title">The context fabric for AI agents</h3>
             <p className="interest-desc">
               Centralizing the knowledge trapped in people&apos;s heads and feeding each agent exactly
               the right context for the task, picked automatically. Not for one kind of agent, but
