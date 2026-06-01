@@ -68,7 +68,7 @@ body { position: relative; }
 .nav-links {
   display: flex;
   gap: 1.5rem;
-  color: var(--ink-faint);
+  color: var(--ink-muted);
   align-items: center;
   font-size: 13.5px;
 }
@@ -89,7 +89,7 @@ body { position: relative; }
 .nav-links a:hover { color: var(--ink); }
 
 .nav-clock {
-  color: var(--whisper);
+  color: var(--ink-faint);
   display: flex;
   align-items: center;
 }
