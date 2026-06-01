@@ -5,6 +5,7 @@ import { Hero } from "~/components/Hero";
 import { ScrollCue } from "~/components/ScrollCue";
 import { BuildingSection } from "~/components/BuildingSection";
 import { WorksSection } from "~/components/WorksSection";
+import { InterestsSection } from "~/components/InterestsSection";
 import { Contact } from "~/components/Contact";
 import { Footer } from "~/components/Footer";
 
@@ -27,6 +28,7 @@ export default function Home() {
         <ScrollCue />
         <BuildingSection />
         <WorksSection />
+        <InterestsSection />
         <Contact />
         <Footer />
       </div>

@@ -423,6 +423,70 @@ body { position: relative; }
   margin: -1rem 0 1.75rem;
 }
 
+/* ── Interests (InterestsSection) ─────────────────────── */
+.interests-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.interest {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.interest-num {
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  padding-top: 0.3rem;
+}
+
+.interest-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+
+.interest-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  margin: 0;
+  color: var(--ink-muted);
+  max-width: 600px;
+}
+
+.interests-outro {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: var(--ink-soft);
+  margin: 2.75rem 0 0;
+  max-width: 600px;
+}
+
+.interests-outro a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.interests-outro a:hover { text-decoration: underline; }
+
 /* ── Flagship block (BuildingSection) ─────────────────── */
 .flagship {
   display: block;
