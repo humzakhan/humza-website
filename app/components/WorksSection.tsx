@@ -15,14 +15,24 @@ export function WorksSection() {
           <span className="ledger-metric">55% lower API latency</span>
         </li>
         <li className="ledger-row">
-          <span className="ledger-co">Lookout</span>
-          <span className="ledger-what">Ingestion for 12M devices</span>
-          <span className="ledger-metric">30% infra cost cut</span>
+          <span className="ledger-co">Provenant</span>
+          <span className="ledger-what">Provenance chains for long-running financial agents</span>
+          <span className="ledger-metric">Audit chain for financial agents</span>
+        </li>
+        <li className="ledger-row">
+          <span className="ledger-co">Fauxbooks</span>
+          <span className="ledger-what">Reconcilable synthetic financial datasets at scale</span>
+          <span className="ledger-metric">Faster testing, faster ship</span>
         </li>
         <li className="ledger-row">
           <span className="ledger-co">Revelate</span>
           <span className="ledger-what">Real-time trade analytics</span>
           <span className="ledger-metric">400M messages/day</span>
+        </li>
+        <li className="ledger-row">
+          <span className="ledger-co">Lookout</span>
+          <span className="ledger-what">Ingestion for 12M devices</span>
+          <span className="ledger-metric">30% infra cost cut</span>
         </li>
       </ul>
     </section>
