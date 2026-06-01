@@ -398,20 +398,6 @@ body { position: relative; }
   transition: background 0.25s ease;
 }
 
-/* Vertical selection indicator that grows on the left edge */
-.ledger-row::after {
-  content: "";
-  position: absolute;
-  left: -0.9rem;
-  top: 50%;
-  width: 2px;
-  height: 0;
-  background: var(--accent);
-  border-radius: 2px;
-  transform: translateY(-50%);
-  transition: height 0.25s ease;
-}
-
 .ledger-row:last-child { border-bottom: none; }
 
 .ledger-co,
@@ -420,7 +406,6 @@ body { position: relative; }
 
 .ledger-row:hover { transform: translateX(8px); }
 .ledger-row:hover::before { background: var(--row-highlight); }
-.ledger-row:hover::after { height: 62%; }
 .ledger-row:hover .ledger-co { color: var(--accent); }
 .ledger-row:hover .ledger-what,
 .ledger-row:hover .ledger-metric { color: var(--ink); }
@@ -428,7 +413,6 @@ body { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .ledger-row,
   .ledger-row:hover { transform: none; }
-  .ledger-row::after { transition: none; }
 }
 
 .ledger-co {
