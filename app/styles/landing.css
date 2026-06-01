@@ -607,13 +607,36 @@ body { position: relative; }
 }
 
 .contact-links a {
+  position: relative;
+  display: inline-block;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
+/* Hover: accent brackets slide outward and fade in, framing the word */
+.contact-links a::before,
+.contact-links a::after {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  color: var(--accent);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.contact-links a::before { content: "["; left: 0; transform: translateX(0); }
+.contact-links a::after  { content: "]"; right: 0; transform: translateX(0); }
+
 .contact-links a:hover { color: var(--ink); }
+.contact-links a:hover::before { opacity: 1; transform: translateX(-11px); }
+.contact-links a:hover::after  { opacity: 1; transform: translateX(11px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-links a::before,
+  .contact-links a::after { transition: opacity 0.25s ease; }
+}
 
 .footer {
   padding: 1.5rem 0;
