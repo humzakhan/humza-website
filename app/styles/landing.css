@@ -415,7 +415,7 @@ body { position: relative; }
 /* ── Section intro (WorksSection framing line) ────────── */
 .section-intro {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 400;
   color: var(--ink-muted);
   line-height: 1.55;
