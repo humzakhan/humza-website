@@ -5,10 +5,10 @@ import { ThemeToggle } from "~/components/ThemeToggle";
 import "~/styles/resume.css";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Résumé" },
+  { title: "Humza Khan — Resume" },
   {
     name: "description",
-    content: "Résumé · Product Engineer · AI, finance, distributed systems.",
+    content: "Resume · Product Engineer · AI, finance, distributed systems.",
   },
 ];
 
@@ -37,12 +37,12 @@ export default function Resume() {
             to="/"
             style={{ textDecoration: "none", color: "var(--ink)" }}
           >
-            humza khan
+            humza k<span className="nav-dot">.</span>
           </Link>
           <div className="nav-links">
             <Link to="/">home</Link>
             <Link to="/works">works</Link>
-            <Link to="/resume" className="active">résumé</Link>
+            <Link to="/resume" className="active">resume</Link>
             {/* Clock already renders its own nav-clock + dot-blink — do NOT wrap */}
             <Clock />
             <ThemeToggle />
@@ -51,7 +51,7 @@ export default function Resume() {
 
         {/* Hero */}
         <section className="hero">
-          <p className="eyebrow">— RÉSUMÉ</p>
+          <p className="eyebrow">— RESUME</p>
           <h1 className="hero-heading">Product Engineer</h1>
           <p className="hero-sub">
             AI<span>·</span>Finance<span>·</span>Distributed Systems

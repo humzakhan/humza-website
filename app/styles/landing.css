@@ -70,6 +70,13 @@ body { position: relative; }
   gap: 1.5rem;
   color: var(--ink-faint);
   align-items: center;
+  font-size: 13.5px;
+}
+
+.nav-dot {
+  color: var(--accent);
+  font-size: 1.5em;
+  line-height: 0;
 }
 
 .nav-links a {

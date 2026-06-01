@@ -63,12 +63,12 @@ export default function Works() {
         {/* Nav — ported faithfully from source with active class on works */}
         <nav className="nav">
           <Link className="nav-name" to="/" style={{ textDecoration: "none", color: "var(--ink)" }}>
-            humza khan
+            humza k<span className="nav-dot">.</span>
           </Link>
           <div className="nav-links">
             <Link to="/">home</Link>
             <Link to="/works" className="active">works</Link>
-            <Link to="/resume">résumé</Link>
+            <Link to="/resume">resume</Link>
             <Clock />
             <ThemeToggle />
           </div>
