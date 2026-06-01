@@ -398,8 +398,6 @@ body { position: relative; }
   transition: background 0.25s ease;
 }
 
-[data-theme="dark"] .ledger-row::before { border-radius: 10px; }
-
 .ledger-row:last-child { border-bottom: none; }
 
 .ledger-co,
@@ -567,11 +565,9 @@ body { position: relative; }
   margin-bottom: 1.5rem;
 }
 
-/* Dark mode only: rounded corners + a whisper-thin animated colour wash that
-   drifts behind the content. Light/default stays a clean square block with no
-   tint, so the blue/violet hues never bleed onto the cream background. */
-[data-theme="dark"] .flagship { border-radius: 14px; }
-
+/* Dark mode only: a whisper-thin animated colour wash that drifts behind the
+   content. Light/default stays clean with no tint, so the blue/violet hues
+   never bleed onto the cream background. Corners are square in every theme. */
 .flagship::before {
   content: "";
   position: absolute;
