@@ -537,11 +537,12 @@ body { position: relative; }
 
 .interests-outro a {
   color: var(--accent);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   transition: color 0.2s;
 }
 
-.interests-outro a:hover { text-decoration: underline; }
+.interests-outro a:hover { opacity: 0.8; }
 
 [data-theme="dark"] .interest:hover .interest-num { text-shadow: 0 0 10px var(--accent); }
 .interest:hover .interest-num::after { width: 16px; }
