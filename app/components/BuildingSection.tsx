@@ -25,9 +25,6 @@ export function BuildingSection() {
           <span className="building-arrow">→</span>
         </div>
       </a>
-      <p className="also-building">
-        also building — <a href="#">WordStack</a>
-      </p>
     </section>
   );
 }
