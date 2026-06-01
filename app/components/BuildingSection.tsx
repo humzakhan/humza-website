@@ -5,7 +5,7 @@ export function BuildingSection() {
         <span>— CURRENTLY BUILDING</span>
         <span className="section-label-right">01 FLAGSHIP</span>
       </div>
-      <a className="flagship flagship--verstack" href="#">
+      <a className="flagship flagship--verstack" href="https://verstack.ai" target="_blank" rel="noreferrer">
         <h3 className="flagship-name">Verstack</h3>
         <p className="flagship-line flagship-line--problem">Reverse ETL for the unstructured data your AI agents can&apos;t read yet.</p>
         <p className="flagship-line flagship-line--what">Co-founded the platform and lead its engineering as technical co-founder.</p>
@@ -15,7 +15,7 @@ export function BuildingSection() {
           <span className="building-arrow">→</span>
         </div>
       </a>
-      <a className="flagship flagship--syndic" href="#">
+      <a className="flagship flagship--syndic" href="https://syndic.dev" target="_blank" rel="noreferrer">
         <h3 className="flagship-name">Syndic</h3>
         <p className="flagship-line flagship-line--problem">Mobile control plane for AI coding agents, running on the subscriptions you already pay for.</p>
         <p className="flagship-line flagship-line--what">Built the entire platform solo, end to end.</p>
