@@ -393,10 +393,12 @@ body { position: relative; }
   position: absolute;
   inset: 0.1rem -0.9rem;
   z-index: -1;
-  border-radius: 10px;
+  border-radius: 0;
   background: transparent;
   transition: background 0.25s ease;
 }
+
+[data-theme="dark"] .ledger-row::before { border-radius: 10px; }
 
 .ledger-row:last-child { border-bottom: none; }
 
@@ -536,7 +538,7 @@ body { position: relative; }
 
 .interests-outro a:hover { text-decoration: underline; }
 
-.interest:hover .interest-num { text-shadow: 0 0 10px var(--accent); }
+[data-theme="dark"] .interest:hover .interest-num { text-shadow: 0 0 10px var(--accent); }
 .interest:hover .interest-num::after { width: 16px; }
 .interest:hover > div { transform: translateX(8px); }
 .interest:hover .interest-title { color: var(--accent); }
@@ -554,7 +556,7 @@ body { position: relative; }
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 0;
   border: 1px solid var(--hairline);
   padding: 1.75rem 1.75rem 1.5rem;
   background: transparent;
@@ -565,9 +567,11 @@ body { position: relative; }
   margin-bottom: 1.5rem;
 }
 
-/* Whisper-thin colour wash: the card stays transparent so the ascii grid shows
-   through; a distinct hue per card barely tints one corner and drifts so slowly
-   it reads as ambience, not a panel. */
+/* Dark mode only: rounded corners + a whisper-thin animated colour wash that
+   drifts behind the content. Light/default stays a clean square block with no
+   tint, so the blue/violet hues never bleed onto the cream background. */
+[data-theme="dark"] .flagship { border-radius: 14px; }
+
 .flagship::before {
   content: "";
   position: absolute;
@@ -575,6 +579,11 @@ body { position: relative; }
   z-index: -1;
   background: linear-gradient(135deg, var(--card-glow, var(--accent)) 0%, transparent 60%);
   background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+[data-theme="dark"] .flagship::before {
   opacity: 0.07;
   animation: card-shimmer 20s ease-in-out infinite alternate;
 }
@@ -582,8 +591,9 @@ body { position: relative; }
 .flagship--verstack { --card-glow: #60a5fa; --card-edge: rgba(96, 165, 250, 0.40); }
 .flagship--syndic   { --card-glow: #a78bfa; --card-edge: rgba(167, 139, 250, 0.40); }
 
-.flagship:hover { border-color: var(--card-edge, var(--accent)); transform: translateY(-2px); }
-.flagship:hover::before { opacity: 0.13; }
+.flagship:hover { border-color: var(--accent); transform: translateY(-2px); }
+[data-theme="dark"] .flagship:hover { border-color: var(--card-edge, var(--accent)); }
+[data-theme="dark"] .flagship:hover::before { opacity: 0.13; }
 
 @keyframes card-shimmer {
   0%   { background-position: 0% 0%;     opacity: 0.05; }
