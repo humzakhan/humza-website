@@ -370,58 +370,46 @@ body { position: relative; }
   font-size: 14px;
 }
 
-.works-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-  border-bottom: 0.5px solid var(--hairline);
-  cursor: pointer;
-  transition: padding 0.2s;
-  text-decoration: none;
-  color: inherit;
+.works-ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.works-row:hover { padding-left: 0.5rem; }
-.works-row:last-child { border-bottom: none; }
+.ledger-row {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 0.5px solid var(--hairline);
+}
 
-.works-title {
+.ledger-row:last-child { border-bottom: none; }
+
+.ledger-co {
   font-family: 'Outfit', sans-serif;
-  font-size: 24px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
-.works-desc {
+.ledger-what {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: var(--ink-muted);
-  margin: 0 0 0.55rem;
-  line-height: 1.55;
   letter-spacing: -0.005em;
 }
 
-.works-metric {
-  font-family: 'Geist Mono', monospace;
-  font-size: 11px;
-  color: var(--label);
-  letter-spacing: 0.04em;
-  font-weight: 500;
-}
-
-.works-meta {
+.ledger-metric {
   font-family: 'Geist Mono', monospace;
   font-size: 12px;
-  color: var(--label);
-  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+  letter-spacing: 0.03em;
   text-align: right;
-  align-self: start;
-  padding-top: 0.5rem;
   white-space: nowrap;
-  line-height: 1.5;
 }
 
 /* ── Section intro (WorksSection framing line) ────────── */
@@ -582,8 +570,8 @@ body { position: relative; }
   .hero { padding: 4rem 0 3rem; }
   .building-grid { grid-template-columns: 1fr; }
   .flagship { padding: 1.25rem 1rem 1rem; }
-  .works-row { grid-template-columns: 1fr; }
-  .works-meta { text-align: left; padding-top: 0.25rem; }
+  .ledger-row { grid-template-columns: 1fr; gap: 0.2rem; }
+  .ledger-metric { text-align: left; }
   .ascii-bg { font-size: 9px; opacity: 0.05; }
 }
 
