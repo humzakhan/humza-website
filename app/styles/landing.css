@@ -258,8 +258,14 @@ body { position: relative; }
 }
 
 .hero-subtitle-sep {
-  margin: 0 0.6em;
-  color: var(--label);
+  margin: 0 0.7em;
+  color: var(--ink-muted);
+}
+
+.zto-arrow {
+  color: var(--accent);
+  margin: 0 0.28em;
+  font-weight: 400;
 }
 
 .hero-text {
