@@ -438,17 +438,47 @@ body { position: relative; }
 /* ── Flagship block (BuildingSection) ─────────────────── */
 .flagship {
   display: block;
-  border-left: 2px solid var(--accent);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--hairline);
   padding: 1.75rem 1.75rem 1.5rem;
-  background: transparent;
+  background: var(--bg-hover);
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: background 0.2s;
-  margin-bottom: 1.25rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  margin-bottom: 1.5rem;
 }
 
-.flagship:hover { background: var(--bg-hover); }
+/* Animated colour wash: a distinct hue per card drifts slowly behind the content */
+.flagship::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  z-index: -1;
+  background: radial-gradient(closest-side, var(--card-glow, var(--accent)) 0%, transparent 72%);
+  opacity: 0.30;
+  filter: blur(18px);
+  animation: card-drift 16s ease-in-out infinite alternate;
+}
+
+.flagship--verstack { --card-glow: rgba(96, 165, 250, 0.55); }
+.flagship--syndic   { --card-glow: rgba(167, 139, 250, 0.55); }
+
+.flagship:hover { border-color: var(--card-glow, var(--accent)); transform: translateY(-2px); }
+.flagship:hover::before { opacity: 0.45; }
+
+@keyframes card-drift {
+  0%   { transform: translate(-14%, -10%) scale(1); }
+  50%  { transform: translate(10%, 6%) scale(1.18); }
+  100% { transform: translate(14%, 12%) scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flagship::before { animation: none; }
+}
 
 .flagship-name {
   font-family: 'Outfit', sans-serif;
