@@ -10,6 +10,7 @@
   --hairline: #e8e2d6;
   --whisper: #b0a590;
   --accent: #5a4e3e;
+  --row-highlight: rgba(90, 78, 62, 0.07);
 }
 
 [data-theme="dark"] {
@@ -23,6 +24,7 @@
   --hairline: #1e2a3e;
   --whisper: #6a7a96;
   --accent: #a0c0e0;
+  --row-highlight: rgba(160, 192, 224, 0.12);
 }
 
 *,
