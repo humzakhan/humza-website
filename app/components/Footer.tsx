@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="footer">
-      <span>{"</>"} with <span className="footer-heart">♥</span> and ☕ 🇨🇦</span>
+      <span>Built with <span className="footer-heart">♥</span> in 🇨🇦</span>
     </footer>
   );
 }
