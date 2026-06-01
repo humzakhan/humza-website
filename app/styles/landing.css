@@ -274,8 +274,8 @@ body { position: relative; }
 .scroll-cue {
   padding: 0 0 5rem;
   font-family: 'Geist Mono', monospace;
-  font-size: 11px;
-  color: var(--whisper);
+  font-size: 12.5px;
+  color: var(--ink-muted);
   letter-spacing: 0.15em;
   display: flex;
   align-items: center;
@@ -284,8 +284,8 @@ body { position: relative; }
 
 .scroll-line {
   width: 32px;
-  height: 0.5px;
-  background: var(--whisper);
+  height: 1px;
+  background: var(--ink-faint);
 }
 
 .section {
@@ -295,8 +295,8 @@ body { position: relative; }
 
 .section-label {
   font-family: 'Geist Mono', monospace;
-  font-size: 12px;
-  color: var(--label);
+  font-size: 13.5px;
+  color: var(--ink-muted);
   letter-spacing: 0.08em;
   margin: 0 0 2rem;
   display: flex;
@@ -306,7 +306,7 @@ body { position: relative; }
 }
 
 .section-label-right {
-  color: var(--whisper);
+  color: var(--ink-muted);
   cursor: pointer;
   transition: color 0.2s;
   text-decoration: none;
