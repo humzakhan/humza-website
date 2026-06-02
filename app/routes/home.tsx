@@ -16,6 +16,29 @@ export const meta: MetaFunction = () => [
     content:
       "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
   },
+  { property: "og:title", content: "Humza Khan — Enterprise AI Engineer" },
+  {
+    property: "og:description",
+    content:
+      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
+  },
+  { property: "og:type", content: "website" },
+  { property: "og:url", content: "https://humza.io/" },
+  { property: "og:site_name", content: "Humza Khan" },
+  { property: "og:image", content: "https://humza.io/og-image.png" },
+  { property: "og:image:width", content: "1200" },
+  { property: "og:image:height", content: "630" },
+  { property: "og:image:alt", content: "Humza Khan" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Humza Khan — Enterprise AI Engineer" },
+  {
+    name: "twitter:description",
+    content:
+      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
+  },
+  { name: "twitter:site", content: "@0xHumza" },
+  { name: "twitter:creator", content: "@0xHumza" },
+  { name: "twitter:image", content: "https://humza.io/og-image.png" },
 ];
 
 export default function Home() {
