@@ -10,6 +10,27 @@ export const meta: MetaFunction = () => [
     name: "description",
     content: "Resume · AI Product Engineer · agent infrastructure, distributed systems at scale.",
   },
+  { property: "og:title", content: "Humza Khan — Resume" },
+  {
+    property: "og:description",
+    content: "Resume · AI Product Engineer · agent infrastructure, distributed systems at scale.",
+  },
+  { property: "og:type", content: "website" },
+  { property: "og:url", content: "https://humza.io/resume" },
+  { property: "og:site_name", content: "Humza Khan" },
+  { property: "og:image", content: "https://humza.io/og-image.png" },
+  { property: "og:image:width", content: "1200" },
+  { property: "og:image:height", content: "630" },
+  { property: "og:image:alt", content: "Humza Khan" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Humza Khan — Resume" },
+  {
+    name: "twitter:description",
+    content: "Resume · AI Product Engineer · agent infrastructure, distributed systems at scale.",
+  },
+  { name: "twitter:site", content: "@0xHumza" },
+  { name: "twitter:creator", content: "@0xHumza" },
+  { name: "twitter:image", content: "https://humza.io/og-image.png" },
 ];
 
 // The source <script> has one page-specific click handler beyond ascii/theme/clock:

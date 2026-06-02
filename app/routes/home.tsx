@@ -10,12 +10,35 @@ import { Contact } from "~/components/Contact";
 import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Enterprise AI Engineer" },
+  { title: "Humza Khan — Senior AI Product Engineer" },
   {
     name: "description",
     content:
-      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
+      "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
   },
+  { property: "og:title", content: "Humza Khan — Senior AI Product Engineer" },
+  {
+    property: "og:description",
+    content:
+      "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
+  },
+  { property: "og:type", content: "website" },
+  { property: "og:url", content: "https://humza.io/" },
+  { property: "og:site_name", content: "Humza Khan" },
+  { property: "og:image", content: "https://humza.io/og-image.png" },
+  { property: "og:image:width", content: "1200" },
+  { property: "og:image:height", content: "630" },
+  { property: "og:image:alt", content: "Humza Khan" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Humza Khan — Senior AI Product Engineer" },
+  {
+    name: "twitter:description",
+    content:
+      "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
+  },
+  { name: "twitter:site", content: "@0xHumza" },
+  { name: "twitter:creator", content: "@0xHumza" },
+  { name: "twitter:image", content: "https://humza.io/og-image.png" },
 ];
 
 export default function Home() {
