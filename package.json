@@ -6,9 +6,9 @@
   "type": "module",
   "packageManager": "pnpm@11.0.9",
   "scripts": {
-    "build": "react-router build",
+    "build": "react-router build && node scripts/build-pages-worker.mjs",
     "dev": "react-router dev",
-    "deploy": "pnpm run build && wrangler deploy",
+    "deploy": "pnpm run build && wrangler pages deploy build/client --project-name humza-website --commit-dirty=true",
     "typecheck": "tsc --noEmit",
     "start": "wrangler dev"
   },
