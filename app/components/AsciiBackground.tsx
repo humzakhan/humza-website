@@ -7,6 +7,7 @@ export function AsciiBackground() {
     const bgMaybe = document.getElementById("ascii-bg");
     if (!bgMaybe) return;
     const bg = bgMaybe as HTMLElement;
+    const staticBgQuery = window.matchMedia("(max-width: 900px), (pointer: coarse)");
 
     const charW = 7.4;
     const charH = 15.4;
@@ -53,6 +54,7 @@ export function AsciiBackground() {
     let cols = 0, rows = 0;
     let t = 0;
     let running = true;
+    let animated = !staticBgQuery.matches;
     const ripples: Array<{ x: number; y: number; born: number; radius: number }> = [];
     const MAX_RIPPLES = 6;
 
@@ -65,10 +67,16 @@ export function AsciiBackground() {
       rows = Math.ceil(window.innerHeight / charH);
     }
 
-    window.addEventListener('resize', resize);
+    function onResize() {
+      resize();
+      if (!animated) render();
+    }
+
+    window.addEventListener('resize', onResize);
     resize();
 
     function onMouseMove(e: MouseEvent) {
+      if (!animated) return;
       targetX = e.clientX / window.innerWidth;
       targetY = e.clientY / window.innerHeight;
       const last = ripples[ripples.length - 1];
@@ -79,6 +87,7 @@ export function AsciiBackground() {
     }
 
     function onMouseLeave() {
+      if (!animated) return;
       targetX = -999; targetY = -999;
     }
 
@@ -89,7 +98,13 @@ export function AsciiBackground() {
 
     function onVisibilityChange() {
       running = !document.hidden;
-      if (running) rafId = requestAnimationFrame(render);
+      if (running) scheduleRender();
+    }
+
+    function onStaticBgChange() {
+      animated = !staticBgQuery.matches;
+      cancelAnimationFrame(rafId);
+      render();
     }
 
     function easeOut(x: number) { return 1 - Math.pow(1 - Math.max(0, x), 2); }
@@ -254,18 +269,25 @@ export function AsciiBackground() {
       }
 
       bg.textContent = out;
+      scheduleRender();
+    }
+
+    function scheduleRender() {
+      if (!running || !animated) return;
       rafId = requestAnimationFrame(render);
     }
 
-    rafId = requestAnimationFrame(render);
+    staticBgQuery.addEventListener('change', onStaticBgChange);
+    render();
 
     return () => {
       running = false;
       cancelAnimationFrame(rafId);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', onResize);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('visibilitychange', onVisibilityChange);
+      staticBgQuery.removeEventListener('change', onStaticBgChange);
     };
   }, []);
 
