@@ -1,12 +1,15 @@
 {
+  // Cloudflare Pages project configuration.
+  // Deploy with: wrangler pages deploy build/client --project-name humza-website
+  //
+  // `pages_build_output_dir` tells `wrangler pages dev` where static assets
+  // live. SSR is handled by build/client/_worker.js (Pages Advanced Mode).
+  // The production custom domain humza.io is bound in the Pages project
+  // dashboard — no routes config needed here.
   "name": "humza-website",
+  "pages_build_output_dir": "./build/client",
   "compatibility_date": "2026-01-01",
-  "main": "build/server/index.js",
-  "assets": {
-    "directory": "./build/client"
-  },
-  "routes": [
-    { "pattern": "humza.io/*", "zone_name": "humza.io" },
-    { "pattern": "www.humza.io/*", "zone_name": "humza.io" }
-  ]
+  // _worker.js bundles Node built-ins (async_hooks, stream, util, crypto)
+  // via react-dom/server etc. nodejs_compat provides the runtime shims.
+  "compatibility_flags": ["nodejs_compat"]
 }

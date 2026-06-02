@@ -2,14 +2,14 @@
 
 Personal website at [humza.io](https://humza.io).
 
-Built with **React Router v7** (framework mode, SSR) + **Cloudflare Workers**, TypeScript, and Vite.
+Built with **React Router v7** (framework mode, SSR) + **Cloudflare Pages** (Advanced Mode / `_worker.js`), TypeScript, and Vite.
 
 ## Stack
 
 | Layer | Technology |
 |---|---|
 | Routing & SSR | React Router v7 (framework mode) |
-| Runtime | Cloudflare Workers |
+| Runtime | Cloudflare Pages (Advanced Mode) |
 | Bundler | Vite + `@cloudflare/vite-plugin` |
 | Language | TypeScript |
 
@@ -49,7 +49,12 @@ Starts a local Vite dev server with Cloudflare Workers emulation via Wrangler.
 pnpm build
 ```
 
-Outputs to `build/server/index.js` (Worker entry) and `build/client/` (static assets).
+Runs `react-router build` then `scripts/build-pages-worker.mjs`.
+
+Outputs:
+- `build/client/` — static assets (JS chunks, CSS, favicons, etc.)
+- `build/client/_worker.js` — self-contained SSR Worker bundle (Pages Advanced Mode)
+- `build/server/index.js` — intermediate RR server build (input to the worker bundler)
 
 ## Type Check
 
@@ -67,7 +72,15 @@ CLOUDFLARE_API_TOKEN=<token> pnpm run deploy
 
 > Note: use `pnpm run deploy` (not `pnpm deploy`) — `deploy` is a reserved pnpm built-in command.
 
-Equivalent to `pnpm run build && wrangler deploy`. Requires a `CLOUDFLARE_API_TOKEN` environment variable with Workers deploy permissions. The `wrangler.jsonc` `routes` block binds `humza.io/*` and `www.humza.io/*` to the Worker on deploy.
+Equivalent to:
+
+```bash
+pnpm run build && wrangler pages deploy build/client --project-name humza-website --commit-dirty=true
+```
+
+Requires a `CLOUDFLARE_API_TOKEN` environment variable with Pages deploy permissions.
+
+Deploys to the **`humza-website` Cloudflare Pages project**. The custom domain `humza.io` is already bound to that Pages project in the Cloudflare dashboard — no local domain configuration is needed. Pages Advanced Mode picks up `build/client/_worker.js` as the SSR request handler automatically.
 
 ## Requirements
 
