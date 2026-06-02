@@ -3,7 +3,7 @@
   "compatibility_date": "2026-01-01",
   "main": "build/server/index.js",
   "assets": {
-    "directory": "./public"
+    "directory": "./build/client"
   },
   "routes": [
     { "pattern": "humza.io/*", "zone_name": "humza.io" },
