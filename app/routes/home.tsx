@@ -14,13 +14,13 @@ export const meta: MetaFunction = () => [
   {
     name: "description",
     content:
-      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
+      "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
   },
   { property: "og:title", content: "Humza Khan — Enterprise AI Engineer" },
   {
     property: "og:description",
     content:
-      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
+      "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
   },
   { property: "og:type", content: "website" },
   { property: "og:url", content: "https://humza.io/" },
@@ -34,7 +34,7 @@ export const meta: MetaFunction = () => [
   {
     name: "twitter:description",
     content:
-      "Building enterprise AI at the intersection of finance and productivity. Production systems shipped at CME Group, Revelate, and Lookout.",
+      "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
   },
   { name: "twitter:site", content: "@0xHumza" },
   { name: "twitter:creator", content: "@0xHumza" },
