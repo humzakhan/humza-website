@@ -10,13 +10,13 @@ import { Contact } from "~/components/Contact";
 import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Enterprise AI Engineer" },
+  { title: "Humza Khan — Senior AI Product Engineer" },
   {
     name: "description",
     content:
       "Senior AI product engineer and physics enthusiast. I build AI agents, ship production systems at scale, and regularly lose arguments to my own chatbots.",
   },
-  { property: "og:title", content: "Humza Khan — Enterprise AI Engineer" },
+  { property: "og:title", content: "Humza Khan — Senior AI Product Engineer" },
   {
     property: "og:description",
     content:
@@ -30,7 +30,7 @@ export const meta: MetaFunction = () => [
   { property: "og:image:height", content: "630" },
   { property: "og:image:alt", content: "Humza Khan" },
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — Enterprise AI Engineer" },
+  { name: "twitter:title", content: "Humza Khan — Senior AI Product Engineer" },
   {
     name: "twitter:description",
     content:
