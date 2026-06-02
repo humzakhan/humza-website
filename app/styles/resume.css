@@ -25,19 +25,6 @@
   margin: 0 0 0.75rem;
 }
 
-.resume-page .hero-sub {
-  font-family: 'Geist Mono', monospace;
-  font-size: 13px;
-  color: var(--ink-muted);
-  letter-spacing: 0.02em;
-  margin: 0 0 2rem;
-}
-
-.resume-page .hero-sub span {
-  color: var(--whisper);
-  margin: 0 0.5rem;
-}
-
 .resume-page .download-link {
   display: inline-flex;
   align-items: center;
@@ -79,11 +66,34 @@
 
 .resume-page .sidebar-label {
   font-family: 'Geist Mono', monospace;
-  font-size: 11px;
+  font-size: 13.5px;
   color: var(--label);
   letter-spacing: 0.08em;
   margin: 0 0 1rem;
   font-weight: 500;
+}
+
+/* Animated sidebar links (email, linkedin, github) */
+.resume-page .side-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.resume-page .side-link:hover {
+  color: var(--ink);
+}
+
+.resume-page .side-link .arr {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.resume-page .side-link:hover .arr {
+  transform: translateX(4px);
 }
 
 .resume-page .sidebar-list {
@@ -123,7 +133,12 @@
   display: flex;
   gap: 8px;
   align-items: flex-start;
-  line-height: 1.55;
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+}
+
+.resume-page .recognition-list li:last-child {
+  margin-bottom: 0;
 }
 
 .resume-page .recognition-list .diamond {
@@ -151,6 +166,7 @@
   margin: 0 0 1.5rem;
   justify-content: unset;
   align-items: unset;
+  font-weight: 600;
 }
 
 .resume-page .intro-text {
@@ -172,16 +188,19 @@
   border-bottom: 0.5px solid var(--hairline);
 }
 
-.resume-page .job:last-child {
-  border-bottom: none;
-}
-
-.resume-page .job:first-child {
+/* First/last job in a section: zero outer padding so the gap to the section
+   label (and to the next section) matches every other section exactly */
+.resume-page .job:first-of-type {
   padding-top: 0;
 }
 
+.resume-page .job:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .resume-page .job-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Lora', serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -189,16 +208,96 @@
   margin: 0 0 0.3rem;
 }
 
+/* Linked job title (e.g. Verstack) — matches the hero heading font, reads as a link */
+.resume-page .job-title-link {
+  font-family: 'Lora', serif;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.resume-page .job-title-link:hover {
+  opacity: 0.65;
+}
+
+.resume-page .job-title-link .ext {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.6em;
+  vertical-align: super;
+  border: none;
+}
+
 .resume-page .job-meta {
   font-family: 'Geist Mono', monospace;
-  font-size: 12px;
-  color: var(--label);
+  font-size: 13.5px;
+  color: var(--ink-muted);
   letter-spacing: 0.02em;
   margin: 0 0 1rem;
 }
 
 .resume-page .job-meta .org {
-  color: var(--ink-muted);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Linked company names — visibly a link: underline + ↗ icon */
+.resume-page a.org {
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--ink-faint);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.resume-page a.org:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.resume-page a.org .ext {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.7em;
+  vertical-align: super;
+  font-weight: 400;
+  border: none;
+}
+
+/* Company with no website — styled hover tooltip, normal cursor */
+.resume-page .org--na {
+  position: relative;
+}
+
+.resume-page .org--na::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.resume-page .org--na:hover::after {
+  opacity: 1;
+}
+
+/* Lead entry (Verstack) role line — larger, with more breathing room above */
+.resume-page .job-meta-lead {
+  font-size: 14px;
+  margin-top: 0.65rem;
+  padding-top: 0.25rem;
 }
 
 .resume-page .job-meta .sep {
@@ -215,19 +314,23 @@
 }
 
 .resume-page .job-bullets li {
-  display: flex;
-  gap: 12px;
+  display: block;
+  position: relative;
+  padding-left: 1.4rem;
   margin-bottom: 0.65rem;
   letter-spacing: -0.005em;
+  text-align: left;
 }
 
 .resume-page .job-bullets li::before {
   content: '↳';
-  color: var(--whisper);
-  flex-shrink: 0;
+  color: var(--ink-faint);
   font-family: 'Geist Mono', monospace;
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.65;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .resume-page .job-bullets strong {
@@ -235,58 +338,176 @@
   font-weight: 600;
 }
 
-/* ── Tech stack ── */
-.resume-page .stack-group {
-  margin-bottom: 1.5rem;
+.resume-page .bullet-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--accent);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
 }
 
-.resume-page .stack-group-label {
+.resume-page .bullet-link:hover {
+  opacity: 0.65;
+}
+
+/* ── Side projects — compact one-line list (distinct from job blocks) ── */
+.resume-page .project-list {
+  list-style: none;
+  margin: 0;
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink);
-  margin: 0 0 0.6rem;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.resume-page .project-list li {
+  margin-bottom: 0.55rem;
   letter-spacing: -0.005em;
 }
 
-.resume-page .stack-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.resume-page .project-list li:last-child {
+  margin-bottom: 0;
 }
 
-.resume-page .stack-tag {
+/* Project name links — same obvious-link affordance as the Verstack title */
+.resume-page .project-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.resume-page .project-link:hover {
+  opacity: 0.65;
+}
+
+.resume-page .project-link .ext {
   font-family: 'Geist Mono', monospace;
-  font-size: 11px;
-  color: var(--ink-muted);
-  background: transparent;
-  border: 0.5px solid var(--hairline);
-  padding: 0.3rem 0.6rem;
-  border-radius: 3px;
-  letter-spacing: 0.02em;
+  font-size: 0.7em;
+  vertical-align: super;
+  border: none;
 }
 
-/* ── References ── */
-.resume-page .references-text {
+/* "More projects on GitHub" link */
+.resume-page .project-more {
+  margin-top: 1.1rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.resume-page .project-more a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--accent);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.resume-page .project-more a:hover {
+  opacity: 0.65;
+}
+
+
+/* ── "How I work with AI" spec rows ── */
+.resume-page .ai-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.005em;
+}
+
+.resume-page .ai-intro span {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-left: 0.25rem;
+}
+
+.resume-page .ai-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.resume-page .ai-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.resume-page .ai-row dt {
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.resume-page .ai-row dd {
+  margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  color: var(--ink-muted);
-  font-style: italic;
+  color: var(--ink-soft);
 }
 
-/* ── Footer override (different padding from landing.css) ── */
-.resume-page .footer {
-  padding: 2rem 0 1.5rem;
+/* Tech-stack inline lists — spaced, muted separators so names don't run together */
+.resume-page .stack-line {
+  line-height: 1.8;
 }
 
-.resume-page .footer a {
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.2s;
+.resume-page .stack-line .sep {
+  color: var(--whisper);
+  margin: 0 0.3em;
 }
 
-.resume-page .footer a:hover {
-  color: var(--ink);
+/* Orchestration sub-list — custom ↳ marker, like job bullets */
+.resume-page .ai-sublist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.resume-page .ai-sublist li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.resume-page .ai-sublist li::before {
+  content: '↳';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink-faint);
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+}
+
+.resume-page .primary-tag {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 640px) {
+  .resume-page .ai-row {
+    grid-template-columns: 140px 1fr;
+    gap: 0.75rem;
+  }
 }
 
 /* ── Responsive ── */
@@ -305,9 +526,140 @@
   .resume-page .hero {
     padding: 3rem 0 2rem;
   }
+}
 
-  .resume-page .footer {
-    flex-direction: column;
-    gap: 0.5rem;
+/* ── Print / PDF — always light, no browser chrome/headers, strips the app chrome ── */
+@media print {
+  /* margin:0 → the light background bleeds to the sheet edges (no white border) */
+  @page { margin: 0; }
+
+  /* Force LIGHT mode in print regardless of the on-screen theme */
+  :root,
+  [data-theme="light"],
+  [data-theme="dark"] {
+    --bg: #faf8f3;
+    --bg-hover: #f5f1e8;
+    --ink: #1a1612;
+    --ink-soft: #3a3228;
+    --ink-muted: #5a4e3e;
+    --ink-faint: #6b6052;
+    --label: #8a7f6f;
+    --hairline: #e8e2d6;
+    --whisper: #b0a590;
+    --accent: #5a4e3e;
+    --row-highlight: rgba(90, 78, 62, 0.07);
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html,
+  body,
+  .resume-page,
+  .resume-page .content {
+    background: var(--bg) !important;
+  }
+
+  /* strip everything that isn't the résumé itself */
+  .ascii-bg,
+  .resume-page .nav,
+  .resume-page .download-link,
+  .resume-page .no-print {
+    display: none !important;
+  }
+
+  /* clean and static — no motion in print */
+  .resume-page *,
+  .resume-page *::before,
+  .resume-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .resume-page .content {
+    max-width: 100%;
+    padding: 1cm 1.2cm;
+  }
+
+  /* keep the compact two-column résumé layout on the page */
+  .resume-page .resume-grid {
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .resume-page .sidebar {
+    position: static;
+  }
+
+  /* every link clearly underlined in print */
+  .resume-page a {
+    text-decoration: underline !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* ── Compaction: smaller type + tight spacing to fit ~2 pages ── */
+  .resume-page .hero {
+    padding: 0 0 0.45cm;
+    max-width: 100%;
+  }
+  .resume-page .eyebrow { margin: 0 0 0.4rem; }
+  .resume-page .hero-heading { font-size: 28px; margin: 0 0 0.2rem; }
+
+  .resume-page .resume-grid {
+    padding: 0.3rem 0 0;
+    gap: 1.5rem;
+  }
+
+  .resume-page .section { margin-bottom: 1.05rem; }
+  .resume-page .section-label { margin: 0 0 0.6rem; font-size: 12px; }
+
+  .resume-page .intro-text {
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+  .resume-page .intro-text + .intro-text { margin-top: 0.55rem; }
+
+  .resume-page .ai-intro { font-size: 11.5px; margin: 0 0 0.6rem; }
+  .resume-page .ai-spec { gap: 0.3rem; }
+  .resume-page .ai-row { grid-template-columns: 150px 1fr; }
+  .resume-page .ai-row dt { font-size: 11px; }
+  .resume-page .ai-row dd { font-size: 11.5px; }
+  .resume-page .ai-sublist { gap: 0.18rem; }
+  .resume-page .ai-sublist li { font-size: 11.5px; line-height: 1.35; }
+
+  .resume-page .job { padding: 0.65rem 0; }
+  .resume-page .job-title { font-size: 15px; margin: 0 0 0.15rem; }
+  .resume-page .job-meta { font-size: 11px; margin: 0 0 0.45rem; }
+  .resume-page .job-meta-lead { font-size: 11.5px; margin-top: 0.2rem; padding-top: 0; }
+  .resume-page .job-bullets { font-size: 11.5px; line-height: 1.46; }
+  .resume-page .job-bullets li { margin-bottom: 0.3rem; padding-left: 1.2rem; }
+  .resume-page .job-bullets li::before { font-size: 12px; }
+
+
+  .resume-page .project-list { font-size: 11.5px; line-height: 1.45; }
+  .resume-page .project-list li { margin-bottom: 0.32rem; }
+  .resume-page .project-more { margin-top: 0.5rem; font-size: 10px; }
+
+  .resume-page .sidebar-section { margin-bottom: 0.9rem; }
+  .resume-page .sidebar-label { font-size: 11px; margin: 0 0 0.45rem; }
+  .resume-page .sidebar-list { font-size: 11px; line-height: 1.45; }
+  .resume-page .recognition-list li { margin-bottom: 0.3rem; line-height: 1.3; }
+
+  /* let jobs flow across page breaks (fills the page), but never orphan a title */
+  .resume-page .ai-row,
+  .resume-page .project-list li {
+    break-inside: avoid;
+  }
+
+  .resume-page .section-label,
+  .resume-page .job-title,
+  .resume-page .job-meta {
+    break-after: avoid;
   }
 }
