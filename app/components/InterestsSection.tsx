@@ -28,7 +28,7 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">02</span>
           <div>
-            <h3 className="interest-title">Vertical agent harnesses for business teams</h3>
+            <h3 className="interest-title">Vertical agent harnesses for specialized workflows</h3>
             <p className="interest-desc">
               Custom agents for analysts, operators, founders, and enterprise teams that encode
               the workflow, data access, checks, and approvals of a specific business process.
