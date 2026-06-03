@@ -11,31 +11,30 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">01</span>
           <div>
-            <h3 className="interest-title">Long-running agents that audit themselves</h3>
+            <h3 className="interest-title">Autonomous workflows with provenance</h3>
             <p className="interest-desc">
-              Agents across finance and productivity that run for hours or days, check their own
-              work, and produce outputs backed by provenance chains you can trust.
+              Agents that can execute multi-step business tasks while tracking what they used,
+              what changed, what failed, and why the final answer should be trusted.
             </p>
           </div>
         </li>
         <li className="interest">
           <span className="interest-num">02</span>
           <div>
-            <h3 className="interest-title">Agent infrastructure that lives off your machine</h3>
+            <h3 className="interest-title">Vertical agent harnesses for business teams</h3>
             <p className="interest-desc">
-              Cloud agents and remote workspaces that lift the work off your laptop and run it
-              anywhere, at scale, on the compute you already have.
+              Custom agents for analysts, operators, founders, and enterprise teams that encode
+              the workflow, data access, checks, and approvals of a specific business process.
             </p>
           </div>
         </li>
         <li className="interest">
           <span className="interest-num">03</span>
           <div>
-            <h3 className="interest-title">The context fabric for AI agents</h3>
+            <h3 className="interest-title">Context infrastructure for reliable agents</h3>
             <p className="interest-desc">
-              Centralizing the knowledge trapped in people&apos;s heads and feeding each agent exactly
-              the right context for the task, picked automatically. Not for one kind of agent, but
-              all of them: coding harnesses, long-running business agents, and beyond.
+              Routing, ranking, and packaging the exact knowledge an agent needs from internal
+              systems before it acts, so execution is grounded instead of generic.
             </p>
           </div>
         </li>
