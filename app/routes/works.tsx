@@ -685,6 +685,82 @@ export default function Works() {
               </div>
             </div>
 
+            <div
+              className="tile tile-flagship"
+              data-case="mtm"
+              onClick={() => toggleCase("mtm")}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("mtm"); } }}
+            >
+              <div className="tile-flagship-top">
+                <span className="tile-tag">EDTECH INFRA</span>
+                <span className="tile-role-chip">Principal Solutions Architect</span>
+              </div>
+              <h3 className="tile-name">MTM Infrastructure Strategy</h3>
+              <p className="tile-desc">Platform architecture for a student opportunity app connecting qualified students to scholarships, grants, and loans.</p>
+              <div className="tile-stat-row">
+                <div className="tile-stat">
+                  <span className="tile-stat-value">0→1</span>
+                  <span className="tile-stat-label">PLATFORM ARCHITECTURE</span>
+                </div>
+                <div className="tile-stat">
+                  <span className="tile-stat-value">E2E</span>
+                  <span className="tile-stat-label">INFRA + DEVOPS</span>
+                </div>
+              </div>
+              <div className="tile-footer">
+                <span>Azure · AWS · REST</span>
+                <span className="tile-cta">read <span>→</span></span>
+              </div>
+            </div>
+
+            <div className={`case${openCase === "mtm" ? " open" : ""}`} id="case-mtm">
+              <button className="case-close" onClick={(e) => { e.stopPropagation(); closeCase(); }} aria-label="Close case study">×</button>
+              <div className="case-inner">
+                <div className="case-header">
+                  <p className="case-eyebrow">— HISTORICAL WORK</p>
+                  <h2 className="case-title">MTM Infrastructure Strategy</h2>
+                  <p className="case-tagline">Architecture and development strategy for MinoritiesToMajorities, a startup making educational funding easier to discover and access.</p>
+                </div>
+                <div className="case-grid">
+                  <div>
+                    <p className="case-cell-label">PROBLEM</p>
+                    <p className="case-cell-text">Qualified students needed a simpler path to scholarships, grants, and loans. The product needed to make opportunity discovery accessible while keeping the platform scalable and secure.</p>
+                  </div>
+                  <div>
+                    <p className="case-cell-label">APPROACH</p>
+                    <p className="case-cell-text">Used the same 0→1 methodology as BlockUnion: define the platform architecture, choose the stack, design REST services, map data flows, and plan cloud infrastructure, security, testing, monitoring, and deployment.</p>
+                  </div>
+                  <div>
+                    <p className="case-cell-label">OUTCOME</p>
+                    <p className="case-cell-text">Delivered the technical foundation for the first version: frontend/backend infrastructure diagrams, endpoint design, storage strategy, security plan, alerting, and DevOps pipeline design.</p>
+                  </div>
+                </div>
+                <div className="case-section">
+                  <p className="case-section-label">— THE DETAIL</p>
+                  <div className="case-section-body">
+                    <p>MTM was a different domain with the same core responsibility: turn an early startup idea into an implementable platform. As Principal Solutions Architect, I translated the business goal into a complete technical plan covering application boundaries, service endpoints, data distribution, cloud resources, and operational requirements.</p>
+                    <p>The work was intentionally end to end. I defined the scalable infrastructure model, produced frontend and backend diagrams, planned logging, monitoring, alerting, security, testing, and DevOps, and selected the technology stack for each part of the platform.</p>
+                  </div>
+                </div>
+                <div className="case-section">
+                  <p className="case-section-label">— TECH</p>
+                  <div className="case-stack">
+                    <span className="case-stack-tag">Microsoft Azure</span>
+                    <span className="case-stack-tag">AWS</span>
+                    <span className="case-stack-tag">REST APIs</span>
+                    <span className="case-stack-tag">Node.js</span>
+                    <span className="case-stack-tag">JavaScript</span>
+                    <span className="case-stack-tag">Java</span>
+                    <span className="case-stack-tag">Python</span>
+                    <span className="case-stack-tag">DevOps</span>
+                    <span className="case-stack-tag">Security architecture</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
