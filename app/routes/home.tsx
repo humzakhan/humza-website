@@ -50,8 +50,8 @@ export default function Home() {
         <Hero />
         <ScrollCue />
         <BuildingSection />
-        <WorksSection />
         <InterestsSection />
+        <WorksSection />
         <Contact />
         <Footer />
       </div>
