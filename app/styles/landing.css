@@ -531,6 +531,98 @@ body { position: relative; }
   max-width: 600px;
 }
 
+.interest-proof {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto 1fr;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.interest-proof-mark {
+  color: var(--accent);
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+.interest-proof-kicker {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.72;
+}
+
+.interest-proof-name {
+  position: relative;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.interest-proof-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.interest-proof-icon {
+  color: var(--accent);
+  font-size: 10px;
+  opacity: 0.7;
+  transform: translateY(-1px);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.interest-proof-desc {
+  color: var(--ink-faint);
+}
+
+a.interest-proof:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+a.interest-proof:hover .interest-proof-name,
+a.interest-proof:hover .interest-proof-desc {
+  color: var(--accent);
+}
+
+a.interest-proof:hover .interest-proof-name::after {
+  transform: scaleX(1);
+}
+
+a.interest-proof:hover .interest-proof-icon {
+  opacity: 1;
+  transform: translate(2px, -3px);
+}
+
+.interest-proof--muted {
+  cursor: default;
+}
+
+.interest-proof--muted .interest-proof-name,
+.interest-proof--muted .interest-proof-desc {
+  color: var(--ink-faint);
+}
+
+.interest-proof--muted .interest-proof-name::after {
+  display: none;
+}
+
 .interests-outro {
   font-family: 'Inter', sans-serif;
   font-size: 15.5px;
@@ -560,6 +652,7 @@ body { position: relative; }
   .interest > div,
   .interest:hover > div { transform: none; }
   .interest-num::after { transition: none; }
+  .interest-proof { transition: none; }
 }
 
 /* ── Flagship block (BuildingSection) ─────────────────── */
