@@ -828,7 +828,36 @@ a.interest-proof:hover .interest-proof-icon {
   font-weight: 500;
 }
 
-.footer-heart { color: #ff3b3b; }
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-code,
+.footer-heart {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.footer-code {
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  letter-spacing: -0.04em;
+}
+
+.footer-heart {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.footer-flags {
+  display: inline-flex;
+  gap: 0.18rem;
+  font-size: 12px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
 
 @media (max-width: 640px) {
   .content { padding: 0 1.25rem; }
