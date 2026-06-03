@@ -38,7 +38,7 @@ export function InterestsSection() {
               <span className="interest-proof-kicker">eg</span>
               <span className="interest-proof-name">syndic.dev</span>
               <span className="interest-proof-icon" aria-hidden="true">↗</span>
-              <span className="interest-proof-desc">mobile harness for developers</span>
+              <span className="interest-proof-desc">mobile control plane for coding agent</span>
             </a>
           </div>
         </li>
