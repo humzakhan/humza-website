@@ -16,6 +16,11 @@ export function InterestsSection() {
               Agents that can execute multi-step business tasks while tracking what they used,
               what changed, what failed, and why the final answer should be trusted.
             </p>
+            <a className="interest-proof" href="https://provenant.dev">
+              <span className="interest-proof-mark" aria-hidden="true">↳</span>
+              <span className="interest-proof-name">Provenant</span>
+              <span className="interest-proof-desc">verifiable agent outputs</span>
+            </a>
           </div>
         </li>
         <li className="interest">
@@ -26,6 +31,11 @@ export function InterestsSection() {
               Custom agents for analysts, operators, founders, and enterprise teams that encode
               the workflow, data access, checks, and approvals of a specific business process.
             </p>
+            <a className="interest-proof" href="https://syndic.dev">
+              <span className="interest-proof-mark" aria-hidden="true">↳</span>
+              <span className="interest-proof-name">Syndic.dev</span>
+              <span className="interest-proof-desc">vertical agent systems</span>
+            </a>
           </div>
         </li>
         <li className="interest">
@@ -36,6 +46,11 @@ export function InterestsSection() {
               Routing, ranking, and packaging the exact knowledge an agent needs from internal
               systems before it acts, so execution is grounded instead of generic.
             </p>
+            <div className="interest-proof interest-proof--muted">
+              <span className="interest-proof-mark" aria-hidden="true">↳</span>
+              <span className="interest-proof-name">Coming soon</span>
+              <span className="interest-proof-desc">context infrastructure</span>
+            </div>
           </div>
         </li>
       </ol>
