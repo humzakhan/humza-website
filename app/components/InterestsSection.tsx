@@ -18,8 +18,10 @@ export function InterestsSection() {
             </p>
             <a className="interest-proof" href="https://provenant.dev">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
-              <span className="interest-proof-name">Provenant</span>
-              <span className="interest-proof-desc">verifiable agent outputs</span>
+              <span className="interest-proof-kicker">eg</span>
+              <span className="interest-proof-name">provenant</span>
+              <span className="interest-proof-icon" aria-hidden="true">↗</span>
+              <span className="interest-proof-desc">verifiable financial agent outputs</span>
             </a>
           </div>
         </li>
@@ -33,7 +35,9 @@ export function InterestsSection() {
             </p>
             <a className="interest-proof" href="https://syndic.dev">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
-              <span className="interest-proof-name">Syndic.dev</span>
+              <span className="interest-proof-kicker">eg</span>
+              <span className="interest-proof-name">syndic.dev</span>
+              <span className="interest-proof-icon" aria-hidden="true">↗</span>
               <span className="interest-proof-desc">vertical agent systems</span>
             </a>
           </div>
@@ -48,7 +52,7 @@ export function InterestsSection() {
             </p>
             <div className="interest-proof interest-proof--muted">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
-              <span className="interest-proof-name">Coming soon</span>
+              <span className="interest-proof-name">coming soon</span>
               <span className="interest-proof-desc">context infrastructure</span>
             </div>
           </div>
