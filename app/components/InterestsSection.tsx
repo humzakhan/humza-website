@@ -16,7 +16,7 @@ export function InterestsSection() {
               Agents that can execute multi-step business tasks while tracking what they used,
               what changed, what failed, and why the final answer should be trusted.
             </p>
-            <a className="interest-proof" href="https://provenant.dev">
+            <a className="interest-proof" href="https://provenant.sh">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
               <span className="interest-proof-kicker">eg</span>
               <span className="interest-proof-name">provenant</span>
