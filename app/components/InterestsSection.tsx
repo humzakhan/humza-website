@@ -38,7 +38,7 @@ export function InterestsSection() {
               <span className="interest-proof-kicker">eg</span>
               <span className="interest-proof-name">syndic.dev</span>
               <span className="interest-proof-icon" aria-hidden="true">↗</span>
-              <span className="interest-proof-desc">vertical agent systems</span>
+              <span className="interest-proof-desc">mobile harness for developers</span>
             </a>
           </div>
         </li>
