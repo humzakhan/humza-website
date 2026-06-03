@@ -109,7 +109,6 @@ export default function Resume() {
               <ul className="sidebar-list recognition-list">
                 <li><span className="diamond">◆</span>AWS Certified Solutions Architect — Associate</li>
                 <li><span className="diamond">◆</span>Y Combinator Startup School — Batch &#39;18</li>
-                <li><span className="diamond">◆</span>Occasional writer on Medium</li>
               </ul>
             </div>
 
@@ -117,7 +116,6 @@ export default function Resume() {
               <p className="sidebar-label">— AVAILABLE FOR</p>
               <ul className="sidebar-list">
                 <li><span className="dot"></span>Consulting / Advisory</li>
-                <li><span className="dot"></span>Full-time roles</li>
               </ul>
             </div>
 
