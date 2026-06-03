@@ -847,10 +847,8 @@ a.interest-proof:hover .interest-proof-icon {
 }
 
 .footer-heart {
-  width: 14px;
-  height: 11px;
-  fill: currentColor;
-  transform: translateY(1px);
+  font-size: 13px;
+  line-height: 1;
 }
 
 .footer-flags {
