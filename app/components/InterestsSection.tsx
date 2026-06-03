@@ -21,7 +21,8 @@ export function InterestsSection() {
               <span className="interest-proof-kicker">eg</span>
               <span className="interest-proof-name">provenant</span>
               <span className="interest-proof-icon" aria-hidden="true">↗</span>
-              <span className="interest-proof-desc">verifiable financial agent outputs</span>
+              <span className="interest-proof-desc interest-proof-desc--long">verifiable financial agent outputs</span>
+              <span className="interest-proof-desc interest-proof-desc--short">financial agent outputs</span>
             </a>
           </div>
         </li>
@@ -38,7 +39,8 @@ export function InterestsSection() {
               <span className="interest-proof-kicker">eg</span>
               <span className="interest-proof-name">syndic.dev</span>
               <span className="interest-proof-icon" aria-hidden="true">↗</span>
-              <span className="interest-proof-desc">mobile control plane for coding agent</span>
+              <span className="interest-proof-desc interest-proof-desc--long">mobile control plane for coding agent</span>
+              <span className="interest-proof-desc interest-proof-desc--short">coding-agent control plane</span>
             </a>
           </div>
         </li>
@@ -53,7 +55,8 @@ export function InterestsSection() {
             <div className="interest-proof interest-proof--muted">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
               <span className="interest-proof-name">coming soon</span>
-              <span className="interest-proof-desc">latent context plus memory layer for business agents</span>
+              <span className="interest-proof-desc interest-proof-desc--long">latent context plus memory layer for business agents</span>
+              <span className="interest-proof-desc interest-proof-desc--short">context + memory layer</span>
             </div>
           </div>
         </li>
