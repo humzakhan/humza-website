@@ -606,9 +606,91 @@ export default function Works() {
           </div>
         </section>
 
-        {/* Chapter 04: Open Source */}
+        {/* Chapter 04: Historical Work */}
+        <section className="chapter-section">
+          <p className="chapter-eyebrow">— 04 · HISTORICAL WORK</p>
+          <div className="tile-grid">
+
+            <div
+              className="tile tile-flagship"
+              data-case="blockunion"
+              onClick={() => toggleCase("blockunion")}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("blockunion"); } }}
+            >
+              <div className="tile-flagship-top">
+                <span className="tile-tag">BLOCKCHAIN INFRA</span>
+                <span className="tile-role-chip">Contract · 2018</span>
+              </div>
+              <h3 className="tile-name">BlockUnion Architecture</h3>
+              <p className="tile-desc">First-version architecture and platform build for a token-incentivized reputation network.</p>
+              <div className="tile-stat-row">
+                <div className="tile-stat">
+                  <span className="tile-stat-value">0→1</span>
+                  <span className="tile-stat-label">STARTUP MVP</span>
+                </div>
+                <div className="tile-stat">
+                  <span className="tile-stat-value">&lt;1K</span>
+                  <span className="tile-stat-label">BETA USERS</span>
+                </div>
+              </div>
+              <div className="tile-footer">
+                <span>Ethereum · Web3 · AWS</span>
+                <span className="tile-cta">read <span>→</span></span>
+              </div>
+            </div>
+
+            <div className={`case${openCase === "blockunion" ? " open" : ""}`} id="case-blockunion">
+              <button className="case-close" onClick={(e) => { e.stopPropagation(); closeCase(); }} aria-label="Close case study">×</button>
+              <div className="case-inner">
+                <div className="case-header">
+                  <p className="case-eyebrow">— HISTORICAL WORK</p>
+                  <h2 className="case-title">BlockUnion Architecture</h2>
+                  <p className="case-tagline">A 2018 contract build for a decentralized reputation platform that rewarded blockchain-service reviews with platform tokens.</p>
+                </div>
+                <div className="case-grid">
+                  <div>
+                    <p className="case-cell-label">PROBLEM</p>
+                    <p className="case-cell-text">Blockchain services had weak reputation signals. Users had little reason to share credible reviews, so discovery and trust stayed thin.</p>
+                  </div>
+                  <div>
+                    <p className="case-cell-label">APPROACH</p>
+                    <p className="case-cell-text">Designed and built the first version end to end: platform architecture, AWS infrastructure, Web3 integration, token-reward flows, REST APIs, and database-backed application services.</p>
+                  </div>
+                  <div>
+                    <p className="case-cell-label">OUTCOME</p>
+                    <p className="case-cell-text">Launched a public beta with fewer than 1,000 users, on-chain token activity, deployed contracts, and cloud-hosted availability around the 99.9% target.</p>
+                  </div>
+                </div>
+                <div className="case-section">
+                  <p className="case-section-label">— THE DETAIL</p>
+                  <div className="case-section-body">
+                    <p>BlockUnion was early full-stack blockchain infrastructure work. The premise was simple: if someone shared an experience with a decentralized service anywhere on the web, the platform could turn that contribution into a reputation signal and reward it with tokens that had monetary value.</p>
+                    <p>I worked as a contract engineer on the first startup version and owned the architecture from scratch: choosing the technical stack, designing for elastic cloud capacity, connecting the application layer to Ethereum/Web3 flows, and translating business requirements into a production-ready technical system.</p>
+                  </div>
+                </div>
+                <div className="case-section">
+                  <p className="case-section-label">— TECH</p>
+                  <div className="case-stack">
+                    <span className="case-stack-tag">Ethereum</span>
+                    <span className="case-stack-tag">Web3</span>
+                    <span className="case-stack-tag">AWS</span>
+                    <span className="case-stack-tag">REST APIs</span>
+                    <span className="case-stack-tag">SQL</span>
+                    <span className="case-stack-tag">C#</span>
+                    <span className="case-stack-tag">Smart contracts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Chapter 05: Open Source */}
         <section className="chapter-section chapter-oss">
-          <p className="chapter-eyebrow">— 04 · OPEN SOURCE</p>
+          <p className="chapter-eyebrow">— 05 · OPEN SOURCE</p>
           <p className="oss-intro">Experiments and tools I build in public.</p>
           <div className="oss-list">
             <a className="oss-row" href="https://github.com/humzakhan/lumi" target="_blank" rel="noopener noreferrer">
