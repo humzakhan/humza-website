@@ -127,10 +127,10 @@ export default function Resume() {
             <section className="section">
               <p className="section-label">— INTRODUCTION</p>
               <p className="intro-text">
-                I&#39;m an AI product engineer who builds agent infrastructure from 0 to 1. Eight years in distributed systems taught me to ship for scale: financial data platforms, real-time pipelines, ingestion across millions of devices.
+                I&#39;m a product-minded full-stack engineer with eight years across distributed systems, financial data platforms, mobile security, and AI tooling.
               </p>
               <p className="intro-text">
-                Now I focus on the tooling and provenance that production AI agents depend on. I lead with the why, work backwards into architecture, and turn messy, ambiguous problems into shipped products.
+                I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure.
               </p>
             </section>
 
