@@ -19,7 +19,7 @@ export function InterestsSection() {
             <a className="interest-proof" href="https://provenant.sh">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
               <span className="interest-proof-kicker">eg</span>
-              <span className="interest-proof-name">provenant</span>
+              <span className="interest-proof-name">provenant.sh</span>
               <span className="interest-proof-icon" aria-hidden="true">↗</span>
               <span className="interest-proof-desc interest-proof-desc--long">verifiable financial agent outputs</span>
               <span className="interest-proof-desc interest-proof-desc--short">financial agent outputs</span>
@@ -39,8 +39,8 @@ export function InterestsSection() {
               <span className="interest-proof-kicker">eg</span>
               <span className="interest-proof-name">syndic.dev</span>
               <span className="interest-proof-icon" aria-hidden="true">↗</span>
-              <span className="interest-proof-desc interest-proof-desc--long">mobile control plane for coding agent</span>
-              <span className="interest-proof-desc interest-proof-desc--short">coding-agent control plane</span>
+              <span className="interest-proof-desc interest-proof-desc--long">mobile control plane for cloud coding agents</span>
+              <span className="interest-proof-desc interest-proof-desc--short">cloud coding agent control plane</span>
             </a>
           </div>
         </li>
