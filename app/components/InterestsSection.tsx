@@ -55,7 +55,7 @@ export function InterestsSection() {
             <div className="interest-proof interest-proof--muted">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
               <span className="interest-proof-name">coming soon</span>
-              <span className="interest-proof-desc interest-proof-desc--long">self-improving latent memory with provenance built in</span>
+              <span className="interest-proof-desc interest-proof-desc--long">self-improving latent memory with provenance built-in</span>
               <span className="interest-proof-desc interest-proof-desc--short">context + memory layer</span>
             </div>
           </div>
