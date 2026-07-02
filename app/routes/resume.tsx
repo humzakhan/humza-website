@@ -127,7 +127,7 @@ export default function Resume() {
             <section className="section">
               <p className="section-label">— INTRODUCTION</p>
               <p className="intro-text">
-                I&#39;m a product-minded full-stack engineer with eight years across distributed systems, financial data platforms, mobile security, and AI tooling.
+                I&#39;m an applied AI systems engineer with eight years across distributed systems, financial data platforms, mobile security, and production AI tooling.
               </p>
               <p className="intro-text">
                 I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure.
