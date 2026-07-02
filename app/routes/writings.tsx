@@ -67,12 +67,12 @@ const xPosts: WritingItem[] = [
 ];
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — The Writings" },
+  { title: "Humza Khan — Writings" },
   {
     name: "description",
     content: "A static first version of writings from Verstack and X.",
   },
-  { property: "og:title", content: "Humza Khan — The Writings" },
+  { property: "og:title", content: "Humza Khan — Writings" },
   {
     property: "og:description",
     content: "Notes from building AI systems, agent infrastructure, and products.",
@@ -85,7 +85,7 @@ export const meta: MetaFunction = () => [
   { property: "og:image:height", content: "630" },
   { property: "og:image:alt", content: "Humza Khan" },
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — The Writings" },
+  { name: "twitter:title", content: "Humza Khan — Writings" },
   {
     name: "twitter:description",
     content: "Notes from building AI systems, agent infrastructure, and products.",
@@ -151,8 +151,7 @@ export default function Writings() {
         </nav>
 
         <section className="hero writings-hero">
-          <p className="eyebrow">— WRITINGS</p>
-          <h1 className="hero-heading">The Writings</h1>
+          <h1 className="hero-heading">Writings</h1>
           <p className="hero-text">
             Notes from building <strong>AI systems</strong>, agent infrastructure, and the occasional thing I had to write down before it disappeared.
           </p>
