@@ -1,0 +1,151 @@
+.writings-page .content {
+  max-width: 780px;
+}
+
+.writings-hero {
+  padding-bottom: 3.75rem;
+}
+
+.writing-section {
+  border-top: 0.5px solid var(--hairline);
+  padding: 2.4rem 0 3.2rem;
+}
+
+.writing-section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.writing-section-kicker,
+.writing-section-count,
+.writing-index,
+.writing-status {
+  font-family: 'Geist Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.writing-section-kicker {
+  margin: 0 0 0.55rem;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.writing-section-desc {
+  margin: 0;
+  max-width: 560px;
+  color: var(--ink-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.writing-section-count {
+  color: var(--ink-muted);
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0.72;
+}
+
+.writing-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.writing-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.05rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  border: 0.5px solid var(--hairline);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.writing-section--posts .writing-row {
+  border-left: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+
+.writing-row:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent) 4%, var(--bg));
+}
+
+.writing-index {
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.writing-copy {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.writing-title {
+  color: var(--ink);
+  font-family: 'Lora', serif;
+  font-size: clamp(18px, 2.3vw, 23px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+}
+
+.writing-section--posts .writing-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.writing-why {
+  color: var(--ink-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.writing-arrow {
+  color: var(--accent);
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  padding-top: 0.05rem;
+}
+
+.writing-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 0.5px solid var(--hairline);
+  padding: 1.25rem 0 4rem;
+  color: var(--ink-muted);
+  font-size: 11px;
+}
+
+@media (max-width: 640px) {
+  .writing-section-head,
+  .writing-status {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .writing-row {
+    grid-template-columns: 1fr auto;
+    gap: 0.7rem;
+  }
+
+  .writing-index {
+    grid-column: 1 / -1;
+  }
+}
