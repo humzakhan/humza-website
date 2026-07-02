@@ -10,17 +10,17 @@ import { Contact } from "~/components/Contact";
 import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Senior AI Software Engineer" },
+  { title: "Humza Khan — Senior Applied AI Systems Engineer" },
   {
     name: "description",
     content:
-      "Senior AI software engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
+      "Senior applied AI systems engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
   },
-  { property: "og:title", content: "Humza Khan — Senior AI Software Engineer" },
+  { property: "og:title", content: "Humza Khan — Senior Applied AI Systems Engineer" },
   {
     property: "og:description",
     content:
-      "Senior AI software engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
+      "Senior applied AI systems engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
   },
   { property: "og:type", content: "website" },
   { property: "og:url", content: "https://humza.io/" },
@@ -30,11 +30,11 @@ export const meta: MetaFunction = () => [
   { property: "og:image:height", content: "630" },
   { property: "og:image:alt", content: "Humza Khan" },
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — Senior AI Software Engineer" },
+  { name: "twitter:title", content: "Humza Khan — Senior Applied AI Systems Engineer" },
   {
     name: "twitter:description",
     content:
-      "Senior AI software engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
+      "Senior applied AI systems engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
   },
   { name: "twitter:site", content: "@0xHumza" },
   { name: "twitter:creator", content: "@0xHumza" },
