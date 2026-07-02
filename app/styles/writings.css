@@ -6,6 +6,81 @@
   padding-bottom: 3.75rem;
 }
 
+
+.writing-channels {
+  border: 0.5px solid var(--hairline);
+  padding: 1.25rem 1.15rem;
+  margin: 0 0 3.25rem;
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+}
+
+.writing-channels-label,
+.writing-channel-name,
+.writing-channel-meta {
+  font-family: 'Geist Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.writing-channels-label {
+  margin: 0 0 1.2rem;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.writing-channel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  color: inherit;
+  text-decoration: none;
+  border-top: 0.5px solid var(--hairline);
+}
+
+.writing-channel:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.writing-channel:last-of-type {
+  padding-bottom: 0;
+}
+
+.writing-channel-main {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.writing-channel-name {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.writing-channel-desc {
+  max-width: 560px;
+  color: var(--ink-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.writing-channel-meta {
+  align-self: start;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  white-space: nowrap;
+}
+
+.writing-channel:hover .writing-channel-name,
+.writing-channel:hover .writing-channel-meta {
+  color: var(--accent);
+}
+
 .writing-section {
   border-top: 0.5px solid var(--hairline);
   padding: 2.4rem 0 3.2rem;
@@ -129,6 +204,7 @@
 
 @media (max-width: 640px) {
   .writing-section-head,
+  .writing-channel,
   .writing-status {
     display: grid;
     gap: 0.65rem;

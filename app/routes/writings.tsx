@@ -162,6 +162,29 @@ export default function Writings() {
           </p>
         </section>
 
+
+        <section className="writing-channels" aria-label="Where I write">
+          <p className="writing-channels-label">WHERE I WRITE</p>
+          <a className="writing-channel" href="https://verstack.ai" target="_blank" rel="noreferrer">
+            <span className="writing-channel-main">
+              <span className="writing-channel-name">SUBSTACK</span>
+              <span className="writing-channel-desc">
+                AI systems, product arguments, infrastructure notes, and things that need more than a post.
+              </span>
+            </span>
+            <span className="writing-channel-meta">LONGER-FORM ESSAYS <span aria-hidden="true">↗</span></span>
+          </a>
+          <a className="writing-channel" href="https://x.com/0xHumza" target="_blank" rel="noreferrer">
+            <span className="writing-channel-main">
+              <span className="writing-channel-name">X</span>
+              <span className="writing-channel-desc">
+                Short observations, build fragments, agent takes, and ideas while they are still in motion.
+              </span>
+            </span>
+            <span className="writing-channel-meta">WORKING NOTES <span aria-hidden="true">↗</span></span>
+          </a>
+        </section>
+
         <WritingSection
           label="ESSAYS"
           description="Longer-form notes on data infrastructure, agents, and product engineering."
