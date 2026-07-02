@@ -112,7 +112,7 @@ function WritingSection({
     <section className={`writing-section writing-section--${variant}`}>
       <div className="writing-section-head">
         <div>
-          <p className="writing-section-kicker">— {label}</p>
+          <p className="writing-section-kicker">{label}</p>
           <p className="writing-section-desc">{description}</p>
         </div>
         <a className="writing-view-all" href={viewAllHref} target="_blank" rel="noreferrer">
