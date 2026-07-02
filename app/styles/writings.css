@@ -167,6 +167,13 @@
   gap: 0.42rem;
 }
 
+.writing-title-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
 .writing-title {
   color: var(--ink);
   font-family: 'Inter', sans-serif;
@@ -174,6 +181,14 @@
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.01em;
+}
+
+.writing-date {
+  color: var(--ink-muted);
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .writing-why {

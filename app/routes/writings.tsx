@@ -7,6 +7,7 @@ import "~/styles/writings.css";
 
 type WritingItem = {
   title: string;
+  date: string;
   why: string;
   href: string;
 };
@@ -14,26 +15,31 @@ type WritingItem = {
 const verstackArticles: WritingItem[] = [
   {
     title: "Turning Unstructured Data Into Agent-Ready Context",
+    date: "May 11, '26",
     why: "To explain the data bottleneck behind useful enterprise agents.",
     href: "https://verstack.ai",
   },
   {
     title: "Reverse ETL for AI Workflows",
+    date: "Apr 28, '26",
     why: "Because models only become useful when the surrounding system can feed them reliable context.",
     href: "https://verstack.ai",
   },
   {
     title: "No-Code Pipelines Without Losing Engineering Rigor",
+    date: "Apr 14, '26",
     why: "To separate accessible product surfaces from fragile implementation shortcuts.",
     href: "https://verstack.ai",
   },
   {
     title: "Evaluating Extraction Quality in Production",
+    date: "Mar 31, '26",
     why: "Accuracy claims matter most when the documents are messy, long, and real.",
     href: "https://verstack.ai",
   },
   {
     title: "What Enterprise AI Actually Needs",
+    date: "Mar 17, '26",
     why: "Most teams do not need a demo; they need dependable systems around the model.",
     href: "https://verstack.ai",
   },
@@ -42,26 +48,31 @@ const verstackArticles: WritingItem[] = [
 const xPosts: WritingItem[] = [
   {
     title: "Agents need memory, but more importantly they need taste.",
+    date: "May 09, '26",
     why: "A short note on why context alone does not make an agent useful.",
     href: "https://x.com/0xHumza",
   },
   {
     title: "The best AI products feel less like chatbots and more like leverage.",
+    date: "May 02, '26",
     why: "To separate product usefulness from model novelty.",
     href: "https://x.com/0xHumza",
   },
   {
     title: "Most automation fails at the handoff.",
+    date: "Apr 25, '26",
     why: "The messy edge between human intent and system execution is usually where the product lives.",
     href: "https://x.com/0xHumza",
   },
   {
     title: "Infrastructure is product when AI is involved.",
+    date: "Apr 18, '26",
     why: "The interface only works if the underlying system can reliably know, act, and recover.",
     href: "https://x.com/0xHumza",
   },
   {
     title: "The future is not agents everywhere. It is better command surfaces.",
+    date: "Apr 11, '26",
     why: "A sharper frame for how I think about supervising AI work.",
     href: "https://x.com/0xHumza",
   },
@@ -126,7 +137,10 @@ function WritingSection({
           <a className="writing-row" href={item.href} target="_blank" rel="noreferrer" key={item.title}>
             <span className="writing-index">{String(index + 1).padStart(2, "0")}</span>
             <span className="writing-copy">
-              <span className="writing-title">{item.title}</span>
+              <span className="writing-title-line">
+                <span className="writing-title">{item.title}</span>
+                <span className="writing-date">{item.date}</span>
+              </span>
               <span className="writing-why">Why I wrote this: {item.why}</span>
             </span>
             <span className="writing-arrow">↗</span>
@@ -201,11 +215,6 @@ export default function Writings() {
           viewAllHref="https://x.com/0xHumza"
         />
 
-        <section className="writing-status" aria-label="Source status">
-          <span>SOURCE STATUS</span>
-          <span>STATIC PREVIEW</span>
-          <span>AUTOMATION LATER</span>
-        </section>
         <Footer />
       </div>
     </div>
