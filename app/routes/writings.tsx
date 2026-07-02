@@ -2,6 +2,7 @@ import { type MetaFunction, Link } from "react-router";
 import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
+import { Footer } from "~/components/Footer";
 import "~/styles/writings.css";
 
 type WritingItem = {
@@ -182,6 +183,7 @@ export default function Writings() {
           <span>STATIC PREVIEW</span>
           <span>AUTOMATION LATER</span>
         </section>
+        <Footer />
       </div>
     </div>
   );
