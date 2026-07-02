@@ -100,11 +100,13 @@ function WritingSection({
   description,
   items,
   variant,
+  viewAllHref,
 }: {
   label: string;
   description: string;
   items: WritingItem[];
   variant: "articles" | "posts";
+  viewAllHref: string;
 }) {
   return (
     <section className={`writing-section writing-section--${variant}`}>
@@ -113,7 +115,9 @@ function WritingSection({
           <p className="writing-section-kicker">— {label}</p>
           <p className="writing-section-desc">{description}</p>
         </div>
-        <span className="writing-section-count">LATEST FIVE</span>
+        <a className="writing-view-all" href={viewAllHref} target="_blank" rel="noreferrer">
+          View all <span aria-hidden="true">↗</span>
+        </a>
       </div>
 
       <div className="writing-list">
@@ -162,6 +166,7 @@ export default function Writings() {
           description="Longer-form notes on data infrastructure, agents, and product engineering."
           items={verstackArticles}
           variant="articles"
+          viewAllHref="https://verstack.ai"
         />
 
         <WritingSection
@@ -169,6 +174,7 @@ export default function Writings() {
           description="Shorter thoughts, product notes, and working observations."
           items={xPosts}
           variant="posts"
+          viewAllHref="https://x.com/0xHumza"
         />
 
         <section className="writing-status" aria-label="Source status">

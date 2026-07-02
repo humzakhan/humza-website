@@ -20,7 +20,7 @@
 }
 
 .writing-section-kicker,
-.writing-section-count,
+.writing-view-all,
 .writing-index,
 .writing-status {
   font-family: 'Geist Mono', monospace;
@@ -43,11 +43,17 @@
   line-height: 1.65;
 }
 
-.writing-section-count {
-  color: var(--ink-muted);
-  font-size: 11px;
+.writing-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
   white-space: nowrap;
-  opacity: 0.72;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
 }
 
 .writing-list {
