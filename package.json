@@ -10,7 +10,8 @@
     "dev": "react-router dev",
     "deploy": "pnpm run build && wrangler pages deploy build/client --project-name humza-website --commit-dirty=true",
     "typecheck": "tsc --noEmit",
-    "start": "wrangler dev"
+    "start": "wrangler dev",
+    "dev:portless": "portless humza-website react-router dev"
   },
   "dependencies": {
     "@react-router/cloudflare": "^7",
@@ -22,11 +23,12 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1",
     "@cloudflare/workers-types": "^4",
-    "@types/node": "^22",
     "@react-router/dev": "^7",
     "@react-router/fs-routes": "^7",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "portless": "^0.15.1",
     "typescript": "^5",
     "vite": "^6",
     "wrangler": "^3"
