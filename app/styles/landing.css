@@ -291,7 +291,7 @@ body { position: relative; }
   font-size: 12.5px;
   color: var(--ink-muted);
   letter-spacing: 0.15em;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 8px;
 }
@@ -865,6 +865,7 @@ a.interest-proof:hover .interest-proof-icon {
   .nav-links { gap: 1rem; font-size: 11px; }
   .nav-clock { display: none; }
   .hero { padding: 4rem 0 3rem; }
+  .scroll-cue { display: flex; }
   .building-grid { grid-template-columns: 1fr; }
   .flagship { padding: 1.25rem 1rem 1rem; }
   .ledger-row { grid-template-columns: 1fr; gap: 0.2rem; }
