@@ -162,7 +162,7 @@ export default function Writings() {
         </section>
 
         <WritingSection
-          label="VERSTACK ESSAYS"
+          label="ESSAYS"
           description="Longer-form notes on data infrastructure, agents, and product engineering."
           items={verstackArticles}
           variant="articles"
