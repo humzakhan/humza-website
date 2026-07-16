@@ -104,7 +104,7 @@ export default function Works() {
 
         {/* Chapter 01: What Defines Me / Production at Scale */}
         <section className="chapter-section">
-          <p className="chapter-eyebrow">— 01 · WHAT DEFINES ME / PRODUCTION AT SCALE</p>
+          <p className="chapter-eyebrow">— 01 · SYSTEMS IN PRODUCTION</p>
           <div className="tile-grid">
 
             {/* Tile row: TCA + Lookout */}
