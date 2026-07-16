@@ -152,7 +152,7 @@ export default function Resume() {
                 </div>
                 <div className="ai-row">
                   <dt>Mechanical</dt>
-                  <dd>GPT-5.6 Luna (high) / Sonnet 5</dd>
+                  <dd>GPT-5.6 Luna (high / medium) / Sonnet 5</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Orchestration</dt>
