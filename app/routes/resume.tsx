@@ -63,7 +63,6 @@ export default function Resume() {
           <div className="nav-links">
             <Link to="/">home</Link>
             <Link to="/works">works</Link>
-            <Link to="/writings">writings</Link>
             <Link to="/resume" className="active">resume</Link>
             {/* Clock already renders its own nav-clock + dot-blink — do NOT wrap */}
             <Clock />

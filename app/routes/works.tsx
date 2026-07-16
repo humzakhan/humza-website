@@ -89,7 +89,6 @@ export default function Works() {
           <div className="nav-links">
             <Link to="/">home</Link>
             <Link to="/works" className="active">works</Link>
-            <Link to="/writings">writings</Link>
             <Link to="/resume">resume</Link>
             <Clock />
             <ThemeToggle />

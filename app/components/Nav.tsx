@@ -8,7 +8,6 @@ export function Nav() {
       <span className="nav-name">humza k<span className="nav-dot">.</span></span>
       <div className="nav-links">
         <Link to="/works">works</Link>
-        <Link to="/writings">writings</Link>
         <Link to="/resume">resume</Link>
         <Clock />
         <ThemeToggle />

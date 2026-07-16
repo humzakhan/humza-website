@@ -163,7 +163,6 @@ export default function Writings() {
           <div className="nav-links">
             <Link to="/">home</Link>
             <Link to="/works">works</Link>
-            <Link to="/writings" className="active">writings</Link>
             <Link to="/resume">resume</Link>
             <Clock />
             <ThemeToggle />
