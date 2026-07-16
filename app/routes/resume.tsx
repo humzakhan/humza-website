@@ -183,14 +183,15 @@ export default function Resume() {
                   >
                     Verstack <span className="ext">↗</span>
                   </a>
+                  <span className="job-title-note">(experimental venture)</span>
                 </h3>
                 <p className="job-meta job-meta-lead">
-                  <span className="org">Technical Co-founder</span> · Leads engineering end-to-end
+                  <span className="org">Technical Co-founder</span> · Leads engineering end to end
                 </p>
                 <ul className="job-bullets">
-                  <li>Reverse ETL for unstructured data: unstructured in, structured out at scale.</li>
-                  <li>No-code pipeline builder lets anyone stand up a production data pipeline in <strong>minutes instead of weeks</strong>, no data engineer required.</li>
-                  <li>Delivers structured output at <strong>95%+ accuracy</strong>, cutting the time to get usable context into AI agents by <strong>~80%</strong>.</li>
+                  <li>Lead engineering for an AI-powered property inspection platform that turns walkthrough media into evidence-backed reports in minutes.</li>
+                  <li>Built the workflow for media capture, AI-assisted damage detection, report generation, and centralized property records.</li>
+                  <li>Reduced inspection reporting from as long as five days to a few minutes.</li>
                 </ul>
               </article>
 
