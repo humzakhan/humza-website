@@ -140,11 +140,11 @@ export default function Resume() {
               <dl className="ai-spec">
                 <div className="ai-row">
                   <dt>Planning</dt>
-                  <dd>Opus 4.8 / GPT-5.5 (high thinking)</dd>
+                  <dd>GPT-5.6 Sol (extra high)</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Building</dt>
-                  <dd>Sonnet 4.6 / GPT-5.4 (high)</dd>
+                  <dd>Fable 5 / GPT-5.6 Terra (high) / Sonnet 4.6</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Review</dt>
@@ -152,7 +152,7 @@ export default function Resume() {
                 </div>
                 <div className="ai-row">
                   <dt>Mechanical</dt>
-                  <dd>Haiku 4.5 / GPT-5.4-mini (medium)</dd>
+                  <dd>GPT-5.6 Terra (medium)</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Orchestration</dt>
