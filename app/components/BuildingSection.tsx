@@ -9,7 +9,7 @@ export function BuildingSection() {
         <h3 className="flagship-name">Verstack</h3>
         <p className="flagship-line flagship-line--problem">AI-powered property inspections in minutes, with every record in one place.</p>
         <div className="building-meta">
-          <span>verstack.ai</span>
+          <span className="building-link">verstack.ai</span>
           <span className="building-arrow">→</span>
         </div>
       </a>
@@ -17,7 +17,7 @@ export function BuildingSection() {
         <h3 className="flagship-name">Syndic</h3>
         <p className="flagship-line flagship-line--problem">Run cloud coding agents with goals, templates, and schedules built in.</p>
         <div className="building-meta">
-          <span>syndic.dev</span>
+          <span className="building-link">syndic.dev</span>
           <span className="building-arrow">→</span>
         </div>
       </a>

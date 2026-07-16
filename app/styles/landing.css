@@ -381,6 +381,21 @@ body { position: relative; }
   border-top: 0.5px solid var(--hairline);
 }
 
+.building-link {
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-size: 12.5px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.building-link:hover {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+
 .building-arrow {
   color: var(--ink);
   font-size: 14px;
