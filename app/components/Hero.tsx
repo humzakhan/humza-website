@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero home-hero">
       <p className="eyebrow">— MONTRÉAL, CA</p>
       <h1 className="hero-heading">Applied AI Systems Engineer</h1>
       <p className="hero-text">

@@ -280,6 +280,14 @@ body { position: relative; }
   letter-spacing: -0.005em;
 }
 
+.home-hero {
+  max-width: 760px;
+}
+
+.home-hero .hero-text {
+  max-width: 720px;
+}
+
 .hero-text + .hero-text { margin-top: 1rem; }
 
 .hero-text strong {
