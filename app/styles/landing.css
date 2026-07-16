@@ -311,8 +311,8 @@ body { position: relative; }
 
 .section-label {
   font-family: 'Geist Mono', monospace;
-  font-size: 13.5px;
-  color: var(--ink-muted);
+  font-size: 14.5px;
+  color: var(--ink-soft);
   letter-spacing: 0.08em;
   margin: 0 0 2rem;
   display: flex;
@@ -322,7 +322,7 @@ body { position: relative; }
 }
 
 .section-label-right {
-  color: var(--ink-muted);
+  color: var(--ink-soft);
   cursor: pointer;
   transition: color 0.2s;
   text-decoration: none;
