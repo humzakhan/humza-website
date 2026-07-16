@@ -159,7 +159,7 @@ export default function Resume() {
                   <dd>
                     <ul className="ai-sublist">
                       <li>mobile: <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">syndic <span className="ext">↗</span></a></li>
-                      <li>desktop: <a className="project-link" href="https://superset.sh" target="_blank" rel="noopener noreferrer">superset.sh <span className="ext">↗</span></a>, <a className="project-link" href="https://cmux.com" target="_blank" rel="noopener noreferrer">cmux <span className="ext">↗</span></a> <span className="primary-tag">(primary)</span></li>
+                      <li>desktop: <a className="project-link" href="https://superset.sh" target="_blank" rel="noopener noreferrer">superset.sh <span className="ext">↗</span></a></li>
                     </ul>
                   </dd>
                 </div>
