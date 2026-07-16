@@ -2,6 +2,10 @@
   max-width: 780px;
 }
 
+.writings-page .nav-links a.active {
+  color: var(--ink);
+}
+
 .writings-hero {
   padding-bottom: 3.75rem;
 }
