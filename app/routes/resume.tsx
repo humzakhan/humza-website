@@ -201,7 +201,7 @@ export default function Resume() {
               <p className="section-label">— ALSO BUILDING</p>
               <ul className="project-list">
                 <li>
-                  <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">Syndic <span className="ext">↗</span></a> — mobile control plane for AI coding agents; self-hosted, runs on your existing subscriptions.
+                  <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">Syndic <span className="ext">↗</span></a> · Mobile orchestration for cloud coding agents, goals, templates, and scheduled workflows.
                 </li>
                 <li>
                   <a className="project-link" href="#" target="_blank" rel="noopener noreferrer">Provenant <span className="ext">↗</span></a> — provenance and audit chains for long-running financial agents.
