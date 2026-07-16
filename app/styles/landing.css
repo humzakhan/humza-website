@@ -280,6 +280,8 @@ body { position: relative; }
   letter-spacing: -0.005em;
 }
 
+.hero-text + .hero-text { margin-top: 1rem; }
+
 .hero-text strong {
   font-weight: 600;
   color: var(--ink);
