@@ -140,7 +140,7 @@ export default function Resume() {
               <dl className="ai-spec">
                 <div className="ai-row">
                   <dt>Planning</dt>
-                  <dd>GPT-5.6 Sol (extra high)</dd>
+                  <dd>GPT-5.6 Sol (xhigh)</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Building</dt>
