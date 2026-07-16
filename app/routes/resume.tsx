@@ -140,11 +140,11 @@ export default function Resume() {
               <dl className="ai-spec">
                 <div className="ai-row">
                   <dt>Planning</dt>
-                  <dd>Opus 4.8 / GPT-5.5 (high thinking)</dd>
+                  <dd>GPT-5.6 Sol (xhigh)</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Building</dt>
-                  <dd>Sonnet 4.6 / GPT-5.4 (high)</dd>
+                  <dd>Fable 5 / GPT-5.6 Terra (high) / Sonnet 4.6</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Review</dt>
@@ -152,14 +152,14 @@ export default function Resume() {
                 </div>
                 <div className="ai-row">
                   <dt>Mechanical</dt>
-                  <dd>Haiku 4.5 / GPT-5.4-mini (medium)</dd>
+                  <dd>GPT-5.6 Luna (high / medium) / Sonnet 5</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Orchestration</dt>
                   <dd>
                     <ul className="ai-sublist">
                       <li>mobile: <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">syndic <span className="ext">↗</span></a></li>
-                      <li>desktop: <a className="project-link" href="https://superset.sh" target="_blank" rel="noopener noreferrer">superset.sh <span className="ext">↗</span></a>, <a className="project-link" href="https://cmux.com" target="_blank" rel="noopener noreferrer">cmux <span className="ext">↗</span></a> <span className="primary-tag">(primary)</span></li>
+                      <li>desktop: <a className="project-link" href="https://superset.sh" target="_blank" rel="noopener noreferrer">superset.sh <span className="ext">↗</span></a></li>
                     </ul>
                   </dd>
                 </div>
@@ -183,14 +183,15 @@ export default function Resume() {
                   >
                     Verstack <span className="ext">↗</span>
                   </a>
+                  <span className="job-title-note">(experimental venture)</span>
                 </h3>
                 <p className="job-meta job-meta-lead">
-                  <span className="org">Technical Co-founder</span> · Leads engineering end-to-end
+                  <span className="org">Technical Co-founder</span> · Leads engineering end to end
                 </p>
                 <ul className="job-bullets">
-                  <li>Reverse ETL for unstructured data: unstructured in, structured out at scale.</li>
-                  <li>No-code pipeline builder lets anyone stand up a production data pipeline in <strong>minutes instead of weeks</strong>, no data engineer required.</li>
-                  <li>Delivers structured output at <strong>95%+ accuracy</strong>, cutting the time to get usable context into AI agents by <strong>~80%</strong>.</li>
+                  <li>Lead engineering for an AI-powered property inspection platform that turns walkthrough media into evidence-backed reports in minutes.</li>
+                  <li>Built the workflow for media capture, AI-assisted damage detection, report generation, and centralized property records.</li>
+                  <li>Reduced inspection reporting from as long as five days to a few minutes.</li>
                 </ul>
               </article>
 
@@ -200,7 +201,7 @@ export default function Resume() {
               <p className="section-label">— ALSO BUILDING</p>
               <ul className="project-list">
                 <li>
-                  <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">Syndic <span className="ext">↗</span></a> — mobile control plane for AI coding agents; self-hosted, runs on your existing subscriptions.
+                  <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">Syndic <span className="ext">↗</span></a> · Mobile orchestration for cloud coding agents, goals, templates, and scheduled workflows.
                 </li>
                 <li>
                   <a className="project-link" href="#" target="_blank" rel="noopener noreferrer">Provenant <span className="ext">↗</span></a> — provenance and audit chains for long-running financial agents.

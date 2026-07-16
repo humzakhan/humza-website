@@ -3,4 +3,5 @@ node_modules
 .env
 .wrangler
 .react-router
+.codegraph/
 .claude/settings.local.json

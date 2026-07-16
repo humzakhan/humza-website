@@ -104,7 +104,7 @@ export default function Works() {
 
         {/* Chapter 01: What Defines Me / Production at Scale */}
         <section className="chapter-section">
-          <p className="chapter-eyebrow">— 01 · WHAT DEFINES ME / PRODUCTION AT SCALE</p>
+          <p className="chapter-eyebrow">— 01 · SYSTEMS IN PRODUCTION</p>
           <div className="tile-grid">
 
             {/* Tile row: TCA + Lookout */}
@@ -342,19 +342,19 @@ export default function Works() {
               onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("verstack"); } }}
             >
               <div className="tile-flagship-top">
-                <span className="tile-tag">AI · FLAGSHIP</span>
-                <span className="tile-role-chip">Technical Co-founder</span>
+                <span className="tile-tag">SPATIAL AI · PROPTECH</span>
+                <span className="tile-role-chip">Experimental venture</span>
               </div>
               <h3 className="tile-name">Verstack</h3>
-              <p className="tile-desc">Reverse ETL for the unstructured data your AI agents can't read yet.</p>
+              <p className="tile-desc">AI-powered property inspections that turn walkthroughs into 3D spatial records and evidence-backed reports in minutes.</p>
               <div className="tile-stat-row">
                 <div className="tile-stat">
-                  <span className="tile-stat-value">95%+</span>
-                  <span className="tile-stat-label">ACCURACY</span>
+                  <span className="tile-stat-value">5d → min</span>
+                  <span className="tile-stat-label">REPORT TURNAROUND</span>
                 </div>
                 <div className="tile-stat">
-                  <span className="tile-stat-value">~80%</span>
-                  <span className="tile-stat-label">LESS TIME-TO-CONTEXT</span>
+                  <span className="tile-stat-value">3D</span>
+                  <span className="tile-stat-label">SPATIAL PROPERTY MAP</span>
                 </div>
               </div>
               <div className="tile-footer">
@@ -370,26 +370,26 @@ export default function Works() {
                 <div className="case-header">
                   <p className="case-eyebrow">— BUILDING NOW</p>
                   <h2 className="case-title">Verstack</h2>
-                  <p className="case-tagline">Unstructured in, structured out. Agent-ready data, delivered reliably at scale.</p>
+                  <p className="case-tagline">Spatial intelligence for faster, evidence-backed property inspections.</p>
                 </div>
                 <div className="case-grid">
                   <div>
                     <p className="case-cell-label">PROBLEM</p>
-                    <p className="case-cell-text">AI agents are only as good as the data they can read. Most enterprise data is unstructured and effectively invisible to them.</p>
+                    <p className="case-cell-text">Property managers can spend days turning walkthrough footage, notes, and scattered records into a complete inspection report. Evidence is difficult to organize and damage decisions are hard to defend.</p>
                   </div>
                   <div>
                     <p className="case-cell-label">APPROACH</p>
-                    <p className="case-cell-text">A reverse-ETL platform that turns unstructured sources into structured, agent-ready data through a no-code pipeline builder.</p>
+                    <p className="case-cell-text">Verstack turns walkthrough media into a structured 3D map of the property. Findings are anchored to where they occurred and connected to supporting evidence inside one centralized record.</p>
                   </div>
                   <div>
                     <p className="case-cell-label">OUTCOME</p>
-                    <p className="case-cell-text">95%+ extraction accuracy and about 80% less time to get usable context into agents. Minutes instead of weeks.</p>
+                    <p className="case-cell-text">Inspection reporting drops from as long as five days to a few minutes. Property managers can document damage faster, support deposit decisions, and resolve disputes with clearer evidence.</p>
                   </div>
                 </div>
                 <div className="case-section">
                   <p className="case-section-label">— THE DETAIL</p>
                   <div className="case-section-body">
-                    <p>As technical co-founder I lead the platform's engineering end to end. The core bet is that the bottleneck for useful AI is not the model, it is the data pipeline feeding it. Enterprises sit on mountains of unstructured documents that agents cannot consume. Verstack turns unstructured in into structured out, reliably and at scale, with a no-code builder so teams can stand up pipelines without writing extraction logic by hand.</p>
+                    <p>Verstack is an experimental proptech venture. As technical co-founder, I lead engineering end to end. Each inspection becomes a navigable spatial record rather than a folder of disconnected videos, photos, and notes. Property managers can understand what happened, where it happened, and which evidence supports the finding without reconstructing the inspection manually.</p>
                   </div>
                 </div>
                 <div className="case-section">
