@@ -5,7 +5,7 @@ export function Hero() {
       <h1 className="hero-heading">Applied AI Systems Engineer</h1>
       <p className="hero-text">
         An AI engineer building <strong>data infrastructure and AI products</strong> across
-        enterprise and productivity, with extensive <strong>fintech</strong> experience.
+        enterprise, productivity, and <strong>fintech</strong>.
       </p>
     </section>
   );
