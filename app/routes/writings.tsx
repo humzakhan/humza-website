@@ -12,36 +12,36 @@ type WritingItem = {
   href: string;
 };
 
-const verstackArticles: WritingItem[] = [
+const essays: WritingItem[] = [
   {
     title: "Turning Unstructured Data Into Agent-Ready Context",
     date: "May 11, '26",
     why: "To explain the data bottleneck behind useful enterprise agents.",
-    href: "https://verstack.ai",
+    href: "#",
   },
   {
     title: "Reverse ETL for AI Workflows",
     date: "Apr 28, '26",
     why: "Because models only become useful when the surrounding system can feed them reliable context.",
-    href: "https://verstack.ai",
+    href: "#",
   },
   {
     title: "No-Code Pipelines Without Losing Engineering Rigor",
     date: "Apr 14, '26",
     why: "To separate accessible product surfaces from fragile implementation shortcuts.",
-    href: "https://verstack.ai",
+    href: "#",
   },
   {
     title: "Evaluating Extraction Quality in Production",
     date: "Mar 31, '26",
     why: "Accuracy claims matter most when the documents are messy, long, and real.",
-    href: "https://verstack.ai",
+    href: "#",
   },
   {
     title: "What Enterprise AI Actually Needs",
     date: "Mar 17, '26",
     why: "Most teams do not need a demo; they need dependable systems around the model.",
-    href: "https://verstack.ai",
+    href: "#",
   },
 ];
 
@@ -82,7 +82,7 @@ export const meta: MetaFunction = () => [
   { title: "Humza Khan — Writings" },
   {
     name: "description",
-    content: "A static first version of writings from Verstack and X.",
+    content: "Notes from building AI systems, agent infrastructure, and products.",
   },
   { property: "og:title", content: "Humza Khan — Writings" },
   {
@@ -179,7 +179,7 @@ export default function Writings() {
 
         <section className="writing-channels" aria-label="Where I write">
           <p className="writing-channels-label">WHERE I WRITE</p>
-          <a className="writing-channel" href="https://verstack.ai" target="_blank" rel="noreferrer">
+          <a className="writing-channel" href="#" target="_blank" rel="noreferrer">
             <span className="writing-channel-main">
               <span className="writing-channel-name">SUBSTACK</span>
               <span className="writing-channel-desc">
@@ -202,9 +202,9 @@ export default function Writings() {
         <WritingSection
           label="ESSAYS"
           description="Longer-form notes on data infrastructure, agents, and product engineering."
-          items={verstackArticles}
+          items={essays}
           variant="articles"
-          viewAllHref="https://verstack.ai"
+          viewAllHref="#"
         />
 
         <WritingSection

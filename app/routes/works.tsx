@@ -327,75 +327,75 @@ export default function Works() {
           </div>
         </section>
 
-        {/* Chapter 02: Building Now — Verstack + Syndic flagships */}
+        {/* Chapter 02: Building Now — Stealth + Syndic flagships */}
         <section className="chapter-section">
           <p className="chapter-eyebrow">— 02 · BUILDING NOW</p>
           <div className="tile-grid">
 
-            {/* Flagship tile: Verstack */}
+            {/* Flagship tile: Stealth */}
             <div
               className="tile tile-flagship"
-              data-case="verstack"
-              onClick={() => toggleCase("verstack")}
+              data-case="stealth"
+              onClick={() => toggleCase("stealth")}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("verstack"); } }}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("stealth"); } }}
             >
               <div className="tile-flagship-top">
-                <span className="tile-tag">SPATIAL AI · PROPTECH</span>
-                <span className="tile-role-chip">Experimental venture</span>
+                <span className="tile-tag">SPATIAL INTELLIGENCE · STEALTH</span>
+                <span className="tile-role-chip">Founding engineer</span>
               </div>
-              <h3 className="tile-name">Verstack</h3>
-              <p className="tile-desc">AI-powered property inspections that turn walkthroughs into 3D spatial records and evidence-backed reports in minutes.</p>
+              <h3 className="tile-name">Stealth</h3>
+              <p className="tile-desc">Spatial intelligence that turns ordinary captures of physical spaces into 3D maps models can reason over, cutting the on-site work those spaces need.</p>
               <div className="tile-stat-row">
                 <div className="tile-stat">
-                  <span className="tile-stat-value">5d → min</span>
-                  <span className="tile-stat-label">REPORT TURNAROUND</span>
+                  <span className="tile-stat-value">3D</span>
+                  <span className="tile-stat-label">SPATIAL MAPS</span>
                 </div>
                 <div className="tile-stat">
-                  <span className="tile-stat-value">3D</span>
-                  <span className="tile-stat-label">SPATIAL PROPERTY MAP</span>
+                  <span className="tile-stat-value">Capture once</span>
+                  <span className="tile-stat-label">ACT REMOTELY</span>
                 </div>
               </div>
               <div className="tile-footer">
-                <span>verstack.ai</span>
+                <span>in stealth</span>
                 <span className="tile-cta">read <span>→</span></span>
               </div>
             </div>
 
-            {/* Case: Verstack */}
-            <div className={`case${openCase === "verstack" ? " open" : ""}`} id="case-verstack">
+            {/* Case: Stealth */}
+            <div className={`case${openCase === "stealth" ? " open" : ""}`} id="case-stealth">
               <button className="case-close" onClick={(e) => { e.stopPropagation(); closeCase(); }} aria-label="Close case study">×</button>
               <div className="case-inner">
                 <div className="case-header">
                   <p className="case-eyebrow">— BUILDING NOW</p>
-                  <h2 className="case-title">Verstack</h2>
-                  <p className="case-tagline">Spatial intelligence for faster, evidence-backed property inspections.</p>
+                  <h2 className="case-title">Stealth</h2>
+                  <p className="case-tagline">Teaching machines to understand physical space, so the physical world needs fewer visits.</p>
                 </div>
                 <div className="case-grid">
                   <div>
                     <p className="case-cell-label">PROBLEM</p>
-                    <p className="case-cell-text">Property managers can spend days turning walkthrough footage, notes, and scattered records into a complete inspection report. Evidence is difficult to organize and damage decisions are hard to defend.</p>
+                    <p className="case-cell-text">Most decisions about a physical space still need someone to be there to look, measure and record, and then to go back when something was missed. That works for one building and falls apart across thousands.</p>
                   </div>
                   <div>
                     <p className="case-cell-label">APPROACH</p>
-                    <p className="case-cell-text">Verstack turns walkthrough media into a structured 3D map of the property. Findings are anchored to where they occurred and connected to supporting evidence inside one centralized record.</p>
+                    <p className="case-cell-text">We're building spatial intelligence: models that turn casual captures into structured 3D representations, and the systems to store, index and query those spaces like any other data.</p>
                   </div>
                   <div>
                     <p className="case-cell-label">OUTCOME</p>
-                    <p className="case-cell-text">Inspection reporting drops from as long as five days to a few minutes. Property managers can document damage faster, support deposit decisions, and resolve disputes with clearer evidence.</p>
+                    <p className="case-cell-text">A space captured once can be understood, compared over time and acted on remotely, so the physical work shrinks to the visits that matter.</p>
                   </div>
                 </div>
                 <div className="case-section">
                   <p className="case-section-label">— THE DETAIL</p>
                   <div className="case-section-body">
-                    <p>Verstack is an experimental proptech venture. As technical co-founder, I lead engineering end to end. Each inspection becomes a navigable spatial record rather than a folder of disconnected videos, photos, and notes. Property managers can understand what happened, where it happened, and which evidence supports the finding without reconstructing the inspection manually.</p>
+                    <p>I'm the founding engineer and lead engineering end to end, from the model pipeline to the systems behind it. We're in stealth, so I'm keeping the specifics light. The problems I spend my days on are reconstructing 3D scenes from imperfect capture, grounding model outputs in physical locations, and keeping a spatial record queryable as the space changes.</p>
                   </div>
                 </div>
                 <div className="case-section">
                   <p className="case-section-label">— LINKS</p>
                   <div className="case-links">
-                    <a className="project-link" href="https://verstack.ai" target="_blank" rel="noopener noreferrer">verstack.ai <span className="ext">↗</span></a>
+                    <p className="case-section-body">More when we launch. If you're working on spatial AI, <a className="project-link" href="mailto:hello@humza.io">I'd like to hear from you</a>.</p>
                   </div>
                 </div>
               </div>
