@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section className="hero home-hero">
       <p className="eyebrow">— MONTRÉAL, CA</p>
-      <h1 className="hero-heading">Applied AI Systems Engineer</h1>
+      <h1 className="hero-heading">Product Engineer</h1>
       <p className="hero-text">
         AI engineer building data infrastructure and long-running agents across enterprise,
         productivity, and fintech. I work where technical systems and product decisions meet,
