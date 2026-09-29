@@ -208,7 +208,7 @@
   margin: 0 0 0.3rem;
 }
 
-/* Linked job title (e.g. Verstack) — matches the hero heading font, reads as a link */
+/* Linked job title — matches the hero heading font, reads as a link */
 .resume-page .job-title-link {
   font-family: 'Lora', serif;
   color: var(--accent);
@@ -303,7 +303,7 @@
   opacity: 1;
 }
 
-/* Lead entry (Verstack) role line — larger, with more breathing room above */
+/* Lead entry role line — larger, with more breathing room above */
 .resume-page .job-meta-lead {
   font-size: 14px;
   margin-top: 0.65rem;
@@ -379,7 +379,7 @@
   margin-bottom: 0;
 }
 
-/* Project name links — same obvious-link affordance as the Verstack title */
+/* Project name links — same obvious-link affordance as linked job titles */
 .resume-page .project-link {
   color: var(--accent);
   text-decoration: none;

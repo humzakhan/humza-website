@@ -8,12 +8,12 @@ export const meta: MetaFunction = () => [
   { title: "Humza Khan — Resume" },
   {
     name: "description",
-    content: "Resume · Senior Applied AI Systems Engineer · AI products, agent infrastructure, distributed systems at scale.",
+    content: "Resume · Product Engineer · AI products, agent infrastructure, distributed systems at scale.",
   },
   { property: "og:title", content: "Humza Khan — Resume" },
   {
     property: "og:description",
-    content: "Resume · Senior Applied AI Systems Engineer · AI products, agent infrastructure, distributed systems at scale.",
+    content: "Resume · Product Engineer · AI products, agent infrastructure, distributed systems at scale.",
   },
   { property: "og:type", content: "website" },
   { property: "og:url", content: "https://humza.io/resume" },
@@ -26,7 +26,7 @@ export const meta: MetaFunction = () => [
   { name: "twitter:title", content: "Humza Khan — Resume" },
   {
     name: "twitter:description",
-    content: "Resume · Senior Applied AI Systems Engineer · AI products, agent infrastructure, distributed systems at scale.",
+    content: "Resume · Product Engineer · AI products, agent infrastructure, distributed systems at scale.",
   },
   { name: "twitter:site", content: "@0xHumza" },
   { name: "twitter:creator", content: "@0xHumza" },
@@ -73,7 +73,7 @@ export default function Resume() {
         {/* Hero */}
         <section className="hero">
           <p className="eyebrow">— RESUME</p>
-          <h1 className="hero-heading">Applied AI Systems Engineer</h1>
+          <h1 className="hero-heading">Product Engineer</h1>
           <a className="download-link" href="#" onClick={handleDownload}>
             ↓ DOWNLOAD PDF
           </a>
@@ -127,7 +127,7 @@ export default function Resume() {
             <section className="section">
               <p className="section-label">— INTRODUCTION</p>
               <p className="intro-text">
-                I&#39;m an applied AI systems engineer with eight years across distributed systems, financial data platforms, mobile security, and production AI tooling.
+                I&#39;m a product engineer with eight years across distributed systems, financial data platforms, mobile security, and production AI tooling.
               </p>
               <p className="intro-text">
                 I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure.
@@ -175,23 +175,16 @@ export default function Resume() {
 
               <article className="job">
                 <h3 className="job-title">
-                  <a
-                    className="job-title-link"
-                    href="https://verstack.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Verstack <span className="ext">↗</span>
-                  </a>
-                  <span className="job-title-note">(experimental venture)</span>
+                  Stealth startup
+                  <span className="job-title-note">(spatial intelligence)</span>
                 </h3>
                 <p className="job-meta job-meta-lead">
-                  <span className="org">Technical Co-founder</span> · Leads engineering end to end
+                  <span className="org">Founding Engineer</span> · Leads engineering end to end
                 </p>
                 <ul className="job-bullets">
-                  <li>Lead engineering for an AI-powered property inspection platform that turns walkthrough media into evidence-backed reports in minutes.</li>
-                  <li>Built the workflow for media capture, AI-assisted damage detection, report generation, and centralized property records.</li>
-                  <li>Reduced inspection reporting from as long as five days to a few minutes.</li>
+                  <li>Building spatial intelligence that maps and understands physical spaces, reducing the on-site work it takes to manage them at scale.</li>
+                  <li>Designed the pipeline from capture to 3D reconstruction to spatially grounded model outputs, with every finding anchored to where it occurred.</li>
+                  <li>Turned a multi-day manual workflow into minutes.</li>
                 </ul>
               </article>
 
