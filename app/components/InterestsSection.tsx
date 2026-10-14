@@ -29,34 +29,33 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">02</span>
           <div>
-            <h3 className="interest-title">Vertical agent harnesses for specialized domains</h3>
+            <h3 className="interest-title">Specialised local models</h3>
             <p className="interest-desc">
-              Custom agents for analysts, operators, founders, and enterprise teams that encode
-              the workflow, data access, checks, and approvals of a specific business process.
+              Fine-tuning small open models for narrow, high-stakes tasks, and measuring them
+              honestly against frontier baselines.
             </p>
-            <a className="interest-proof" href="https://syndic.dev">
+            <div className="interest-proof interest-proof--muted">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
-              <span className="interest-proof-kicker">eg</span>
-              <span className="interest-proof-name">syndic.dev</span>
-              <span className="interest-proof-icon" aria-hidden="true">↗</span>
-              <span className="interest-proof-desc interest-proof-desc--long">mobile control plane for cloud coding agents</span>
-              <span className="interest-proof-desc interest-proof-desc--short">cloud coding agent control plane</span>
-            </a>
+              <span className="interest-proof-name">in progress</span>
+              <span className="interest-proof-desc interest-proof-desc--long">bank-statement extraction, EN/FR</span>
+              <span className="interest-proof-desc interest-proof-desc--short">bank-statement extraction</span>
+            </div>
           </div>
         </li>
         <li className="interest">
           <span className="interest-num">03</span>
           <div>
-            <h3 className="interest-title">Context infrastructure for reliable agents</h3>
+            <h3 className="interest-title">AI safety &amp; security for agents</h3>
             <p className="interest-desc">
-              Routing, ranking, and packaging the exact knowledge an agent needs from internal
-              systems before it acts, so execution is grounded instead of generic.
+              Agents that stay controllable when their inputs are hostile: untrusted content
+              treated as data, approvals bound to the exact action, and evals that measure how
+              often those defenses actually hold.
             </p>
             <div className="interest-proof interest-proof--muted">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
-              <span className="interest-proof-name">coming soon</span>
-              <span className="interest-proof-desc interest-proof-desc--long">self-improving latent memory with provenance built-in</span>
-              <span className="interest-proof-desc interest-proof-desc--short">context + memory layer</span>
+              <span className="interest-proof-name">in production</span>
+              <span className="interest-proof-desc interest-proof-desc--long">injection-hardened multimodal agent pipeline</span>
+              <span className="interest-proof-desc interest-proof-desc--short">injection-hardened agent pipeline</span>
             </div>
           </div>
         </li>
