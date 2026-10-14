@@ -6,7 +6,8 @@ export function Hero() {
       <p className="hero-text">
         AI engineer building data infrastructure and long-running agents across enterprise,
         productivity, and fintech. I work where technical systems and product decisions meet,
-        shaping the context, orchestration, and interfaces that make AI useful.
+        shaping the context, orchestration, and safeguards that make AI useful and safe. Lately
+        I&apos;m learning to fine-tune small open models for specialised tasks.
       </p>
       <p className="hero-text">
         I dropped out of college early in my freshman year and learned engineering by building. I
