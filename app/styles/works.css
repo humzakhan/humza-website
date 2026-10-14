@@ -228,6 +228,21 @@
   font-weight: 600;
 }
 
+/* Text stats (Stealth): value and label share one size */
+.works-page .tile-stat-row--text .tile-stat-value,
+.works-page .tile-stat-row--text .tile-stat-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.works-page .tile-stat-row--text .tile-stat-value {
+  color: var(--ink);
+}
+
 .works-page .tile-footer {
   display: flex;
   justify-content: space-between;
