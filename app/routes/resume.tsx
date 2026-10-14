@@ -90,7 +90,7 @@ export default function Resume() {
               <ul className="sidebar-list">
                 <li><span className="dot"></span>Montréal, QC</li>
                 <li><span className="dot"></span><a className="side-link" href="mailto:hello@humza.io">hello@humza.io</a></li>
-                <li><span className="dot"></span><a className="side-link" href="#" target="_blank" rel="noopener noreferrer">linkedin <span className="arr">→</span></a></li>
+                <li><span className="dot"></span><a className="side-link" href="https://www.linkedin.com/in/humzakhaan/" target="_blank" rel="noopener noreferrer">linkedin <span className="arr">→</span></a></li>
                 <li><span className="dot"></span><a className="side-link" href="https://github.com/humzakhan" target="_blank" rel="noopener noreferrer">github <span className="arr">→</span></a></li>
               </ul>
             </div>
@@ -115,7 +115,7 @@ export default function Resume() {
             <div className="sidebar-section">
               <p className="sidebar-label">— AVAILABLE FOR</p>
               <ul className="sidebar-list">
-                <li><span className="dot"></span>Consulting / Advisory</li>
+                <li><span className="dot"></span>Full-time engineering &amp; research</li>
               </ul>
             </div>
 
@@ -130,36 +130,37 @@ export default function Resume() {
                 I&#39;m a product engineer with eight years across distributed systems, financial data platforms, mobile security, and production AI tooling.
               </p>
               <p className="intro-text">
-                I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure.
+                I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure. Lately: agent safeguards, evals, and fine-tuning small open models.
               </p>
             </section>
 
             <section className="section">
               <p className="section-label">— HOW I WORK WITH AI</p>
-              <p className="ai-intro">Two harnesses, each role routed to the model that fits <span>(Claude / Codex)</span></p>
+              <p className="ai-intro">I mostly use Claude: Opus to plan, Sonnet to build. OpenAI models handle the grunt work. <span>(Claude Code / Codex)</span></p>
               <dl className="ai-spec">
                 <div className="ai-row">
                   <dt>Planning</dt>
-                  <dd>GPT-5.6 Sol (xhigh)</dd>
+                  <dd>Opus 5.5</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Building</dt>
-                  <dd>Fable 5 / GPT-5.6 Terra (high) / Sonnet 4.6</dd>
+                  <dd>Sonnet 5.5</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Review</dt>
-                  <dd>subagents across mixed models</dd>
+                  <dd>Claude subagents, run adversarially against the plan</dd>
                 </div>
                 <div className="ai-row">
-                  <dt>Mechanical</dt>
-                  <dd>GPT-5.6 Luna (high / medium) / Sonnet 5</dd>
+                  <dt>Grunt work</dt>
+                  <dd>GPT-6.1 Sol / Luna · migrations, renames, boilerplate</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Orchestration</dt>
                   <dd>
                     <ul className="ai-sublist">
-                      <li>mobile: <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">syndic <span className="ext">↗</span></a></li>
-                      <li>desktop: <a className="project-link" href="https://superset.sh" target="_blank" rel="noopener noreferrer">superset.sh <span className="ext">↗</span></a></li>
+                      <li><a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">syndic <span className="ext">↗</span></a></li>
+                      <li>Claude Remote</li>
+                      <li>T3 Code</li>
                     </ul>
                   </dd>
                 </div>
@@ -184,6 +185,8 @@ export default function Resume() {
                 <ul className="job-bullets">
                   <li>Building spatial intelligence that maps and understands physical spaces, reducing the on-site work it takes to manage them at scale.</li>
                   <li>Designed the pipeline from capture to 3D reconstruction to spatially grounded model outputs, with every finding anchored to where it occurred.</li>
+                  <li>Hardened the multimodal model pipeline (video, audio, documents) against prompt injection: untrusted evidence is delimited as data, and any finding without a timestamp, location, and cited basis is suppressed.</li>
+                  <li>Ran a human-labelled eval of a video-language model across a prompt matrix and repeated runs: recall <strong>0.56 → 0.92</strong>, F1 <strong>0.67 → 0.87</strong>, and isolated a false positive the model repeated in 4 of 5 runs.</li>
                   <li>Turned a multi-day manual workflow into minutes.</li>
                 </ul>
               </article>
@@ -197,10 +200,13 @@ export default function Resume() {
                   <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">Syndic <span className="ext">↗</span></a> · Mobile orchestration for cloud coding agents, goals, templates, and scheduled workflows.
                 </li>
                 <li>
-                  <a className="project-link" href="#" target="_blank" rel="noopener noreferrer">Provenant <span className="ext">↗</span></a> — provenance and audit chains for long-running financial agents.
+                  <span className="project-name">Provenant</span> · Provenance and audit chains for long-running financial agents, with fail-closed reads and deterministic replay.
                 </li>
                 <li>
-                  <a className="project-link" href="#" target="_blank" rel="noopener noreferrer">Fauxbooks <span className="ext">↗</span></a> — reconcilable synthetic financial datasets at scale.
+                  <span className="project-name">Finance Models Lab</span> · Fine-tuning small open models for bilingual bank-statement extraction, with a sandboxed data pipeline.
+                </li>
+                <li>
+                  <span className="project-name">Fieldnote</span> · Research agent where every claim must quote its source verbatim, tested against 20 adversarial cases (prompt injection, secret leakage, out-of-scope writes).
                 </li>
               </ul>
               <p className="project-more">
@@ -208,13 +214,13 @@ export default function Resume() {
               </p>
             </section>
 
-            <section className="section no-print">
+            <section className="section">
               <p className="section-label">— TECH STACK</p>
 
               <dl className="ai-spec">
                 <div className="ai-row">
                   <dt>Current</dt>
-                  <dd className="stack-line">Go&nbsp;<span className="sep">·</span> TypeScript&nbsp;<span className="sep">·</span> Python&nbsp;<span className="sep">·</span> Postgres&nbsp;<span className="sep">·</span> pgvector&nbsp;<span className="sep">·</span> React&nbsp;<span className="sep">·</span> Next.js&nbsp;<span className="sep">·</span> Tailwind</dd>
+                  <dd className="stack-line">Python&nbsp;<span className="sep">·</span> TypeScript&nbsp;<span className="sep">·</span> Go&nbsp;<span className="sep">·</span> Postgres&nbsp;<span className="sep">·</span> pgvector&nbsp;<span className="sep">·</span> React&nbsp;<span className="sep">·</span> Next.js&nbsp;<span className="sep">·</span> Tailwind</dd>
                 </div>
                 <div className="ai-row">
                   <dt>Experienced</dt>
@@ -236,7 +242,7 @@ export default function Resume() {
                   2y
                 </p>
                 <ul className="job-bullets">
-                  <li>Redesigned the core ingestion service, cutting <strong>$60K/yr</strong> in operating costs while sustaining data from <strong>~12M devices</strong>.</li>
+                  <li>Redesigned the core ingestion service feeding the mobile security graph, cutting <strong>$60K/yr</strong> in operating costs while sustaining data from <strong>~12M devices</strong>.</li>
                   <li>Automated compliance workflows, returning <strong>6–8 engineering hours/week</strong> per person to product work.</li>
                   <li>Cut client-facing API latency <strong>55%</strong> (batched requests, DB partitioning) and infrastructure spend <strong>30%</strong> through smarter compute use.</li>
                   <li>Stood up DataDog observability, lifting system visibility <strong>35–45%</strong> with cross-channel alerting.</li>

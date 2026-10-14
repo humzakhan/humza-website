@@ -389,6 +389,12 @@
   transition: opacity 0.2s ease;
 }
 
+/* Unlinked project names (private repos) */
+.resume-page .project-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .resume-page .project-link:hover {
   opacity: 0.65;
 }
