@@ -205,9 +205,6 @@ export default function Resume() {
                 <li>
                   <span className="project-name">Fine-Tuned Statement Extraction</span> · Small open models (Qwen, NuExtract) for bilingual bank statements, with a sandboxed data pipeline.
                 </li>
-                <li>
-                  <span className="project-name">Fieldnote</span> · Research agent where every claim must quote its source verbatim, tested against 20 adversarial cases (prompt injection, secret leakage, out-of-scope writes).
-                </li>
               </ul>
               <p className="project-more">
                 <a href="https://github.com/humzakhan" target="_blank" rel="noopener noreferrer">More projects on GitHub →</a>
@@ -235,11 +232,28 @@ export default function Resume() {
               <article className="job">
                 <h3 className="job-title">Senior Software Engineer</h3>
                 <p className="job-meta">
+                  <span className="org">Integral</span>
+                  <span className="sep">·</span>
+                  Apr 2024 — Sep 2025
+                  <span className="sep">·</span>
+                  1y 6m
+                </p>
+                <ul className="job-bullets">
+                  <li>Owned the ingestion pipeline end to end for an AI-powered accounting platform, bringing transactions from crypto data sources into a single, accounting-ready ledger.</li>
+                  <li>Built and maintained the source integrations as the product expanded from crypto accounting to accounting for small and medium-sized businesses.</li>
+                  <li>Raised ingestion data quality by deduplicating transactions across overlapping sources, so downstream books stayed accurate.</li>
+                  <li>Used AI extensively to design, build, and maintain the data pipelines and integrations.</li>
+                </ul>
+              </article>
+
+              <article className="job">
+                <h3 className="job-title">Senior Software Engineer</h3>
+                <p className="job-meta">
                   <a className="org" href="https://www.lookout.com/" target="_blank" rel="noopener noreferrer">Lookout Inc <span className="ext">↗</span></a>
                   <span className="sep">·</span>
-                  Aug 2022 — 2024
+                  Aug 2022 — Feb 2024
                   <span className="sep">·</span>
-                  2y
+                  1y 7m
                 </p>
                 <ul className="job-bullets">
                   <li>Redesigned the core ingestion service feeding the mobile security graph, cutting <strong>$60K/yr</strong> in operating costs while sustaining data from <strong>~12M devices</strong>.</li>
@@ -250,7 +264,7 @@ export default function Resume() {
               </article>
 
               <article className="job">
-                <h3 className="job-title">Full Stack Developer</h3>
+                <h3 className="job-title">Full Stack Engineer</h3>
                 <p className="job-meta">
                   <a className="org" href="https://revelate.co/" target="_blank" rel="noopener noreferrer">Revelate <span className="ext">↗</span></a>
                   <span className="sep">·</span>
@@ -271,9 +285,9 @@ export default function Resume() {
                 <p className="job-meta">
                   <a className="org" href="https://www.upwork.com/freelancers/~01da283dbe40c60c70" target="_blank" rel="noopener noreferrer">Self-Employed <span className="ext">↗</span></a>
                   <span className="sep">·</span>
-                  May 2016 — 2021
+                  May 2016 — Feb 2019
                   <span className="sep">·</span>
-                  5y
+                  2y 10m
                 </p>
                 <ul className="job-bullets">
                   <li>Drove a SaaS MVP to launch as the linchpin engineer, stretching across backend, infrastructure, frontend, and product strategy to hit every deadline. The client called it <strong>&#34;the sole reason it was delivered successfully.&#34;</strong></li>
