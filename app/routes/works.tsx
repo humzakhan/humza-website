@@ -347,7 +347,7 @@ export default function Works() {
               </div>
               <h3 className="tile-name">Stealth</h3>
               <p className="tile-desc">Spatial intelligence that turns ordinary captures of physical spaces into 3D maps models can reason over, cutting the on-site work those spaces need.</p>
-              <div className="tile-stat-row">
+              <div className="tile-stat-row tile-stat-row--text">
                 <div className="tile-stat">
                   <span className="tile-stat-value">3D</span>
                   <span className="tile-stat-label">SPATIAL MAPS</span>
@@ -390,6 +390,7 @@ export default function Works() {
                   <p className="case-section-label">— THE DETAIL</p>
                   <div className="case-section-body">
                     <p>I'm the founding engineer and lead engineering end to end, from the model pipeline to the systems behind it. We're in stealth, so I'm keeping the specifics light. The problems I spend my days on are reconstructing 3D scenes from imperfect capture, grounding model outputs in physical locations, and keeping a spatial record queryable as the space changes.</p>
+                    <p>Because the models read untrusted video, audio, and documents, much of my work is keeping them honest: treating that input as data, suppressing findings that can't cite a time and place, and measuring the model against human-labelled references.</p>
                   </div>
                 </div>
                 <div className="case-section">
@@ -455,7 +456,6 @@ export default function Works() {
                   <p className="case-section-label">— LINKS</p>
                   <div className="case-links">
                     <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">syndic.dev <span className="ext">↗</span></a>
-                    <a className="project-link" href="https://github.com/humzakhan/syndic" target="_blank" rel="noopener noreferrer">GitHub <span className="ext">↗</span></a>
                   </div>
                 </div>
               </div>
@@ -480,8 +480,8 @@ export default function Works() {
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("provenant"); } }}
               >
-                <span className="tile-tag">FINTECH · OPEN SOURCE</span>
-                <p className="tile-oss-meta">Go · MIT · Open Source</p>
+                <span className="tile-tag">FINTECH</span>
+                <p className="tile-oss-meta">Go · Open source soon</p>
                 <h3 className="tile-name">Provenant</h3>
                 <p className="tile-desc">Provenance for finance workflows, with evidence you can verify and replay.</p>
                 <div className="tile-footer">
@@ -499,8 +499,8 @@ export default function Works() {
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("fauxbooks"); } }}
               >
-                <span className="tile-tag">FINTECH · OPEN SOURCE</span>
-                <p className="tile-oss-meta">Go · MIT · Open Source</p>
+                <span className="tile-tag">FINTECH</span>
+                <p className="tile-oss-meta">Go · Open source soon</p>
                 <h3 className="tile-name">Fauxbooks</h3>
                 <p className="tile-desc">Deterministic, reconcilable synthetic double-entry accounting datasets.</p>
                 <div className="tile-footer">
@@ -530,7 +530,7 @@ export default function Works() {
                   </div>
                   <div>
                     <p className="case-cell-label">STATUS</p>
-                    <p className="case-cell-text">In development. Open source, Go and MIT. Integrates with MCP hosts including Claude Code, Cursor, and Codex CLI.</p>
+                    <p className="case-cell-text">In development in Go, open source soon. Integrates with MCP hosts including Claude Code, Cursor, and Codex CLI.</p>
                   </div>
                 </div>
                 <div className="case-section">
@@ -546,12 +546,6 @@ export default function Works() {
                     <span className="case-stack-tag">MCP</span>
                     <span className="case-stack-tag">Schema validation</span>
                     <span className="case-stack-tag">Deterministic replay</span>
-                  </div>
-                </div>
-                <div className="case-section">
-                  <p className="case-section-label">— LINKS</p>
-                  <div className="case-links">
-                    <a className="project-link" href="https://github.com/humzakhan/provenant" target="_blank" rel="noopener noreferrer">GitHub <span className="ext">↗</span></a>
                   </div>
                 </div>
               </div>
@@ -577,7 +571,7 @@ export default function Works() {
                   </div>
                   <div>
                     <p className="case-cell-label">STATUS</p>
-                    <p className="case-cell-text">In development. Open source, Go and MIT.</p>
+                    <p className="case-cell-text">In development in Go, open source soon.</p>
                   </div>
                 </div>
                 <div className="case-section">
@@ -594,10 +588,69 @@ export default function Works() {
                     <span className="case-stack-tag">Deterministic generation</span>
                   </div>
                 </div>
+              </div>
+            </div>
+
+
+            {/* Flagship tile: Fine-Tuned Statement Extraction */}
+            <div
+              className="tile tile-flagship"
+              data-case="finlab"
+              onClick={() => toggleCase("finlab")}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("finlab"); } }}
+            >
+              <div className="tile-flagship-top">
+                <span className="tile-tag">LOCAL MODELS · RESEARCH</span>
+                <span className="tile-role-chip">Solo build</span>
+              </div>
+              <h3 className="tile-name">Fine-Tuned Statement Extraction</h3>
+              <p className="tile-desc">Fine-tuning small open models to read bilingual bank statements, measured against frontier baselines.</p>
+              <div className="tile-footer">
+                <span>In progress · Python · Qwen · NuExtract</span>
+                <span className="tile-cta">read <span>→</span></span>
+              </div>
+            </div>
+
+            {/* Case: Fine-Tuned Statement Extraction */}
+            <div className={`case${openCase === "finlab" ? " open" : ""}`} id="case-finlab">
+              <button className="case-close" onClick={(e) => { e.stopPropagation(); closeCase(); }} aria-label="Close case study">×</button>
+              <div className="case-inner">
+                <div className="case-header">
+                  <p className="case-eyebrow">— WHAT'S NEXT</p>
+                  <h2 className="case-title">Fine-Tuned Statement Extraction</h2>
+                  <p className="case-tagline">Small open models, fine-tuned for one narrow job and measured honestly against the frontier.</p>
+                </div>
+                <div className="case-grid">
+                  <div>
+                    <p className="case-cell-label">PROBLEM</p>
+                    <p className="case-cell-text">Bank statements are private, messy, and bilingual (English and French), and the data shouldn&apos;t leave the machine that holds it.</p>
+                  </div>
+                  <div>
+                    <p className="case-cell-label">APPROACH</p>
+                    <p className="case-cell-text">Generate synthetic statements with known ground truth, set baselines (rules, untuned Qwen3.5-4B, NuExtract3), then fine-tune a small extraction adapter and track its learning curve.</p>
+                  </div>
+                  <div>
+                    <p className="case-cell-label">STATUS</p>
+                    <p className="case-cell-text">In progress. Data pipeline and evaluation built; first fine-tune runs next.</p>
+                  </div>
+                </div>
                 <div className="case-section">
-                  <p className="case-section-label">— LINKS</p>
-                  <div className="case-links">
-                    <a className="project-link" href="https://github.com/humzakhan/fauxbooks" target="_blank" rel="noopener noreferrer">GitHub <span className="ext">↗</span></a>
+                  <p className="case-section-label">— THE DETAIL</p>
+                  <div className="case-section-body">
+                    <p>The data pipeline runs in a sandbox (bubblewrap and systemd cgroups) with no unconfined fallback, and failures are scrubbed so private paths and ground truth never leak through error messages. Text extracted from PDFs is treated as untrusted, including any instructions embedded in it. Each source carries separate permissions for access, training, and redistribution, and unknown defaults to no.</p>
+                  </div>
+                </div>
+                <div className="case-section">
+                  <p className="case-section-label">— TECH</p>
+                  <div className="case-stack">
+                    <span className="case-stack-tag">Python</span>
+                    <span className="case-stack-tag">Qwen3.5-4B</span>
+                    <span className="case-stack-tag">NuExtract3</span>
+                    <span className="case-stack-tag">LoRA</span>
+                    <span className="case-stack-tag">Synthetic data</span>
+                    <span className="case-stack-tag">Temporal</span>
                   </div>
                 </div>
               </div>
