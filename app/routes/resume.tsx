@@ -203,7 +203,7 @@ export default function Resume() {
                   <span className="project-name">Provenant</span> · Provenance and audit chains for long-running financial agents, with fail-closed reads and deterministic replay.
                 </li>
                 <li>
-                  <span className="project-name">Finance Models Lab</span> · Fine-tuning small open models for bilingual bank-statement extraction, with a sandboxed data pipeline.
+                  <span className="project-name">Fine-Tuned Statement Extraction</span> · Small open models (Qwen, NuExtract) for bilingual bank statements, with a sandboxed data pipeline.
                 </li>
                 <li>
                   <span className="project-name">Fieldnote</span> · Research agent where every claim must quote its source verbatim, tested against 20 adversarial cases (prompt injection, secret leakage, out-of-scope writes).
