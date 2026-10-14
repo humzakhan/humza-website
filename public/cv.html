@@ -102,10 +102,9 @@
     }
     section:last-of-type { border-bottom: none; }
     h2 {
-      font-family: var(--mono);
-      font-weight: 500;
+      font-family: var(--sans);
+      font-weight: 600;
       font-size: 7pt;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
       padding-top: 1.6pt;
       color: var(--accent);
@@ -131,29 +130,26 @@
     .role-org { color: var(--soft); }
     .when { font-family: var(--mono); font-size: 7.2pt; white-space: nowrap; color: var(--accent); }
 
+    /* Hanging dash kept in normal flow: positioned bullets get written to the PDF out of reading order */
     ul { list-style: none; }
     ul li {
-      position: relative;
       padding-left: 10pt;
+      text-indent: -10pt;
       margin-bottom: 2pt;
     }
     ul li::before {
       content: "–";
-      position: absolute;
-      left: 0;
+      display: inline-block;
+      width: 10pt;
+      text-indent: 0;
       color: var(--soft);
     }
 
     /* Projects */
-    .projects li { padding-left: 0; margin-bottom: 2.5pt; }
+    .projects li { padding-left: 0; text-indent: 0; margin-bottom: 2.5pt; }
     .projects li::before { content: none; }
     .proj { font-weight: 600; }
     .lang { font-family: var(--mono); font-size: 7pt; color: var(--soft); }
-    .note { margin-top: 2pt; font-family: var(--mono); font-size: 7pt; color: var(--soft); }
-
-    /* Skills */
-    dl.skills { display: grid; grid-template-columns: max-content 1fr; gap: 1.6pt 10pt; }
-    dl.skills dt { font-family: var(--mono); font-size: 7.2pt; padding-top: 1pt; color: var(--soft); }
 
     footer {
       margin-top: 6pt;
@@ -162,7 +158,6 @@
       text-align: center;
       font-family: var(--mono);
       font-size: 7.2pt;
-      letter-spacing: 0.02em;
       color: var(--soft);
     }
 
