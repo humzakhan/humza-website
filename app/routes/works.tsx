@@ -294,7 +294,7 @@ export default function Works() {
                   </div>
                   <div>
                     <p className="case-cell-label">OUTCOME</p>
-                    <p className="case-cell-text">Shipped in 8 weeks. 100 customers at launch, tens of thousands processed, and early inbound from businesses.</p>
+                    <p className="case-cell-text">Shipped in 8 weeks, with tens of thousands processed and early inbound from businesses.</p>
                   </div>
                 </div>
                 <div className="case-section">
