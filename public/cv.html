@@ -173,7 +173,7 @@
   <header>
     <div>
       <h1>Humza Khan</h1>
-      <p class="headline">Product Engineer · AI safety &amp; security for agents · LLM evaluation · Fine-tuning open models</p>
+      <p class="headline">Product Engineer · AI safety &amp; security for agents · LLM evaluation · Learning to fine-tune</p>
     </div>
     <p class="contact">
       <span>Montréal, Canada</span><span class="sep"> · </span>
@@ -187,7 +187,7 @@
   <section>
     <h2>Summary&nbsp;</h2>
     <p class="lede">
-      Self-taught product engineer with a decade of experience across financial data, mobile security, and applied AI.
+      Self-taught product engineer who started programming by running multiplayer game servers as a teenager; a decade of experience across financial data, mobile security, and applied AI.
       Currently a founding engineer at a multimodal AI startup, focused on evaluation and safeguards. Moving into
       empirical AI safety research; available full-time January–April 2027.
     </p>
@@ -213,8 +213,8 @@
       <div class="role">
         <div class="role-head"><p><span class="role-title">Founding Engineer</span> <span class="role-org">· Stealth startup (spatial intelligence, multimodal AI)</span></p><span class="when">&nbsp;Apr 2026 – Present</span></div>
         <ul>
-          <li>Lead engineering end to end for a multimodal LLM pipeline (video, audio, documents) producing spatially grounded findings; built primarily in Python (Temporal, pydantic).</li>
-          <li>Ran a pilot eval of a video-language model against a human-labelled reference: a prompt matrix with 5 repeated runs and consensus-of-3 raised <span class="metric">recall 0.56 → 0.92 (F1 0.67 → 0.87)</span>. Showed the baseline was stably wrong, not noisy, and traced a false positive repeated in 4 of 5 runs.</li>
+          <li>Lead engineering end to end for a multimodal LLM pipeline (video, audio, documents) producing spatially grounded findings; built primarily in Python (Temporal, pydantic, OpenCV).</li>
+          <li>Ran a pilot eval of a video-language model against a human-labelled reference: a prompt matrix with 5 repeated runs and consensus-of-3 raised the share of labelled issues caught from <span class="metric">56%</span> to <span class="metric">92%</span>. Showed the baseline was stably wrong, not noisy, and traced a false positive repeated in 4 of 5 runs.</li>
           <li>Kept the model advisory where its output affects people's money: findings lacking a timestamp, source capture, or lease basis are dropped, unsupported dollar estimates are suppressed, injected instructions in model output are filtered, and weak evidence goes to a human who makes the final call.</li>
           <li>Isolated each customer's homes and footage: fail-closed tenant scoping at the data layer, short-lived scoped storage URLs, revocable share links that never expose raw video, and a hash-chained, append-only audit log.</li>
         </ul>
@@ -223,7 +223,7 @@
       <div class="role">
         <div class="role-head"><p><span class="role-title">Senior Software Engineer</span> <span class="role-org">· Integral (AI accounting platform)</span></p><span class="when">&nbsp;Apr 2024 – Sep 2025</span></div>
         <ul>
-          <li>Owned the ingestion pipeline as the platform grew from crypto to small-business accounting: built the source integrations, deduplicated transactions across overlapping feeds to raise data quality, and used AI heavily to build the pipelines.</li>
+          <li>Owned the ingestion pipeline as the platform grew from crypto to small-business accounting: built the source integrations, deduplicated transactions across overlapping feeds to raise data quality, and used AI heavily to build the pipelines (FastAPI, SQLAlchemy).</li>
         </ul>
       </div>
 
@@ -237,7 +237,7 @@
       <div class="role">
         <div class="role-head"><p><span class="role-title">Full Stack Engineer</span> <span class="role-org">· <a href="https://revelate.co/">Revelate</a> (financial data)</span></p><span class="when">&nbsp;Mar 2019 – Jul 2022</span></div>
         <ul>
-          <li>Built and scaled a real-time trade-analytics engine processing <span class="metric">200–400M messages/day</span> across NYSE, NASDAQ, and TSX (Java, Kafka, Kudu, Spark); cut metrics delivery from 30 to 12 minutes.</li>
+          <li>Built and scaled a real-time trade-analytics engine processing <span class="metric">200–400M messages/day</span> across NYSE, NASDAQ, and TSX (Java, Kafka, Spark, Airflow); cut metrics delivery from 30 to 12 minutes.</li>
         </ul>
       </div>
 
@@ -254,7 +254,7 @@
     <h2>Latest Projects&nbsp;</h2>
     <div>
     <ul class="projects">
-      <li><span class="proj">Fine-Tuned Statement Extraction</span> <span class="lang">Python · in progress</span> · Small open models for bilingual bank statements vs. Qwen3.5-4B and NuExtract3 baselines; synthetic ground truth; sandboxed pipeline that treats PDF text as untrusted.</li>
+      <li><span class="proj">Fine-Tuned Statement Extraction</span> <span class="lang">Python · in progress</span> · Supervised fine-tuning (LoRA) of small open models on bilingual bank statements vs. Qwen3.5-4B and NuExtract3 baselines; synthetic ground truth; sandboxed pipeline that treats PDF text as untrusted.</li>
       <li><span class="proj">Provenant</span> <span class="lang">Go · <a href="https://provenant.sh/">provenant.sh</a></span> · Provenance layer for agent outputs: fail-closed reads, schema-first validation, deterministic replay.</li>
       <li><span class="proj">Fauxbooks</span> <span class="lang">Go · <a href="https://fauxbooks.xyz/">fauxbooks.xyz</a></span> · Reconcilable synthetic accounting datasets, byte-identical across platforms, for testing financial pipelines and models.</li>
     </ul>

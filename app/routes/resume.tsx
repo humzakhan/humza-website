@@ -186,7 +186,7 @@ export default function Resume() {
                   <li>Building spatial intelligence that maps and understands physical spaces, reducing the on-site work it takes to manage them at scale.</li>
                   <li>Designed the pipeline from capture to 3D reconstruction to spatially grounded model outputs, with every finding anchored to where it occurred.</li>
                   <li>Hardened the multimodal model pipeline (video, audio, documents) against prompt injection: untrusted evidence is delimited as data, and any finding without a timestamp, location, and cited basis is suppressed.</li>
-                  <li>Ran a human-labelled eval of a video-language model across a prompt matrix and repeated runs: recall <strong>0.56 → 0.92</strong>, F1 <strong>0.67 → 0.87</strong>, and isolated a false positive the model repeated in 4 of 5 runs.</li>
+                  <li>Ran a human-labelled eval of a video-language model across a prompt matrix and repeated runs: raised the share of labelled issues caught from <strong>56%</strong> to <strong>92%</strong>, and isolated a false positive the model repeated in 4 of 5 runs.</li>
                   <li>Turned a multi-day manual workflow into minutes.</li>
                 </ul>
               </article>
