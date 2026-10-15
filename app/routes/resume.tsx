@@ -8,12 +8,12 @@ export const meta: MetaFunction = () => [
   { title: "Humza Khan — Resume" },
   {
     name: "description",
-    content: "Resume · Product Engineer · AI products, agent infrastructure, distributed systems at scale.",
+    content: "Resume · Product Engineer · AI safety and security for agents, LLM evaluation, distributed systems at scale.",
   },
   { property: "og:title", content: "Humza Khan — Resume" },
   {
     property: "og:description",
-    content: "Resume · Product Engineer · AI products, agent infrastructure, distributed systems at scale.",
+    content: "Resume · Product Engineer · AI safety and security for agents, LLM evaluation, distributed systems at scale.",
   },
   { property: "og:type", content: "website" },
   { property: "og:url", content: "https://humza.io/resume" },
@@ -26,7 +26,7 @@ export const meta: MetaFunction = () => [
   { name: "twitter:title", content: "Humza Khan — Resume" },
   {
     name: "twitter:description",
-    content: "Resume · Product Engineer · AI products, agent infrastructure, distributed systems at scale.",
+    content: "Resume · Product Engineer · AI safety and security for agents, LLM evaluation, distributed systems at scale.",
   },
   { name: "twitter:site", content: "@0xHumza" },
   { name: "twitter:creator", content: "@0xHumza" },
@@ -127,7 +127,7 @@ export default function Resume() {
             <section className="section">
               <p className="section-label">— INTRODUCTION</p>
               <p className="intro-text">
-                I&#39;m a product engineer with eight years across distributed systems, financial data platforms, mobile security, and production AI tooling.
+                I&#39;m a product engineer with a decade of experience across distributed systems, financial data platforms, mobile security, and production AI tooling.
               </p>
               <p className="intro-text">
                 I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure. Lately: agent safeguards, evals, and fine-tuning small open models.
@@ -180,13 +180,13 @@ export default function Resume() {
                   <span className="job-title-note">(spatial intelligence)</span>
                 </h3>
                 <p className="job-meta job-meta-lead">
-                  <span className="org">Founding Engineer</span> · Leads engineering end to end
+                  <span className="org">Founding Engineer</span> · Apr 2026 — Present · Leads engineering end to end
                 </p>
                 <ul className="job-bullets">
                   <li>Building spatial intelligence that maps and understands physical spaces, reducing the on-site work it takes to manage them at scale.</li>
                   <li>Designed the pipeline from capture to 3D reconstruction to spatially grounded model outputs, with every finding anchored to where it occurred.</li>
                   <li>Hardened the multimodal model pipeline (video, audio, documents) against prompt injection: untrusted evidence is delimited as data, and any finding without a timestamp, location, and cited basis is suppressed.</li>
-                  <li>Ran a human-labelled eval of a video-language model across a prompt matrix and repeated runs: raised the share of labelled issues caught from <strong>56%</strong> to <strong>92%</strong>, and isolated a false positive the model repeated in 4 of 5 runs.</li>
+                  <li>Ran a pilot eval of a video-language model against human labels, across a prompt matrix with repeated runs and consensus-of-3: raised the share of labelled issues caught from <strong>56%</strong> to <strong>92%</strong>, and isolated a false positive the model repeated in 4 of 5 runs.</li>
                   <li>Turned a multi-day manual workflow into minutes.</li>
                 </ul>
               </article>
@@ -200,10 +200,13 @@ export default function Resume() {
                   <a className="project-link" href="https://syndic.dev" target="_blank" rel="noopener noreferrer">Syndic <span className="ext">↗</span></a> · Mobile orchestration for cloud coding agents, goals, templates, and scheduled workflows.
                 </li>
                 <li>
-                  <span className="project-name">Provenant</span> · Provenance and audit chains for long-running financial agents, with fail-closed reads and deterministic replay.
+                  <a className="project-link" href="https://github.com/humzakhan/provenant" target="_blank" rel="noopener noreferrer">Provenant <span className="ext">↗</span></a> · Provenance and audit chains for long-running financial agents, with fail-closed reads and deterministic replay. Open source, Go.
                 </li>
                 <li>
-                  <span className="project-name">Fine-Tuned Statement Extraction</span> · Small open models (Qwen, NuExtract) for bilingual bank statements, with a sandboxed data pipeline.
+                  <a className="project-link" href="https://github.com/humzakhan/fauxbooks" target="_blank" rel="noopener noreferrer">Fauxbooks <span className="ext">↗</span></a> · Reconcilable synthetic accounting datasets, byte-identical across platforms, for testing financial pipelines and models. Open source, Go.
+                </li>
+                <li>
+                  <span className="project-name">Fine-Tuned Statement Extraction</span> · Supervised fine-tuning of small open models for bilingual bank statements, with a sandboxed data pipeline. In progress.
                 </li>
               </ul>
               <p className="project-more">
@@ -294,7 +297,6 @@ export default function Resume() {
                   <li>Took a UK telecom leader&#39;s new fibre-optic product from concept to MVP in <strong>record time</strong>, owning architecture and build end-to-end on an aggressive timeline.</li>
                   <li>Turned ambiguous requirements into execution-ready architectures, delivered ahead of deadline; one client noted the work was <strong>&#34;completed prior to the expected end date with the highest quality of work.&#34;</strong></li>
                   <li>Earned a <strong>100% five-star track record</strong> across every engagement, consistently rated by clients as accountable, reliable, and committed to quality.</li>
-                  <li>Brought finance and cybersecurity depth to high-stakes data platforms: <strong>petabyte-scale</strong> data monetization and Transaction Cost Analytics for institutional traders, plus a real-time engine ingesting <strong>500M+ trade messages/day</strong>.</li>
                   <li><a className="bullet-link" href="https://www.upwork.com/freelancers/~01da283dbe40c60c70" target="_blank" rel="noopener noreferrer">See real partner reviews on Upwork →</a></li>
                 </ul>
               </article>

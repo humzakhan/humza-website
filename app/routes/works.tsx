@@ -123,7 +123,7 @@ export default function Works() {
                 <h3 className="tile-name">Real-Time Trade Analytics</h3>
                 <p className="tile-desc">Sub-15-minute analytics over every trade on NYSE, NASDAQ, and TSX.</p>
                 <div className="tile-stat">
-                  <span className="tile-stat-value">400M</span>
+                  <span className="tile-stat-value">200–400M</span>
                   <span className="tile-stat-label">MESSAGES/DAY</span>
                 </div>
                 <div className="tile-footer">
@@ -481,7 +481,7 @@ export default function Works() {
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("provenant"); } }}
               >
                 <span className="tile-tag">FINTECH</span>
-                <p className="tile-oss-meta">Go · Open source soon</p>
+                <p className="tile-oss-meta">Go · Open source</p>
                 <h3 className="tile-name">Provenant</h3>
                 <p className="tile-desc">Provenance for finance workflows, with evidence you can verify and replay.</p>
                 <div className="tile-footer">
@@ -500,7 +500,7 @@ export default function Works() {
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("fauxbooks"); } }}
               >
                 <span className="tile-tag">FINTECH</span>
-                <p className="tile-oss-meta">Go · Open source soon</p>
+                <p className="tile-oss-meta">Go · Open source</p>
                 <h3 className="tile-name">Fauxbooks</h3>
                 <p className="tile-desc">Deterministic, reconcilable synthetic double-entry accounting datasets.</p>
                 <div className="tile-footer">
@@ -530,7 +530,7 @@ export default function Works() {
                   </div>
                   <div>
                     <p className="case-cell-label">STATUS</p>
-                    <p className="case-cell-text">In development in Go, open source soon. Integrates with MCP hosts including Claude Code, Cursor, and Codex CLI.</p>
+                    <p className="case-cell-text">In development in Go, open source on <a href="https://github.com/humzakhan/provenant" target="_blank" rel="noopener noreferrer">GitHub ↗</a>. Integrates with MCP hosts including Claude Code, Cursor, and Codex CLI.</p>
                   </div>
                 </div>
                 <div className="case-section">
@@ -571,7 +571,7 @@ export default function Works() {
                   </div>
                   <div>
                     <p className="case-cell-label">STATUS</p>
-                    <p className="case-cell-text">In development in Go, open source soon.</p>
+                    <p className="case-cell-text">In development in Go, open source on <a href="https://github.com/humzakhan/fauxbooks" target="_blank" rel="noopener noreferrer">GitHub ↗</a>.</p>
                   </div>
                 </div>
                 <div className="case-section">
@@ -606,7 +606,7 @@ export default function Works() {
                 <span className="tile-role-chip">Solo build</span>
               </div>
               <h3 className="tile-name">Fine-Tuned Statement Extraction</h3>
-              <p className="tile-desc">Fine-tuning small open models to read bilingual bank statements, measured against frontier baselines.</p>
+              <p className="tile-desc">Fine-tuning small open models to read bilingual bank statements, to be measured against strong baselines.</p>
               <div className="tile-footer">
                 <span>In progress · Python · Qwen · NuExtract</span>
                 <span className="tile-cta">read <span>→</span></span>
@@ -620,7 +620,7 @@ export default function Works() {
                 <div className="case-header">
                   <p className="case-eyebrow">— WHAT'S NEXT</p>
                   <h2 className="case-title">Fine-Tuned Statement Extraction</h2>
-                  <p className="case-tagline">Small open models, fine-tuned for one narrow job and measured honestly against the frontier.</p>
+                  <p className="case-tagline">Small open models, fine-tuned for one narrow job and measured honestly against strong baselines.</p>
                 </div>
                 <div className="case-grid">
                   <div>
@@ -633,7 +633,7 @@ export default function Works() {
                   </div>
                   <div>
                     <p className="case-cell-label">STATUS</p>
-                    <p className="case-cell-text">In progress. Data pipeline and evaluation built; first fine-tune runs next.</p>
+                    <p className="case-cell-text">In progress. Data pipeline and evaluation harness built; baselines and the first fine-tune run next.</p>
                   </div>
                 </div>
                 <div className="case-section">
@@ -822,6 +822,16 @@ export default function Works() {
           <p className="chapter-eyebrow">— 05 · OPEN SOURCE</p>
           <p className="oss-intro">Experiments and tools I build in public.</p>
           <div className="oss-list">
+            <a className="oss-row" href="https://github.com/humzakhan/provenant" target="_blank" rel="noopener noreferrer">
+              <span className="oss-row-name">provenant</span>
+              <span className="oss-row-desc">Provenance layer for agent outputs: fail-closed reads and deterministic replay.</span>
+              <span className="oss-row-arrow">↗</span>
+            </a>
+            <a className="oss-row" href="https://github.com/humzakhan/fauxbooks" target="_blank" rel="noopener noreferrer">
+              <span className="oss-row-name">fauxbooks</span>
+              <span className="oss-row-desc">Reconcilable synthetic accounting datasets for testing financial pipelines.</span>
+              <span className="oss-row-arrow">↗</span>
+            </a>
             <a className="oss-row" href="https://github.com/humzakhan/lumi" target="_blank" rel="noopener noreferrer">
               <span className="oss-row-name">lumi</span>
               <span className="oss-row-desc">Visually learn any concept.</span>
@@ -854,7 +864,7 @@ export default function Works() {
         </section>
 
         <footer className="footer">
-          <span className="footer-copyright">© 2026 <a href="mailto:humzakhanagain@outlook.com">Humza Khan</a></span>
+          <span className="footer-copyright">© 2026 <a href="mailto:hello@humza.io">Humza Khan</a></span>
         </footer>
 
       </div>
