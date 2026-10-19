@@ -10,7 +10,8 @@ interface NavProps {
 export function Nav({ staticPage = false }: NavProps) {
   return (
     <nav className="nav">
-      <span className="nav-name">humza k<span className="nav-dot">.</span></span>
+      {/* Plain anchor so it also works on static (JS-free) blog pages. */}
+      <a className="nav-name" href="/">humza k<span className="nav-dot">.</span></a>
       <div className="nav-links">
         <Link to="/works">works</Link>
         <Link to="/resume">resume</Link>
