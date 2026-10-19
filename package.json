@@ -8,6 +8,7 @@
   "scripts": {
     "build": "react-router build && node scripts/build-pages-worker.mjs",
     "dev": "react-router dev",
+    "indexnow": "node scripts/indexnow.mjs",
     "deploy": "pnpm run build && wrangler pages deploy build/client --project-name humza-website --commit-dirty=true",
     "typecheck": "tsc --noEmit",
     "start": "wrangler dev",

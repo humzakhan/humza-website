@@ -1,5 +1,6 @@
 import type { MetaFunction, LoaderFunctionArgs } from "react-router";
 import { useLoaderData } from "react-router";
+import { AsciiBackground } from "~/components/AsciiBackground";
 import { Nav } from "~/components/Nav";
 import { ArticleLayout } from "~/components/ArticleLayout";
 import {
@@ -109,9 +110,12 @@ export default function BlogPost() {
   const { post } = useLoaderData<typeof loader>();
 
   return (
-    <div className="content">
-      <Nav staticPage />
-      <ArticleLayout meta={post.meta} html={post.html} />
-    </div>
+    <>
+      <AsciiBackground staticPage />
+      <div className="content">
+        <Nav staticPage />
+        <ArticleLayout meta={post.meta} html={post.html} />
+      </div>
+    </>
   );
 }

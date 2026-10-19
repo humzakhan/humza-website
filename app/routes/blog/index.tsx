@@ -1,5 +1,6 @@
 import type { MetaFunction } from "react-router";
 import { useLoaderData } from "react-router";
+import { AsciiBackground } from "~/components/AsciiBackground";
 import { Nav } from "~/components/Nav";
 import {
   AUTHOR,
@@ -75,33 +76,36 @@ export default function BlogIndex() {
   const { posts } = useLoaderData<typeof loader>();
 
   return (
-    <div className="content">
-      <Nav staticPage />
-      <main className="blog-index">
-        <header className="blog-index-header">
-          <p className="eyebrow">blog</p>
-          <h1 className="blog-index-title">Essays &amp; Notes</h1>
-          <p className="blog-index-lead">
-            Occasional writing on software, building, and the things in between.
-          </p>
-        </header>
+    <>
+      <AsciiBackground staticPage />
+      <div className="content">
+        <Nav staticPage />
+        <main className="blog-index">
+          <header className="blog-index-header">
+            <p className="eyebrow">blog</p>
+            <h1 className="blog-index-title">Essays &amp; Notes</h1>
+            <p className="blog-index-lead">
+              Occasional writing on software, building, and the things in between.
+            </p>
+          </header>
 
-        <ul className="article-list">
-          {posts.map((post) => (
-            <li key={post.slug} className="article-row">
-              <a href={postPath(post.slug)} className="article-row-link">
-                <div className="article-row-body">
-                  <h2 className="article-row-title">{post.title}</h2>
-                  <p className="article-row-desc">{post.description}</p>
-                </div>
-                <time className="article-row-date" dateTime={post.date}>
-                  {formatDate(post.date)}
-                </time>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
+          <ul className="article-list">
+            {posts.map((post) => (
+              <li key={post.slug} className="article-row">
+                <a href={postPath(post.slug)} className="article-row-link">
+                  <div className="article-row-body">
+                    <h2 className="article-row-title">{post.title}</h2>
+                    <p className="article-row-desc">{post.description}</p>
+                  </div>
+                  <time className="article-row-date" dateTime={post.date}>
+                    {formatDate(post.date)}
+                  </time>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </main>
+      </div>
+    </>
   );
 }

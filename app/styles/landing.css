@@ -39,6 +39,20 @@ body { position: relative; }
   -webkit-text-stroke: 0.5px rgba(138, 170, 208, 0.13);
 }
 
+/* Static pages (no data-theme): follow the system scheme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .ascii-bg {
+    opacity: 1;
+    color: transparent;
+    background: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 0 8px rgba(138, 170, 208, 0.10),
+      0 0 2px rgba(138, 170, 208, 0.16);
+    -webkit-text-stroke: 0.5px rgba(138, 170, 208, 0.13);
+  }
+}
+
 .content {
   position: relative;
   z-index: 1;
