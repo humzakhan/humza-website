@@ -15,7 +15,7 @@ export const AUTHOR = {
 export const BLOG_PATH = "/blog/";
 
 export type PostImage = {
-  src: string; // site-absolute path, e.g. /blog/<slug>/cover.png
+  src: string; // site-absolute path, e.g. /blog/<slug>/cover.jpg
   alt: string;
   width: number;
   height: number;

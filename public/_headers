@@ -3,3 +3,6 @@
 
 /blog/*
   X-Content-Type-Options: nosniff
+
+/ascii-bg.js
+  Cache-Control: public, max-age=3600

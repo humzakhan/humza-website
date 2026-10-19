@@ -30,6 +30,8 @@ Built with **React Router v7** (framework mode, SSR) + **Cloudflare Pages** (Adv
 
 Blog and discovery routes export `handle = { staticPage: true }`, which makes the root layout drop `<Scripts/>`, `<ScrollRestoration/>` and the theme script. Link to them with a plain `<a href>`, not a client-side `<Link>`.
 
+Blog pages ship no app JS. Their only scripts are Plausible, JSON-LD and the standalone `/ascii-bg.js` progressive enhancement (the ASCII background, shared with hydrated pages via `public/ascii-bg.js`).
+
 ## Project Layout
 
 ```
@@ -78,6 +80,17 @@ Outputs:
 - `build/client/` — static assets (JS chunks, CSS, favicons, etc.)
 - `build/client/_worker.js` — self-contained SSR Worker bundle (Pages Advanced Mode)
 - `build/server/index.js` — intermediate RR server build (input to the worker bundler)
+
+## IndexNow
+
+After each deploy, notify search engines of the sitemap URLs:
+
+```bash
+pnpm run indexnow            # all URLs in build/client/sitemap.xml
+node scripts/indexnow.mjs https://humza.io/blog/   # specific URLs
+```
+
+The key file is `public/b1d2b9065317c5636a6560d9459a6d59.txt` (public by design).
 
 ## Type Check
 
