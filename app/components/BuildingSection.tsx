@@ -8,7 +8,7 @@ export function BuildingSection() {
         <span className="section-label-right">01 FLAGSHIP</span>
       </div>
       <Link className="flagship flagship--stealth" to="/works">
-        <h3 className="flagship-name">Stealth</h3>
+        <h2 className="flagship-name">Stealth</h2>
         <p className="flagship-line flagship-line--problem">Spatial intelligence for the physical world: mapping and understanding real spaces, so less work has to happen inside them.</p>
         <div className="building-meta">
           <span className="building-link">in stealth</span>
@@ -16,7 +16,7 @@ export function BuildingSection() {
         </div>
       </Link>
       <a className="flagship flagship--syndic" href="https://syndic.dev" target="_blank" rel="noreferrer">
-        <h3 className="flagship-name">Syndic</h3>
+        <h2 className="flagship-name">Syndic</h2>
         <p className="flagship-line flagship-line--problem">Run cloud coding agents with goals, templates, and schedules built in.</p>
         <div className="building-meta">
           <span className="building-link">syndic.dev</span>

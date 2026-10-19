@@ -375,3 +375,16 @@
     font-size: 17px;
   }
 }
+
+.article-byline {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--label);
+  letter-spacing: 0.04em;
+  margin: 6px 0 0;
+}
+
+.article-byline a {
+  color: inherit;
+  text-decoration: underline;
+}

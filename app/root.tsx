@@ -1,4 +1,13 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useMatches } from "react-router";
+import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useMatches,
+  useRouteError,
+} from "react-router";
 import "~/styles/theme.css";
 import "~/styles/landing.css";
 
@@ -10,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <html lang="en" data-theme={isStatic ? undefined : "light"}>
+    <html lang="en-CA" data-theme={isStatic ? undefined : "light"}>
       <head>
         {/* No-FOUC blocking script — must be first, before stylesheets */}
         {!isStatic && (
@@ -74,4 +83,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function Root() {
   return <Outlet />;
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const notFound = isRouteErrorResponse(error) && error.status === 404;
+  const title = notFound ? "Page not found | Humza Khan" : "Something went wrong | Humza Khan";
+
+  return (
+    <main style={{ maxWidth: "40rem", margin: "4rem auto", padding: "0 1.5rem" }}>
+      <title>{title}</title>
+      <meta name="robots" content="noindex" />
+      <h1>{notFound ? "Page not found" : "Something went wrong"}</h1>
+      <p>
+        {notFound
+          ? "That page does not exist or has moved."
+          : "An unexpected error occurred. Please try again."}
+      </p>
+      <p>
+        <a href="/">Home</a> · <a href="/works">Works</a> · <a href="/resume">Resume</a> ·{" "}
+        <a href="/blog/">Blog</a>
+      </p>
+    </main>
+  );
 }

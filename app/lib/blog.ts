@@ -8,6 +8,7 @@ export const AUTHOR = {
     "https://humzaaa.substack.com",
     "https://github.com/humzakhan",
     "https://www.linkedin.com/in/humzakhaan/",
+    "https://www.upwork.com/freelancers/~01da283dbe40c60c70",
   ],
 };
 

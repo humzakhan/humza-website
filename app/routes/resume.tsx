@@ -1,49 +1,29 @@
 import { type MetaFunction, Link } from "react-router";
+import { PERSON_ID, WEBSITE_ID, jsonLd, pageMeta } from "~/lib/seo";
 import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import "~/styles/resume.css";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Resume" },
-  {
-    name: "description",
-    content: "Resume · Product Engineer · AI safety and security for agents, LLM evaluation, distributed systems at scale.",
-  },
-  { property: "og:title", content: "Humza Khan — Resume" },
-  {
-    property: "og:description",
-    content: "Resume · Product Engineer · AI safety and security for agents, LLM evaluation, distributed systems at scale.",
-  },
-  { property: "og:type", content: "website" },
-  { property: "og:url", content: "https://humza.io/resume" },
-  { property: "og:site_name", content: "Humza Khan" },
-  { property: "og:image", content: "https://humza.io/og-image.png" },
-  { property: "og:image:width", content: "1200" },
-  { property: "og:image:height", content: "630" },
-  { property: "og:image:alt", content: "Humza Khan" },
-  { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — Resume" },
-  {
-    name: "twitter:description",
-    content: "Resume · Product Engineer · AI safety and security for agents, LLM evaluation, distributed systems at scale.",
-  },
-  { name: "twitter:site", content: "@0xHumza" },
-  { name: "twitter:creator", content: "@0xHumza" },
-  { name: "twitter:image", content: "https://humza.io/og-image.png" },
+  ...pageMeta({
+    path: "/resume",
+    title: "Humza Khan Resume | Founding & Software Engineer",
+    description:
+      "Resume of Humza Khan, software engineer in Montréal: founding engineer, ex-Lookout, Revelate and Integral. Distributed systems, fintech data, AI evals.",
+    type: "profile",
+  }),
+  jsonLd({
+    "@type": "ProfilePage",
+    "@id": "https://humza.io/resume#profile",
+    url: "https://humza.io/resume",
+    name: "Humza Khan Resume",
+    isPartOf: { "@id": WEBSITE_ID },
+    mainEntity: { "@id": PERSON_ID },
+    dateModified: "2026-10-19",
+    inLanguage: "en-CA",
+  }),
 ];
-
-// The source <script> has one page-specific click handler beyond ascii/theme/clock:
-// the download-link `href="#" download`. This is a PDF download placeholder that
-// in browser context would trigger window.print() or navigate to a PDF file.
-// We wire it as an onClick that calls window.print() — a real event handler (not
-// rendered logic), so it is SSR-safe: the function only runs in the browser on click.
-function handleDownload(e: React.MouseEvent<HTMLAnchorElement>) {
-  e.preventDefault();
-  if (typeof window !== "undefined") {
-    window.print();
-  }
-}
 
 export default function Resume() {
   return (
@@ -64,6 +44,7 @@ export default function Resume() {
             <Link to="/">home</Link>
             <Link to="/works">works</Link>
             <Link to="/resume" className="active">resume</Link>
+            <a href="/blog/">blog</a>
             {/* Clock already renders its own nav-clock + dot-blink — do NOT wrap */}
             <Clock />
             <ThemeToggle />
@@ -74,7 +55,7 @@ export default function Resume() {
         <section className="hero">
           <p className="eyebrow">— RESUME</p>
           <h1 className="hero-heading">Product Engineer</h1>
-          <a className="download-link" href="#" onClick={handleDownload}>
+          <a className="download-link" href="/humza-khan-resume.pdf" download>
             ↓ DOWNLOAD PDF
           </a>
         </section>
@@ -88,7 +69,7 @@ export default function Resume() {
             <div className="sidebar-section">
               <p className="sidebar-label">— CONTACT</p>
               <ul className="sidebar-list">
-                <li><span className="dot"></span>Montréal, QC</li>
+                <li><span className="dot"></span>Montréal, Québec, Canada</li>
                 <li><span className="dot"></span><a className="side-link" href="mailto:hello@humza.io">hello@humza.io</a></li>
                 <li><span className="dot"></span><a className="side-link" href="https://www.linkedin.com/in/humzakhaan/" target="_blank" rel="noopener noreferrer">linkedin <span className="arr">→</span></a></li>
                 <li><span className="dot"></span><a className="side-link" href="https://github.com/humzakhan" target="_blank" rel="noopener noreferrer">github <span className="arr">→</span></a></li>
@@ -127,7 +108,7 @@ export default function Resume() {
             <section className="section">
               <p className="section-label">— INTRODUCTION</p>
               <p className="intro-text">
-                I&#39;m a product engineer with a decade of experience across distributed systems, financial data platforms, mobile security, and production AI tooling.
+                I&#39;m a product engineer and software engineer based in Montréal with a decade of experience across distributed systems, financial data platforms, mobile security, and production AI tooling.
               </p>
               <p className="intro-text">
                 I build the whole surface area: user experience, backend architecture, data flows, agent harnesses, and production infrastructure. Lately: agent safeguards, evals, and fine-tuning small open models.
@@ -175,10 +156,10 @@ export default function Resume() {
               <p className="section-label">— BUILDING NOW</p>
 
               <article className="job">
-                <h3 className="job-title">
+                <h2 className="job-title">
                   Stealth startup
                   <span className="job-title-note">(spatial intelligence)</span>
-                </h3>
+                </h2>
                 <p className="job-meta job-meta-lead">
                   <span className="org">Founding Engineer</span> · Apr 2026 — Present · Leads engineering end to end
                 </p>
@@ -233,7 +214,7 @@ export default function Resume() {
               <p className="section-label">— PROFESSIONAL EXPERIENCE</p>
 
               <article className="job">
-                <h3 className="job-title">Senior Software Engineer</h3>
+                <h2 className="job-title">Senior Software Engineer</h2>
                 <p className="job-meta">
                   <span className="org">Integral</span>
                   <span className="sep">·</span>
@@ -250,7 +231,7 @@ export default function Resume() {
               </article>
 
               <article className="job">
-                <h3 className="job-title">Senior Software Engineer</h3>
+                <h2 className="job-title">Senior Software Engineer</h2>
                 <p className="job-meta">
                   <a className="org" href="https://www.lookout.com/" target="_blank" rel="noopener noreferrer">Lookout Inc <span className="ext">↗</span></a>
                   <span className="sep">·</span>
@@ -267,7 +248,7 @@ export default function Resume() {
               </article>
 
               <article className="job">
-                <h3 className="job-title">Full Stack Engineer</h3>
+                <h2 className="job-title">Full Stack Engineer</h2>
                 <p className="job-meta">
                   <a className="org" href="https://revelate.co/" target="_blank" rel="noopener noreferrer">Revelate <span className="ext">↗</span></a>
                   <span className="sep">·</span>
@@ -284,7 +265,7 @@ export default function Resume() {
               </article>
 
               <article className="job">
-                <h3 className="job-title">Principal Consultant</h3>
+                <h2 className="job-title">Principal Consultant</h2>
                 <p className="job-meta">
                   <a className="org" href="https://www.upwork.com/freelancers/~01da283dbe40c60c70" target="_blank" rel="noopener noreferrer">Self-Employed <span className="ext">↗</span></a>
                   <span className="sep">·</span>
@@ -302,7 +283,7 @@ export default function Resume() {
               </article>
 
               <article className="job">
-                <h3 className="job-title">Full Stack Web Developer</h3>
+                <h2 className="job-title">Full Stack Web Developer</h2>
                 <p className="job-meta">
                   <span className="org org--na" data-tip="website not available">Muballigh Travels</span>
                   <span className="sep">·</span>
@@ -317,7 +298,7 @@ export default function Resume() {
               </article>
 
               <article className="job">
-                <h3 className="job-title">Intern Web Developer</h3>
+                <h2 className="job-title">Intern Web Developer</h2>
                 <p className="job-meta">
                   <span className="org org--na" data-tip="website not available">Geneve Travel &amp; Tours</span>
                   <span className="sep">·</span>

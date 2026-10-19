@@ -3,7 +3,8 @@ import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { Footer } from "~/components/Footer";
-import { BLOG_PATH, getPosts, postPath } from "~/lib/blog";
+import { BLOG_PATH, absoluteUrl, getPosts, postPath } from "~/lib/blog";
+import { PERSON_ID, WEBSITE_ID, jsonLd, pageMeta } from "~/lib/seo";
 import "~/styles/writings.css";
 
 type WritingItem = {
@@ -61,34 +62,34 @@ const xPosts: WritingItem[] = [
   },
 ];
 
-export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Writings" },
-  {
-    name: "description",
-    content: "Notes from building AI systems, agent infrastructure, and products.",
-  },
-  { property: "og:title", content: "Humza Khan — Writings" },
-  {
-    property: "og:description",
-    content: "Notes from building AI systems, agent infrastructure, and products.",
-  },
-  { property: "og:type", content: "website" },
-  { property: "og:url", content: "https://humza.io/writings" },
-  { property: "og:site_name", content: "Humza Khan" },
-  { property: "og:image", content: "https://humza.io/og-image.png" },
-  { property: "og:image:width", content: "1200" },
-  { property: "og:image:height", content: "630" },
-  { property: "og:image:alt", content: "Humza Khan" },
-  { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — Writings" },
-  {
-    name: "twitter:description",
-    content: "Notes from building AI systems, agent infrastructure, and products.",
-  },
-  { name: "twitter:site", content: "@0xHumza" },
-  { name: "twitter:creator", content: "@0xHumza" },
-  { name: "twitter:image", content: "https://humza.io/og-image.png" },
-];
+export const meta: MetaFunction = () => {
+  const title = "Writings on AI Agents & Engineering | Humza Khan";
+  const description =
+    "Essays and notes by Humza Khan, a Montréal product engineer, on AI agents, verifying AI-generated code, LLM evaluation and production systems.";
+  const url = absoluteUrl("/writings");
+  return [
+    ...pageMeta({ path: "/writings", title, description }),
+    jsonLd({
+      "@type": "CollectionPage",
+      "@id": `${url}#page`,
+      url,
+      name: title,
+      description,
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": PERSON_ID },
+      inLanguage: "en-CA",
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: getPosts().map((post, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: absoluteUrl(postPath(post.slug)),
+          name: post.title,
+        })),
+      },
+    }),
+  ];
+};
 
 // Internal links stay in the same tab; external ones open a new tab.
 const linkProps = (href: string) =>
@@ -151,6 +152,7 @@ export default function Writings() {
             <Link to="/">home</Link>
             <Link to="/works">works</Link>
             <Link to="/resume">resume</Link>
+            <a href="/blog/">blog</a>
             <Clock />
             <ThemeToggle />
           </div>
@@ -159,7 +161,7 @@ export default function Writings() {
         <section className="hero writings-hero">
           <h1 className="hero-heading">Writings</h1>
           <p className="hero-text">
-            Notes from building <strong>AI systems</strong>, agent infrastructure, and the occasional thing I had to write down before it disappeared.
+            Notes from Montréal on building <strong>AI systems</strong>, agent infrastructure, and the occasional thing I had to write down before it disappeared.
           </p>
         </section>
 

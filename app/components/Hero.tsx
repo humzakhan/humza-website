@@ -1,11 +1,11 @@
 export function Hero() {
   return (
     <section className="hero home-hero">
-      <p className="eyebrow">— MONTRÉAL, CA</p>
+      <p className="eyebrow">— MONTRÉAL, QC, CANADA</p>
       <h1 className="hero-heading">Product Engineer</h1>
       <p className="hero-text">
-        AI engineer building data infrastructure and long-running agents across enterprise,
-        productivity, and fintech. I work where technical systems and product decisions meet,
+        AI and product engineer in Montréal, Canada, building data infrastructure and long-running
+        agents across enterprise, productivity, and fintech. I work where technical systems and product decisions meet,
         shaping the context, orchestration, and safeguards that make AI useful and safe. Lately
         I&apos;m learning to fine-tune small open models for specialised tasks.
       </p>

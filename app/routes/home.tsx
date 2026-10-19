@@ -8,37 +8,26 @@ import { WorksSection } from "~/components/WorksSection";
 import { InterestsSection } from "~/components/InterestsSection";
 import { Contact } from "~/components/Contact";
 import { Footer } from "~/components/Footer";
+import { jsonLd, pageMeta, PERSON_ID, WEBSITE_ID } from "~/lib/seo";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Product Engineer" },
-  {
-    name: "description",
-    content:
-      "Product engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
-  },
-  { property: "og:title", content: "Humza Khan — Product Engineer" },
-  {
-    property: "og:description",
-    content:
-      "Product engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
-  },
-  { property: "og:type", content: "website" },
-  { property: "og:url", content: "https://humza.io/" },
-  { property: "og:site_name", content: "Humza Khan" },
-  { property: "og:image", content: "https://humza.io/og-image.png" },
-  { property: "og:image:width", content: "1200" },
-  { property: "og:image:height", content: "630" },
-  { property: "og:image:alt", content: "Humza Khan" },
-  { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — Product Engineer" },
-  {
-    name: "twitter:description",
-    content:
-      "Product engineer and physics enthusiast. I build AI products, agents, and production systems at scale — and regularly lose arguments to my own chatbots.",
-  },
-  { name: "twitter:site", content: "@0xHumza" },
-  { name: "twitter:creator", content: "@0xHumza" },
-  { name: "twitter:image", content: "https://humza.io/og-image.png" },
+  ...pageMeta({
+    path: "/",
+    title: "Humza Khan | Product Engineer in Montréal, Canada",
+    description:
+      "Humza Khan is a product engineer in Montréal (Montreal), Canada. Founding engineer building AI agents, LLM evals and production systems at scale.",
+    type: "profile",
+  }),
+  jsonLd({
+    "@type": "ProfilePage",
+    "@id": "https://humza.io/#profile",
+    url: "https://humza.io/",
+    name: "Humza Khan | Product Engineer in Montréal, Canada",
+    isPartOf: { "@id": WEBSITE_ID },
+    mainEntity: { "@id": PERSON_ID },
+    inLanguage: "en-CA",
+    dateModified: "2026-10-19",
+  }),
 ];
 
 export default function Home() {
