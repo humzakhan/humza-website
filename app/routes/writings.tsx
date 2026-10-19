@@ -3,6 +3,7 @@ import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { Footer } from "~/components/Footer";
+import { BLOG_PATH, getPosts, postPath } from "~/lib/blog";
 import "~/styles/writings.css";
 
 type WritingItem = {
@@ -12,38 +13,20 @@ type WritingItem = {
   href: string;
 };
 
-const essays: WritingItem[] = [
-  {
-    title: "Turning Unstructured Data Into Agent-Ready Context",
-    date: "May 11, '26",
-    why: "To explain the data bottleneck behind useful enterprise agents.",
-    href: "#",
-  },
-  {
-    title: "Reverse ETL for AI Workflows",
-    date: "Apr 28, '26",
-    why: "Because models only become useful when the surrounding system can feed them reliable context.",
-    href: "#",
-  },
-  {
-    title: "No-Code Pipelines Without Losing Engineering Rigor",
-    date: "Apr 14, '26",
-    why: "To separate accessible product surfaces from fragile implementation shortcuts.",
-    href: "#",
-  },
-  {
-    title: "Evaluating Extraction Quality in Production",
-    date: "Mar 31, '26",
-    why: "Accuracy claims matter most when the documents are messy, long, and real.",
-    href: "#",
-  },
-  {
-    title: "What Enterprise AI Actually Needs",
-    date: "Mar 17, '26",
-    why: "Most teams do not need a demo; they need dependable systems around the model.",
-    href: "#",
-  },
-];
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// "2026-05-11" -> "May 11, '26", matching the other writing rows.
+function formatShortDate(iso: string): string {
+  const [year, month, day] = iso.split("-").map(Number);
+  return `${MONTHS[month - 1]} ${day}, '${String(year).slice(-2)}`;
+}
+
+const essays: WritingItem[] = getPosts().map((post) => ({
+  title: post.title,
+  date: formatShortDate(post.date),
+  why: post.description,
+  href: postPath(post.slug),
+}));
 
 const xPosts: WritingItem[] = [
   {
@@ -107,6 +90,10 @@ export const meta: MetaFunction = () => [
   { name: "twitter:image", content: "https://humza.io/og-image.png" },
 ];
 
+// Internal links stay in the same tab; external ones open a new tab.
+const linkProps = (href: string) =>
+  href.startsWith("/") ? {} : { target: "_blank", rel: "noreferrer" };
+
 function WritingSection({
   label,
   description,
@@ -127,14 +114,14 @@ function WritingSection({
           <p className="writing-section-kicker">{label}</p>
           <p className="writing-section-desc">{description}</p>
         </div>
-        <a className="writing-view-all" href={viewAllHref} target="_blank" rel="noreferrer">
+        <a className="writing-view-all" href={viewAllHref} {...linkProps(viewAllHref)}>
           View all <span aria-hidden="true">↗</span>
         </a>
       </div>
 
       <div className="writing-list">
         {items.map((item, index) => (
-          <a className="writing-row" href={item.href} target="_blank" rel="noreferrer" key={item.title}>
+          <a className="writing-row" href={item.href} {...linkProps(item.href)} key={item.title}>
             <span className="writing-index">{String(index + 1).padStart(2, "0")}</span>
             <span className="writing-copy">
               <span className="writing-title-line">
@@ -179,7 +166,7 @@ export default function Writings() {
 
         <section className="writing-channels" aria-label="Where I write">
           <p className="writing-channels-label">WHERE I WRITE</p>
-          <a className="writing-channel" href="#" target="_blank" rel="noreferrer">
+          <a className="writing-channel" href="https://humzaaa.substack.com" target="_blank" rel="noreferrer">
             <span className="writing-channel-main">
               <span className="writing-channel-name">SUBSTACK</span>
               <span className="writing-channel-desc">
@@ -204,7 +191,7 @@ export default function Writings() {
           description="Longer-form notes on data infrastructure, agents, and product engineering."
           items={essays}
           variant="articles"
-          viewAllHref="#"
+          viewAllHref={BLOG_PATH}
         />
 
         <WritingSection

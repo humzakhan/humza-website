@@ -1,21 +1,29 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useMatches } from "react-router";
 import "~/styles/theme.css";
 import "~/styles/landing.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  // Static pages (blog, discovery files) ship no app JS: no hydration, no
+  // theme script. They follow the system colour scheme through CSS alone.
+  const isStatic = useMatches().some(
+    (m) => (m.handle as { staticPage?: boolean } | undefined)?.staticPage,
+  );
+
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme={isStatic ? undefined : "light"}>
       <head>
         {/* No-FOUC blocking script — must be first, before stylesheets */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){
+        {!isStatic && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){
   var s=localStorage.getItem('theme');
   var p=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
   document.documentElement.setAttribute('data-theme', s||p);
 })();`,
-          }}
-        />
+            }}
+          />
+        )}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Plausible Analytics (self-hosted) */}
@@ -35,6 +43,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Humza Khan — Blog"
+          href="/rss.xml"
+        />
         {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -47,8 +61,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <ScrollRestoration />
-        <Scripts />
+        {!isStatic && (
+          <>
+            <ScrollRestoration />
+            <Scripts />
+          </>
+        )}
       </body>
     </html>
   );

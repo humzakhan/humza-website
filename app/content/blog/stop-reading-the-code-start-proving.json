@@ -1,0 +1,28 @@
+{
+  "slug": "stop-reading-the-code-start-proving",
+  "title": "Stop reading the code. Start proving it's clean, fast and secure.",
+  "seoTitle": "Verify AI-Generated Code Instead of Reading It",
+  "description": "How to verify AI-generated code: reviews rarely catch bugs, so use independent checkers, run the code, and gate CI on clean, fast and secure.",
+  "date": "2026-10-19",
+  "tags": ["ai", "code-review", "testing", "verification"],
+  "keywords": [
+    "verify AI-generated code",
+    "AI code review alternatives",
+    "does code review find bugs",
+    "mutation testing AI-generated code",
+    "CI quality gates for AI agents",
+    "coding agents verification",
+    "stop reading AI code",
+    "built-in quality",
+    "independent checkers for agent code",
+    "agent-written code"
+  ],
+  "image": {
+    "src": "/blog/stop-reading-the-code-start-proving/cover.png",
+    "alt": "Dark title card reading “Stop reading the code. Prove it.” with code-like characters passing through a glass filter and coming out as clean dotted lines.",
+    "width": 1672,
+    "height": 941
+  },
+  "originalUrl": "https://humzaaa.substack.com/p/stop-reading-the-code-start-proving",
+  "readingMinutes": 6
+}
