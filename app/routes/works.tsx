@@ -1,37 +1,64 @@
 import { useEffect, useState } from "react";
 import { type MetaFunction, Link } from "react-router";
+import { PERSON_ID, WEBSITE_ID, jsonLd, pageMeta } from "~/lib/seo";
 import { AsciiBackground } from "~/components/AsciiBackground";
 import { Clock } from "~/components/Clock";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import "~/styles/works.css";
 
 export const meta: MetaFunction = () => [
-  { title: "Humza Khan — Works" },
-  {
-    name: "description",
-    content: "Selected work · AI, finance, infrastructure, and open source.",
-  },
-  { property: "og:title", content: "Humza Khan — Works" },
-  {
-    property: "og:description",
-    content: "Selected work · AI, finance, infrastructure, and open source.",
-  },
-  { property: "og:type", content: "website" },
-  { property: "og:url", content: "https://humza.io/works" },
-  { property: "og:site_name", content: "Humza Khan" },
-  { property: "og:image", content: "https://humza.io/og-image.png" },
-  { property: "og:image:width", content: "1200" },
-  { property: "og:image:height", content: "630" },
-  { property: "og:image:alt", content: "Humza Khan" },
-  { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Humza Khan — Works" },
-  {
-    name: "twitter:description",
-    content: "Selected work · AI, finance, infrastructure, and open source.",
-  },
-  { name: "twitter:site", content: "@0xHumza" },
-  { name: "twitter:creator", content: "@0xHumza" },
-  { name: "twitter:image", content: "https://humza.io/og-image.png" },
+  ...pageMeta({
+    path: "/works",
+    title: "Works: AI Agents, Evals & Data Systems | Humza Khan",
+    description:
+      "Projects by Humza Khan, an AI engineer in Montréal: agent safeguards, LLM evaluation, trade analytics at 200–400M msgs/day, and open-source Go tools.",
+  }),
+  jsonLd({
+    "@type": "CollectionPage",
+    "@id": "https://humza.io/works#page",
+    url: "https://humza.io/works",
+    name: "Works",
+    description:
+      "Projects by Humza Khan, an AI engineer in Montréal: agent safeguards, LLM evaluation, trade analytics, and open-source Go tools.",
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": PERSON_ID },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Real-Time Trade Analytics", description: "Sub-15-minute analytics over every trade on NYSE, NASDAQ, and TSX." },
+        { "@type": "ListItem", position: 2, name: "Ingestion Redesign", description: "Rebuilt the pipeline feeding a mobile security graph for 12M devices." },
+        { "@type": "ListItem", position: 3, name: "Crypto-Native Payments", description: "A neobank MVP that let freelancers get paid through a single link, settled on-chain in USDC." },
+        { "@type": "ListItem", position: 4, name: "Stealth", description: "Spatial intelligence that turns ordinary captures of physical spaces into 3D maps models can reason over." },
+        { "@type": "ListItem", position: 5, name: "Syndic", url: "https://syndic.dev", description: "Mobile control plane for AI coding agents, running on the subscriptions you already pay for." },
+        {
+          "@type": "ListItem",
+          position: 6,
+          item: {
+            "@type": "SoftwareSourceCode",
+            name: "Provenant",
+            description: "Provenance for finance workflows, with evidence you can verify and replay.",
+            codeRepository: "https://github.com/humzakhan/provenant",
+            programmingLanguage: "Go",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          item: {
+            "@type": "SoftwareSourceCode",
+            name: "Fauxbooks",
+            description: "Deterministic, reconcilable synthetic double-entry accounting datasets.",
+            codeRepository: "https://github.com/humzakhan/fauxbooks",
+            programmingLanguage: "Go",
+          },
+        },
+        { "@type": "ListItem", position: 8, name: "Fine-Tuned Statement Extraction", description: "Fine-tuning small open models to read bilingual bank statements." },
+        { "@type": "ListItem", position: 9, name: "BlockUnion Architecture", description: "First-version architecture and platform build for a token-incentivized reputation network." },
+        { "@type": "ListItem", position: 10, name: "MTM Infrastructure Strategy", description: "Platform architecture for a student opportunity app connecting qualified students to scholarships, grants, and loans." },
+      ],
+    },
+    inLanguage: "en-CA",
+  }),
 ];
 
 // Page-specific interactivity: case study expand/collapse.
@@ -90,6 +117,7 @@ export default function Works() {
             <Link to="/">home</Link>
             <Link to="/works" className="active">works</Link>
             <Link to="/resume">resume</Link>
+            <a href="/blog/">blog</a>
             <Clock />
             <ThemeToggle />
           </div>
@@ -99,7 +127,7 @@ export default function Works() {
         <section className="hero">
           <p className="eyebrow">— WORKS</p>
           <h1 className="hero-heading">Prominent Works.</h1>
-          <p className="hero-subtitle">A closer look at the work linked across the site: the problem each project solved, the approach, and where it landed.</p>
+          <p className="hero-subtitle">Projects from an AI and product engineer in Montréal. A closer look at the work linked across the site: the problem each project solved, the approach, and where it landed.</p>
         </section>
 
         {/* Chapter 01: What Defines Me / Production at Scale */}
@@ -120,7 +148,7 @@ export default function Works() {
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("tca"); } }}
               >
                 <span className="tile-tag">FINTECH</span>
-                <h3 className="tile-name">Real-Time Trade Analytics</h3>
+                <h2 className="tile-name">Real-Time Trade Analytics</h2>
                 <p className="tile-desc">Sub-15-minute analytics over every trade on NYSE, NASDAQ, and TSX.</p>
                 <div className="tile-stat">
                   <span className="tile-stat-value">200–400M</span>
@@ -142,7 +170,7 @@ export default function Works() {
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCase("lookout"); } }}
               >
                 <span className="tile-tag">INFRASTRUCTURE</span>
-                <h3 className="tile-name">Ingestion Redesign</h3>
+                <h2 className="tile-name">Ingestion Redesign</h2>
                 <p className="tile-desc">Rebuilt the pipeline feeding the security graph for 12M devices.</p>
                 <div className="tile-stat">
                   <span className="tile-stat-value">12M</span>
@@ -260,7 +288,7 @@ export default function Works() {
                 <span className="tile-tag">FINTECH</span>
                 <span className="tile-role-chip">Engineering Lead</span>
               </div>
-              <h3 className="tile-name">Crypto-Native Payments</h3>
+              <h2 className="tile-name">Crypto-Native Payments</h2>
               <p className="tile-desc">A neobank MVP that let freelancers get paid through a single link, settled on-chain in USDC.</p>
               <div className="tile-stat-row">
                 <div className="tile-stat">
@@ -345,7 +373,7 @@ export default function Works() {
                 <span className="tile-tag">SPATIAL INTELLIGENCE · STEALTH</span>
                 <span className="tile-role-chip">Founding engineer</span>
               </div>
-              <h3 className="tile-name">Stealth</h3>
+              <h2 className="tile-name">Stealth</h2>
               <p className="tile-desc">Spatial intelligence that turns ordinary captures of physical spaces into 3D maps models can reason over, cutting the on-site work those spaces need.</p>
               <div className="tile-stat-row tile-stat-row--text">
                 <div className="tile-stat">
@@ -415,7 +443,7 @@ export default function Works() {
                 <span className="tile-tag">DEVTOOL · LIVE</span>
                 <span className="tile-role-chip">Solo build</span>
               </div>
-              <h3 className="tile-name">Syndic</h3>
+              <h2 className="tile-name">Syndic</h2>
               <p className="tile-desc">Mobile control plane for AI coding agents, running on the subscriptions you already pay for.</p>
               <div className="tile-footer">
                 <span>syndic.dev</span>
@@ -482,7 +510,7 @@ export default function Works() {
               >
                 <span className="tile-tag">FINTECH</span>
                 <p className="tile-oss-meta">Go · Open source</p>
-                <h3 className="tile-name">Provenant</h3>
+                <h2 className="tile-name">Provenant</h2>
                 <p className="tile-desc">Provenance for finance workflows, with evidence you can verify and replay.</p>
                 <div className="tile-footer">
                   <span>In development</span>
@@ -501,7 +529,7 @@ export default function Works() {
               >
                 <span className="tile-tag">FINTECH</span>
                 <p className="tile-oss-meta">Go · Open source</p>
-                <h3 className="tile-name">Fauxbooks</h3>
+                <h2 className="tile-name">Fauxbooks</h2>
                 <p className="tile-desc">Deterministic, reconcilable synthetic double-entry accounting datasets.</p>
                 <div className="tile-footer">
                   <span>In development</span>
@@ -605,7 +633,7 @@ export default function Works() {
                 <span className="tile-tag">LOCAL MODELS · RESEARCH</span>
                 <span className="tile-role-chip">Solo build</span>
               </div>
-              <h3 className="tile-name">Fine-Tuned Statement Extraction</h3>
+              <h2 className="tile-name">Fine-Tuned Statement Extraction</h2>
               <p className="tile-desc">Fine-tuning small open models to read bilingual bank statements, to be measured against strong baselines.</p>
               <div className="tile-footer">
                 <span>In progress · Python · Qwen · NuExtract</span>
@@ -676,7 +704,7 @@ export default function Works() {
                 <span className="tile-tag">BLOCKCHAIN INFRA</span>
                 <span className="tile-role-chip">Contract · 2018</span>
               </div>
-              <h3 className="tile-name">BlockUnion Architecture</h3>
+              <h2 className="tile-name">BlockUnion Architecture</h2>
               <p className="tile-desc">First-version architecture and platform build for a token-incentivized reputation network.</p>
               <div className="tile-stat-row">
                 <div className="tile-stat">
@@ -750,7 +778,7 @@ export default function Works() {
                 <span className="tile-tag">EDTECH INFRA</span>
                 <span className="tile-role-chip">Principal Solutions Architect</span>
               </div>
-              <h3 className="tile-name">MTM Infrastructure Strategy</h3>
+              <h2 className="tile-name">MTM Infrastructure Strategy</h2>
               <p className="tile-desc">Platform architecture for a student opportunity app connecting qualified students to scholarships, grants, and loans.</p>
               <div className="tile-stat-row">
                 <div className="tile-stat">

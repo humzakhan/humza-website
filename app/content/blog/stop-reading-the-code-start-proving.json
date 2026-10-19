@@ -1,7 +1,7 @@
 {
   "slug": "stop-reading-the-code-start-proving",
   "title": "Stop reading the code. Start proving it's clean, fast and secure.",
-  "seoTitle": "Verify AI-Generated Code Instead of Reading It",
+  "seoTitle": "Verify AI-Generated Code Instead of Reading It | Humza Khan",
   "description": "How to verify AI-generated code: reviews rarely catch bugs, so use independent checkers, run the code, and gate CI on clean, fast and secure.",
   "date": "2026-10-19",
   "tags": ["ai", "code-review", "testing", "verification"],

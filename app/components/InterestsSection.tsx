@@ -11,7 +11,7 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">01</span>
           <div>
-            <h3 className="interest-title">Autonomous workflows with provenance</h3>
+            <h2 className="interest-title">Autonomous workflows with provenance</h2>
             <p className="interest-desc">
               Agents that can execute multi-step business tasks while tracking what they used,
               what changed, what failed, and why the final answer should be trusted.
@@ -29,7 +29,7 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">02</span>
           <div>
-            <h3 className="interest-title">Specialised local models</h3>
+            <h2 className="interest-title">Specialised local models</h2>
             <p className="interest-desc">
               Fine-tuning small open models for narrow, high-stakes tasks, and measuring them
               honestly against frontier baselines.
@@ -45,7 +45,7 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">03</span>
           <div>
-            <h3 className="interest-title">AI safety &amp; security for agents</h3>
+            <h2 className="interest-title">AI safety &amp; security for agents</h2>
             <p className="interest-desc">
               Agents that stay controllable when their inputs are hostile: untrusted content
               treated as data, approvals bound to the exact action, and evals that measure how

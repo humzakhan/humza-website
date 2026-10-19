@@ -10,14 +10,29 @@ const escapeXml = (s: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
+const SITE_UPDATED = "2026-10-19";
+
+/** Last-modified dates for static pages. "/blog/" follows the newest post. */
+const STATIC_LASTMOD: Record<string, string> = {
+  "/": SITE_UPDATED,
+  "/works": SITE_UPDATED,
+  "/resume": SITE_UPDATED,
+  "/writings": SITE_UPDATED,
+};
 const STATIC_PATHS = ["/", "/works", "/resume", "/writings", "/blog/"];
 
 export async function loader() {
   const posts = getPosts();
 
-  const pages = STATIC_PATHS.map(
-    (path) => `  <url>\n    <loc>${escapeXml(absoluteUrl(path))}</loc>\n  </url>`,
+  const newestPost = posts.reduce(
+    (max, p) => ((p.updated ?? p.date) > max ? (p.updated ?? p.date) : max),
+    "",
   );
+
+  const pages = STATIC_PATHS.map((path) => {
+    const lastmod = path === "/blog/" ? newestPost || SITE_UPDATED : STATIC_LASTMOD[path];
+    return `  <url>\n    <loc>${escapeXml(absoluteUrl(path))}</loc>\n    <lastmod>${escapeXml(lastmod)}</lastmod>\n  </url>`;
+  });
 
   const postEntries = posts.map((post) => {
     const lines = [
