@@ -13,26 +13,49 @@ Built with **React Router v7** (framework mode, SSR) + **Cloudflare Pages** (Adv
 | Bundler | Vite + `@cloudflare/vite-plugin` |
 | Language | TypeScript |
 
+## Routes
+
+| Path | Source | Notes |
+|---|---|---|
+| `/` | `app/routes/home.tsx` | SSR |
+| `/works` | `app/routes/works.tsx` | SSR |
+| `/resume` | `app/routes/resume.tsx` | SSR |
+| `/writings` | `app/routes/writings.tsx` | SSR, lists blog essays and X posts |
+| `/blog/` | `app/routes/blog/index.tsx` | Prerendered, no app JS |
+| `/blog/<slug>/` | `app/routes/blog/$slug.tsx` | Prerendered, no app JS |
+| `/sitemap.xml` | `app/routes/sitemap[.]xml.ts` | Prerendered |
+| `/robots.txt` | `app/routes/robots[.]txt.ts` | Prerendered |
+| `/rss.xml` | `app/routes/rss[.]xml.ts` | Prerendered |
+| `/llms.txt` | `app/routes/llms[.]txt.ts` | Prerendered |
+
+Blog and discovery routes export `handle = { staticPage: true }`, which makes the root layout drop `<Scripts/>`, `<ScrollRestoration/>` and the theme script. Link to them with a plain `<a href>`, not a client-side `<Link>`.
+
 ## Project Layout
 
 ```
 app/
-  routes/
-    home.tsx          → /
-    blog/
-      index.tsx       → /blog
-      $slug.tsx       → /blog/:slug
+  routes/             → route modules (see Routes)
   components/         → shared UI components
+  content/blog/       → blog posts: <slug>.html + <slug>.json
+  lib/                → blog.ts (meta), blog.server.ts (bodies), seo.ts
   styles/             → global CSS
 
 public/
-  works/index.html    → /works  (static asset, Phase 2 deferred)
-  resume/index.html   → /resume (static asset, Phase 2 deferred)
+  blog/<slug>/        → post images
+  _headers            → Cloudflare Pages headers
 
+planning/             → goal.md + plan.md per workstream
 design/source/        → design source files (Figma exports, etc.)
 ```
 
-`/works` and `/resume` are served as static HTML assets from `public/` — React migration of those pages is deferred to Phase 2.
+## Publishing a blog post
+
+1. Add `app/content/blog/<slug>.html`: a body fragment (no `<h1>`, no scripts, no inline styles).
+2. Add `app/content/blog/<slug>.json`: `slug`, `title`, `description`, `date`, `tags`, `keywords`, `readingMinutes`, plus optional `seoTitle`, `updated`, `image`, `originalUrl`.
+3. Put images in `public/blog/<slug>/` and reference them as `/blog/<slug>/<file>`.
+4. Run `pnpm build`, then `pnpm run deploy`.
+
+The post is prerendered at `/blog/<slug>/` and added to the blog index, `/writings`, sitemap, RSS and `llms.txt` automatically. See `planning/static-blog/plan.md` for the full contract.
 
 ## Local Development
 

@@ -1,4 +1,5 @@
 :root,
+:root:not([data-theme]),
 [data-theme="light"] {
   --bg: #faf8f3;
   --bg-hover: #f5f1e8;
@@ -25,6 +26,23 @@
   --whisper: #6a7a96;
   --accent: #a0c0e0;
   --row-highlight: rgba(160, 192, 224, 0.12);
+}
+
+/* No data-theme (static pages ship no JS): follow the system scheme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0e1320;
+    --bg-hover: #161c2c;
+    --ink: #f0f4fc;
+    --ink-soft: #dde4f3;
+    --ink-muted: #c6d0e6;
+    --ink-faint: #a4b2cc;
+    --label: #8a9ab8;
+    --hairline: #1e2a3e;
+    --whisper: #6a7a96;
+    --accent: #a0c0e0;
+    --row-highlight: rgba(160, 192, 224, 0.12);
+  }
 }
 
 *,
