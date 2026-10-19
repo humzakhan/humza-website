@@ -32,6 +32,22 @@ Blog and discovery routes export `handle = { staticPage: true }`, which makes th
 
 Blog pages ship no app JS. Their only scripts are Plausible, JSON-LD and the standalone `/ascii-bg.js` progressive enhancement (the ASCII background, shared with hydrated pages via `public/ascii-bg.js`).
 
+## Markdown for agents
+
+Every public page is also served as Markdown, so agents get clean text instead of HTML.
+
+- `scripts/build-markdown.mjs` runs in `pnpm build` after `react-router build`. It renders each URL in `build/client/sitemap.xml` through the SSR handler, converts `<main>` with turndown and writes `build/client/<path>.md` (plus `blog/<slug>/index.md`) and `llms-full.txt`. New pages and posts are picked up automatically; the build fails if a page does not return 200.
+- `app/entry.pages-worker.ts` serves the `.md` file when the request has `Accept: text/markdown` (q at least that of `text/html`), or directly for `.md` URLs. HTML responses get `Vary: Accept`.
+- Every page has `<link rel="alternate" type="text/markdown">`, and `/llms.txt` links the `.md` URLs.
+
+Test after `pnpm build` and `wrangler pages dev build/client`, or against production:
+
+```sh
+curl -H 'Accept: text/markdown' https://humza.io/works
+curl -i https://humza.io/blog/stop-reading-the-code-start-proving.md
+curl -H 'Accept: text/html' -I https://humza.io/works   # still HTML, Vary: Accept
+```
+
 ## Project Layout
 
 ```

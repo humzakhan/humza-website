@@ -6,7 +6,7 @@
   "type": "module",
   "packageManager": "pnpm@11.0.9",
   "scripts": {
-    "build": "react-router build && node scripts/build-pages-worker.mjs",
+    "build": "react-router build && node scripts/build-markdown.mjs && node scripts/build-pages-worker.mjs",
     "dev": "react-router dev",
     "indexnow": "node scripts/indexnow.mjs",
     "deploy": "pnpm run build && wrangler pages deploy build/client --project-name humza-website --commit-dirty=true",
@@ -30,6 +30,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "portless": "^0.15.1",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
     "typescript": "^5",
     "vite": "^6",
     "wrangler": "^3"

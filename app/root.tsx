@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
   useMatches,
   useRouteError,
 } from "react-router";
@@ -17,6 +18,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const isStatic = useMatches().some(
     (m) => (m.handle as { staticPage?: boolean } | undefined)?.staticPage,
   );
+
+  // Every page has a generated Markdown twin (scripts/build-markdown.mjs).
+  const { pathname } = useLocation();
+  const markdownHref =
+    pathname === "/"
+      ? "/index.md"
+      : pathname.endsWith("/")
+        ? `${pathname}index.md`
+        : `${pathname}.md`;
 
   return (
     <html lang="en-CA" data-theme={isStatic ? undefined : "light"}>
@@ -58,6 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           title="Humza Khan — Blog"
           href="/rss.xml"
         />
+        <link rel="alternate" type="text/markdown" href={markdownHref} />
         {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

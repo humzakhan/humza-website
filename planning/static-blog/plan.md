@@ -48,6 +48,10 @@ Links from hydrated pages to blog pages must be real document loads (`<a href>` 
 
 The index, sitemap, RSS, llms.txt and `/writings` pick the post up automatically.
 
+## Markdown for agents
+
+`scripts/build-markdown.mjs` (between `react-router build` and the worker bundle) renders every sitemap URL, converts `<main>` to Markdown and writes `<path>.md`, `blog/<slug>/index.md`, `blog/<slug>.md` and `llms-full.txt` into `build/client`. The worker serves them on `Accept: text/markdown` or a direct `.md` URL and adds `Vary: Accept` to HTML, so posts need no extra step: publishing a post regenerates its Markdown on the next build. The blog HTML stays static and ships no extra JS.
+
 ## Not verified
 
 No install, build, typecheck, test or wrangler run happened on this host (execution restricted). Unchecked:
