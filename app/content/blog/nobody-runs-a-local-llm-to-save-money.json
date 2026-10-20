@@ -1,0 +1,28 @@
+{
+  "slug": "nobody-runs-a-local-llm-to-save-money",
+  "title": "Nobody runs a local LLM to save money. Here's when it's worth it.",
+  "seoTitle": "Local LLM vs Cloud API: When Running Local Is Worth It",
+  "description": "Local LLM vs cloud API: nobody runs local to save money. The real reasons are privacy and understanding inference, and the cost math when it pays off.",
+  "date": "2026-10-20",
+  "tags": ["ai", "local-llm", "privacy", "infrastructure"],
+  "keywords": [
+    "local LLM vs cloud API",
+    "is it worth running a local LLM",
+    "local LLM vs Claude subscription",
+    "Mac Studio for local LLM",
+    "run LLM locally for privacy",
+    "self-hosted LLM cost",
+    "local AI for regulated data",
+    "open-weight models vs frontier models",
+    "how much memory to run a local LLM",
+    "local LLM hardware cost per month"
+  ],
+  "image": {
+    "src": "/blog/nobody-runs-a-local-llm-to-save-money/cover.jpg",
+    "alt": "Dark title card reading “Nobody runs a local LLM to save money. Here’s when it’s worth it.” beside a Mac Studio on a desk with dotted lines of data flowing out of it.",
+    "width": 1672,
+    "height": 941
+  },
+  "originalUrl": "https://humzaaa.substack.com/p/nobody-runs-a-local-llm-to-save-money",
+  "readingMinutes": 5
+}
