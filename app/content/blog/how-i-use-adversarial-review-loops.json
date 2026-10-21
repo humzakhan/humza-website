@@ -1,0 +1,28 @@
+{
+  "slug": "how-i-use-adversarial-review-loops",
+  "title": "How I use adversarial review loops to generate production specs",
+  "seoTitle": "Adversarial Review Loop for AI Agent Specs | Humza Khan",
+  "description": "An adversarial review loop for AI agent specs: Hone pits a Critic against a Defender until the plan is stable, so you catch a broken spec before you build.",
+  "date": "2026-10-21",
+  "tags": ["ai", "agents", "specs", "code-review", "claude-code"],
+  "keywords": [
+    "adversarial review loop",
+    "adversarial review for AI agent specs",
+    "AI agent spec review",
+    "critic and defender agents",
+    "LLM self-correction without external feedback",
+    "agent reviewing its own plan",
+    "Hone adversarial review framework",
+    "spec-driven development with AI agents",
+    "Claude Code slash commands for spec review",
+    "calibrated critic prompt"
+  ],
+  "image": {
+    "src": "/blog/how-i-use-adversarial-review-loops/cover.jpg",
+    "alt": "Dark navy title card reading “The Adversarial Spec Loop.” beside a glowing funnel shape narrowing to a small central square.",
+    "width": 900,
+    "height": 360
+  },
+  "originalUrl": "https://humzaaa.substack.com/p/how-i-use-adversarial-review-loops",
+  "readingMinutes": 5
+}
