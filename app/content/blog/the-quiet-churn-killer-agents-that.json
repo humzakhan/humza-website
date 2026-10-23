@@ -1,0 +1,33 @@
+{
+  "slug": "the-quiet-churn-killer-agents-that",
+  "title": "The quiet churn killer: agents that find and fix bugs before customers do",
+  "seoTitle": "AI Agents for Customer Retention: Find and Fix Bugs",
+  "description": "AI agents for customer retention: autonomous testing finds and fixes product bugs before customers notice, with verified fixes and a business playbook.",
+  "date": "2026-10-23",
+  "tags": [
+    "ai-agents",
+    "customer-experience",
+    "software-testing",
+    "customer-retention"
+  ],
+  "keywords": [
+    "AI agents for customer retention",
+    "agentic QA for SaaS products",
+    "autonomous software testing",
+    "proactive bug detection",
+    "AI bug fixing with verified fixes",
+    "customer experience automation",
+    "SaaS churn prevention through product quality",
+    "visual regression testing with AI agents",
+    "multi-agent testing for software quality",
+    "customer journey testing across user roles"
+  ],
+  "image": {
+    "src": "/blog/the-quiet-churn-killer-agents-that/cover.jpg",
+    "alt": "Dark title card about using agent swarms to detect issues before customers do, beside a glowing signal spike.",
+    "width": 1600,
+    "height": 640
+  },
+  "originalUrl": "https://humzaaa.substack.com/p/the-quiet-churn-killer-agents-that",
+  "readingMinutes": 7
+}
