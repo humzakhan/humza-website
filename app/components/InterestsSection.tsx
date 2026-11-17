@@ -29,16 +29,16 @@ export function InterestsSection() {
         <li className="interest">
           <span className="interest-num">02</span>
           <div>
-            <h2 className="interest-title">Specialised local models</h2>
+            <h2 className="interest-title">Small models that run fully offline</h2>
             <p className="interest-desc">
-              Fine-tuning small open models for narrow, high-stakes tasks, and measuring them
-              honestly against frontier baselines.
+              Training classifiers, rerankers and small language models for specific business
+              domains that run entirely offline, measured honestly against frontier baselines.
             </p>
             <div className="interest-proof interest-proof--muted">
               <span className="interest-proof-mark" aria-hidden="true">↳</span>
               <span className="interest-proof-name">in progress</span>
-              <span className="interest-proof-desc interest-proof-desc--long">bank-statement extraction, EN/FR</span>
-              <span className="interest-proof-desc interest-proof-desc--short">bank-statement extraction</span>
+              <span className="interest-proof-desc interest-proof-desc--long">financial statements first, more domains next</span>
+              <span className="interest-proof-desc interest-proof-desc--short">financial statements first</span>
             </div>
           </div>
         </li>

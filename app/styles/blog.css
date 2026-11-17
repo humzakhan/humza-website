@@ -156,10 +156,22 @@
 
 .article-meta {
   font-family: 'Geist Mono', monospace;
-  font-size: 12px;
-  color: var(--label);
+  font-size: 13.5px;
+  color: var(--ink-muted);
   letter-spacing: 0.04em;
+  line-height: 1.6;
   margin: 0;
+}
+
+.article-meta a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--whisper);
+}
+
+.article-meta a:hover {
+  text-decoration-color: currentColor;
 }
 
 .article-tags {
@@ -167,16 +179,17 @@
   gap: 0.5rem;
   list-style: none;
   padding: 0;
-  margin: 0.75rem 0 0;
+  margin: 1rem 0 0;
   flex-wrap: wrap;
 }
 
 .article-tag {
   font-family: 'Geist Mono', monospace;
-  font-size: 11px;
-  color: var(--ink-muted);
-  border: 0.5px solid var(--hairline);
-  padding: 0.2rem 0.6rem;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  border: 1px solid var(--hairline);
+  background: var(--bg-hover);
+  padding: 0.3rem 0.7rem;
   letter-spacing: 0.05em;
 }
 
@@ -338,8 +351,8 @@
   padding-top: 1.25rem;
   border-top: 0.5px solid var(--hairline);
   font-family: 'Geist Mono', monospace;
-  font-size: 12px;
-  color: var(--label);
+  font-size: 14px;
+  color: var(--ink-muted);
   letter-spacing: 0.02em;
 }
 
@@ -348,7 +361,7 @@
 }
 
 .article-footer a {
-  color: var(--ink-muted);
+  color: var(--ink);
   text-underline-offset: 3px;
 }
 
@@ -374,17 +387,4 @@
   .dek {
     font-size: 17px;
   }
-}
-
-.article-byline {
-  font-family: 'Geist Mono', monospace;
-  font-size: 12px;
-  color: var(--label);
-  letter-spacing: 0.04em;
-  margin: 6px 0 0;
-}
-
-.article-byline a {
-  color: inherit;
-  text-decoration: underline;
 }
