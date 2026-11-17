@@ -27,6 +27,8 @@ export function ArticleLayout({ meta, html }: ArticleLayoutProps) {
           <h1 className="article-title">{meta.title}</h1>
           <p className="dek">{meta.description}</p>
           <p className="article-meta">
+            By <a className="article-meta-author" href="/">Humza Khan</a>
+            {" · "}
             <time dateTime={meta.date}>{formatDate(meta.date)}</time>
             {hasUpdate && (
               <>
@@ -35,9 +37,6 @@ export function ArticleLayout({ meta, html }: ArticleLayoutProps) {
               </>
             )}
             {` · ${meta.readingMinutes} min read`}
-          </p>
-          <p className="article-byline">
-            By <a href="/">Humza Khan</a>, product engineer in Montréal
           </p>
           {meta.tags.length > 0 && (
             <ul className="article-tags">
